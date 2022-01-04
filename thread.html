@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Java Multithreading</title>
+
+    <link href="Images/favicon.png" rel="icon">
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <!-- <a href="index.html" class="logo"><img src="Images/logo.png" alt="" class="img-fluid"></a> -->
+            <a href="index.html" class="logo">Java Reading Materials</a>
+
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img id="java-icon" src="Images/java-icon.png" alt="" class="img-fluid">Java
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="index.html">Java Standard Edition </a>
+                          <a class="dropdown-item" href="enterprise.html">Java Enterprise Edition </a>
+                          <a class="dropdown-item" href="#">Java Micro Edition </a>
+                        </div>
+                      </li>
+                    <li></i><a class="nav-link active" href="index.html"> Database</a></li>
+                </ul>
+                <i class="bi mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav leftCol" id="sidenavigation">
+                <nav class="nav flex-column">
+                    <h4 class="sidenav-title"><b><a href="index.html">Standard Edition</a></b></h4>
+                    <ul class="sidenav-title02">
+                        <li><a href="index.html">Java Basics</a></li>
+                        <li><a href="oop.html">OOP</a></li>
+                        <li><a href="lamda.html">Lambda Expression</a></li>
+                        <li><a href="generics.html">Generics</a></li>
+                        <li><a href="collection.html">Collections API</a></li>
+                        <li><a href="io.html">Java I/O Streams</a></li>
+                        <li><a href="thread.html">Threading</a></li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#Threading"><b>Threading</b></a></span>
+                            <ul>
+                                <li><a href="#Multitasking">Multitasking</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#LifeCycle"><b>Life Cycle of Thread</b></a></span></li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#ThreadScheduler"><b>Thread Scheduler</b></a></span>
+                            <ul>
+                                <li><a href="#Preemptive-priority">Preemptive-priority scheduling</a></li>
+                                <li><a href="#FirstcomeFirst">First come First serve Scheduling(FIFS)</a></li>
+                                <li><a href="#Time-slicing">Time-slicing scheduling</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#Synchronization"><b>Synchronization </b></a></span></li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#ThreadinJava"><b>Thread in Java</b></a></span>
+                            <ul>
+                                <li><a href="#ExtendingThreadClass">Extending Thread Class</a></li>
+                                <li><a href="#ImplementingRunnable">Implementing Runnable Interface</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="sidenav-title02">
+                        <li><a href="socket.html">Socket</a></li>
+                        <li><a href="stream.html">Stream API</a></li>
+                        <li><a href="reflection.html">Java Reflection</a></li>
+                    </ul>
+                    <h4 class="sidenav-title"><b><a href="webserver.html">Enterprise Edition</a></b></h4>
+                    <h4 class="sidenav-title"><b><a href="index.html"> Micro Edition</a></b></h4>
+
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                </nav>
+            </div>
+
+            <div class="col-sm-9 rightCol" id="contentbody">
+                <h3 class="page-title"><b>Threading</b></h3>
+                <hr>
+                <h4 id="Threading" class="level1"><b>Threading</b></h4>
+                <p class="peragraph">A thread is a light-weight smallest part of a process that can run concurrently
+                    with the other parts(other threads) of the same process. <br>
+                    Multithreading in Java is a process of executing multiple threads simultaneously. Multithreading,
+                    used to achieve multitasking. <br>
+                    In java multithreading is used because threads use a shared memory area. They don't
+                    allocate separate memory area so saves memory, and context-switching between the threads takes less
+                    time. <br>
+                </p>
+                <h5 id="Multitasking" class="level2"><b>Multitasking</b></h5>
+                <p class="peragraph">Multitasking is a process of executing multiple tasks simultaneously. We use
+                    multitasking to utilize the CPU. Multitasking can be achieved in two ways:<br>
+                </p>
+                <!-- <img class="content-img" src="Images/content-img/multi-threading.jpg"
+                    alt="multi threading"> -->
+                <ul class="random-li">
+                    <li>Process-based Multitasking (Multiprocessing)</li>
+                    <li>Thread-based Multitasking (Multithreading)</li>
+                </ul>
+                <h6 id="" class="level3"><b>Multiprocessing</b></h6>
+                <p class="peragraph">Each process has an address in memory. In other words, each process allocates a
+                    separate memory area. A process is heavyweight. Cost of communication between the process is high.
+                    Switching from one process to another requires some time for saving and loading registers, memory
+                    maps, updating lists, etc.<br>
+                </p>
+                <h6 id="" class="level3"><b>Multithreading</b></h6>
+                <p class="peragraph">Threads share the same address space. A thread is lightweight.
+                    Cost of communication between the thread is low.<br>
+                </p>
+                <h4 id="LifeCycle" class="level1"><b>Life Cycle of Thread</b></h4>
+                <img class="content-img" src="Images/content-img/ThreadLifeCycle.png" alt="life cycle of thread">
+                <p class="peragraph"> <b>New - </b> Instance of thread created which is not yet started by involving
+                    start(). In this state, the thread is also known as the born thread. <br>
+                    <b>Runnable - </b> After invocation of start() & before it is selected to be run by the scheduler.
+                    <br>
+                    <b>Running - </b> After the thread scheduler has selected it. <br>
+                    <b>Non-runnable - </b> thread alive, not eligible to run. <br>
+                    <b>Terminated - </b> run() method has exited. <br>
+                </p>
+                <h4 id="ThreadScheduler" class="level1"><b>Thread Scheduler</b></h4>
+                <p class="peragraph"> A thread scheduler in java is the part of the JVM that decides which thread should
+                    run and which should wait. The thread scheduler always chooses a thread to run only if it is in the
+                    RUNNABLE state. But there is no guarantee which thread will be chosen to run if you have multiple
+                    threads in RUNNABLE state. <br> <br>
+                    <b>There are a number of factor or criteria which are used to select a thread.</b> <br> <br>
+                    <b>Priority</b> <br>
+                    Whenever we create a thread, it always inherits priority from its parent thread. Each thread has a
+                    priority that lies between 1 to 10. The higher priority of thread means a higher chance to get
+                    selected for the execution. <br>
+                    <b>Arrival time</b> <br>
+                    The thread scheduler also depends on the arrival time of the thread. If two or more thread has same
+                    priority then thread scheduler checks the arrival time of threads. <br>
+                </p>
+                <h5 id="Preemptive-priority" class="level2"><b>Preemptive-priority scheduling / Round Robin</b></h5>
+                <p class="peragraph"> As you can see the name of the algorithm already says priority scheduling. This
+                    algorithm is based on the priority of the thread. Suppose the multiple threads are in the RUNNABLE
+                    state (ready to run), the thread scheduler chooses the threads that have the highest priority. It
+                    will ignore the other’s thread and select the higher-priority thread. <br>
+                    <b> 1. </b>A higher priority thread becomes runnable, <br>
+                    <b> 2. </b>When the current thread goes for stop the execution. We can use yield(), sleep(), join()
+                    method
+                    to give the chance to executes the other threads. <br>
+                    <b> 3. </b>If the selected thread has completed its time slice. <br>
+                    If any higher priority thread comes in the RUNNABLE state or the time slice of a given thread has
+                    finished. Then the current running thread will be suspended and another thread having higher
+                    priority will get time slice for completing its task in the Running state. <br>
+                </p>
+                <h5 id="FirstcomeFirst" class="level2"><b>First come First serve Scheduling(FIFS)</b></h5>
+                <p class="peragraph">
+                    According to this algorithm, the thread scheduler assigns the CPU time to the thread which comes
+                    first. The thread scheduler checks the arrival time of the thread, give the time slice for its
+                    execution. <br>
+                </p>
+                <h5 id="Time-slicing" class="level2"><b>Time-slicing scheduling</b></h5>
+                <p class="peragraph">
+                    This algorithm based on First Comes First Serve and time slice. The thread scheduler assigns a piece
+                    of time to each thread that is known as a time slice. The time slice is defined in the system and
+                    every thread gets executed cyclically. <br>
+                </p>
+                <h4 id="Synchronization" class="level1"><b>Synchronization </b></h4>
+                <p class="peragraph">
+                    Synchronization in Java is the capability to control the access of multiple threads to any shared
+                    resource. <br>
+                    Java Synchronization is better option where we want to allow only one thread to access the shared
+                    resource. <br> <br>
+                    <b>Synchronized (Thread Safe) - </b> Means one thread can access method at a time. <br>
+                    <b>Non-synchronized (Not Thread Safe) - </b> Means multiple thread can access the same method at the
+                    same time. <br>
+                </p>
+                <h4 id="ThreadinJava" class="level1"><b>Thread in java</b></h4>
+                <p class="peragraph">
+                    <b>Ways To Create A Thread In Java</b> <br>
+                    - By extending the thread class <br>
+                    - By implementing Runnable interface <br>
+                </p>
+                <h5 id="ExtendingThreadClass" class="level2"><b>Extending Thread Class</b></h5>
+                <p class="peragraph">
+                    To create a thread using the thread class, we need to extend the thread class. Java's multithreading
+                    system is based on the thread class.<br>
+                    <span class="code-snip">
+                        class MyThread extends Thread{ <br>
+                        @Override <br>
+                        public void run(){ <br>
+                        int i =0; <br>
+                        while(i&lt;40000){ <br>
+                        System.out.println(" Thread is Running"); <br>
+                        System.out.println("I am happy!"); <br>
+                        i++;<br>
+                        }}<br>
+                        }<br><br>
+                        public class Main {<br>
+                        public static void main(String[] args) {<br>
+                        MyThread t1 = new MyThread();<br>
+                        t1.start();<br>
+                        }<br>
+                        }<br>
+                    </span>
+                </p>
+                <h5 id="ImplementingRunnable" class="level2"><b>Implementing Runnable Interface</b></h5>
+                <p class="peragraph">
+                    To create a thread using the Runnable Interface, we need to implement the Runnable interface.<br>
+                    <span class="code-snip">
+                        classs t1 implements Runnable{ <br>
+                        @Override <br>
+                        public void run(){ <br>
+                        System.out.println("Thread is running"); <br>
+                        }<br>
+                        }<br><br>
+
+                        public class ClassName{<br>
+                        public static void main(String[] args) {<br>
+                        t1 obj1 = new t1(); <br>
+                        Thread t = new Thread(obj1); <br>
+                        t.start();<br>
+                        }<br>
+                        }<br>
+                    </span>
+                </p>
+
+
+
+                <div id="footer" class="container d-flex align-items-center justify-content-between">
+                    <a href="io.html" class="btn btn-outline-info"><i class="bi bi-chevron-double-left"></i>  Previous</a>
+                    <a href="socket.html" class="btn btn-outline-info">Next  <i class="bi bi-chevron-double-right"></i></a>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

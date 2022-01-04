@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Java IO</title>
+
+    <link href="Images/favicon.png" rel="icon">
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <!-- <a href="index.html" class="logo"><img src="Images/logo.png" alt="" class="img-fluid"></a> -->
+            <a href="index.html" class="logo">Java Reading Materials</a>
+
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img id="java-icon" src="Images/java-icon.png" alt="" class="img-fluid">Java
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="index.html">Java Standard Edition </a>
+                          <a class="dropdown-item" href="enterprise.html">Java Enterprise Edition </a>
+                          <a class="dropdown-item" href="#">Java Micro Edition </a>
+                        </div>
+                      </li>
+                    <li></i><a class="nav-link active" href="index.html"> Database</a></li>
+                </ul>
+                <i class="bi mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav leftCol" id="sidenavigation">
+                <nav class="nav flex-column">
+                    <h4 class="sidenav-title"><b><a href="index.html">Standard Edition</a></b></h4>
+                    <ul class="sidenav-title02">
+                        <li><a href="index.html">Java Basics</a></li>
+                        <li><a href="oop.html">OOP</a></li>
+                        <li><a href="lamda.html">Lambda Expression</a></li>
+                        <li><a href="generics.html">Generics</a></li>
+                        <li><a href="collection.html">Collections API</a></li>
+                        <li><a href="io.html">Java I/O Streams</a></li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#serialization"><b>Serialization and Deserialization</b></a></span>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#marker-interface"><b>Marker Interface</b></a></span>
+                            <ul>
+                                <li><a href="#serializable-interface">Serializable Interface</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#i-o-stream"><b>I/O Stream</b></a></span>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#in-and-out-stream"><b>InputStream & OutputStream</b></a></span>
+                            <ul>
+                                <li><a href="#file-Input-Stream">FileInputStream</a></li>
+                                <li><a href="#file-Output-Stream">FileOutputStream</a></li>
+                                <li><a href="#ObjectInputStream">ObjectInputStream</a></li>
+                                <li><a href="#ObjectOutputStream">ObjectOutputStream</a></li>
+                                <li><a href="#BufferedInputStream">BufferedInputStream</a></li>
+                                <li><a href="#BufferedOutputStream">BufferedOutputStream</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#ReaderAndWriter"><b>Reader & Writer</b></a></span>
+                            <ul>
+                                <li><a href="#InputStreamReader">InputStreamReader</a></li>
+                                <li><a href="#OutputStreamWriter">OutputStreamWriter</a></li>
+                                <li><a href="#FileReader">FileReader</a></li>
+                                <li><a href="#FileWriter">FileWriter</a></li>
+                                <li><a href="#BufferedReader">BufferedReader</a></li>
+                                <li><a href="#BufferedWriter">BufferedWriter</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="sidenav-title02">
+                        <li><a href="thread.html">Threading</a></li>
+                        <li><a href="socket.html">Socket</a></li>
+                        <li><a href="stream.html">Stream API</a></li>
+                        <li><a href="reflection.html">Java Reflection</a></li>
+                    </ul>
+                    <h4 class="sidenav-title"><b><a href="webserver.html">Enterprise Edition</a></b></h4>
+                    <h4 class="sidenav-title"><b><a href="index.html"> Micro Edition</a></b></h4>
+
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                </nav>
+            </div>
+
+            <div class="col-sm-9 rightCol" id="contentbody">
+                <h3 class="page-title"><b>Java I/O Streams</b></h3>
+                <hr>
+                <h4 id="serialization" class="level1"><b>Serialization and Deserialization</b></h4>
+                <p class="peragraph">Serialization is the conversion of the state of an object into a byte stream;
+                    deserialization is conversion of byte stream into an object. Stated differently, serialization is
+                    the conversion of a Java
+                    object into a static stream (sequence) of bytes which can then be saved to a database or transferred
+                    over a network. <br> <br>
+                    The serialization process is instance-independent, i.e. objects can be serialized on one platform
+                    and deserialized on another. <b style="color: darkgreen;"> Classes that are eligible for
+                        serialization need to implement a special
+                        marker interface Serializable.</b>
+                </p>
+                <hr>
+                <h4 id="marker-interface" class="level1"><b>Marker Interface</b></h4>
+                <p class="peragraph">An interface that does not contain methods, fields, and constants is known as
+                    marker interface. In other words, an empty interface is known as marker interface or tag interface.
+                    It delivers the run-time type information about an object. It is the reason that the JVM and
+                    compiler have additional information about an object. The <b> Serializable </b>and <b> Cloneable
+                        interfaces </b> are
+                    examples of marker interfaces. <br></p>
+
+                <h5 id="serializable-interface" class="level2"><b>Serializable Interface</b></h5>
+                <p class="peragraph">
+                    Serializable is a marker interface (has no data member and method). It is used to "mark" Java
+                    classes so that the objects of these classes may get a certain capability.
+                    The Serializable interface must be implemented by the class whose object needs to be persisted.
+                    <br>
+                </p>
+                <hr>
+                <h4 id="i-o-stream" class="level1"><b>I/O Stream</b></h4>
+                <p class="peragraph">In Java streams are the sequence of data that are read from the source and written
+                    to the destination.<br>
+                    Input stream is used to read data from the source. Output stream is used to write data to the
+                    destination.
+                </p>
+                <b>Types of Stream</b>
+                <ul>
+                    <li>Byte Stream</li>
+                    <li>Character Stream</li>
+                </ul>
+                <img class="content-img" src="Images/content-img/java-io-stream.jpg" alt="java types of stream">
+                <p class="peragraph">
+                    <b>Byte Stream</b> <br>
+                    Byte stream is used to read and write a single byte (8 bits) of data. All byte stream class are
+                    derived from base abstract classes called InputStream abn OutputStream. <br>
+                    <b>Character Stream</b> <br>
+                    Character strea is used to read and write single character of data. All character stream classes are
+                    derived from base abstract classes Reader and Writer.
+                </p>
+                <h4 id="in-and-out-stream" class="level1"><b>InputStream</b></h4>
+                <p class="peragraph">
+                    InputStream represents an ordered scequence of bytes. In other words you can read from a java input
+                    stream as a orderd sequence of bytes.
+                </p>
+                <img class="content-img" src="Images/content-img/java inputstream-subclasses.jpg"
+                    alt="java InputStream class">
+                <p class="peragraph"><b>Methods of InputStream</b></p>
+                <table class="table table-bordered" id="table1">
+                    <thead>
+                        <tr>
+                            <th scope="col">Method</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">read()</th>
+                            <td>reads one byte of data from the input stream</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">read(byte[] array)</th>
+                            <td> reads bytes from the stream and stores in the specified array</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">available()</th>
+                            <td>returns the number of bytes available in the input stream</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">close()</th>
+                            <td>closes the input stream</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 id="" class="level1"><b>OutputStream</b></h4>
+                <p class="peragraph">
+                    Java application uses an output stream to write data to a destination; it may be a file, an array,
+                    peripheral device or socket.
+                </p>
+                <img class="content-img" src="Images/content-img/java outputstream-subclasses.jpg"
+                    alt="java OutputStream class">
+                <p class="peragraph"><b>Methods of OutputStream</b></p>
+                <table class="table table-bordered" id="table1">
+                    <thead>
+                        <tr>
+                            <th scope="col">Method</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">write()</th>
+                            <td>writes the specified byte to the output stream</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">write(byte[] array)</th>
+                            <td>writes the bytes from the specified array to the output stream</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">flush()</th>
+                            <td>forces to write all data present in output stream to the destination</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">close()</th>
+                            <td>closes the output stream</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h5 id="file-Input-Stream" class="level2"><b>FileInputStream</b></h5>
+                <p class="peragraph">
+                    Java FileInputStream class obtains input bytes from a file. It is used for reading byte-oriented
+                    data (streams of raw bytes) such as image data, audio, video etc. <br>
+                    <span class="code-snip">
+                        import java.io.FileInputStream; <br>
+                        import java.io.InputStream; <br><br>
+                        class Main { <br>
+                        public static void main(String args[]) { <br>
+                        byte[] array = new byte[100];<br>
+                        try {<br>
+                        InputStream input = new FileInputStream("input.txt");<br>
+                        System.out.println("Available bytes in the file: " + input.available());<br><br>
+                        <span class="style-text">// Read byte from the input stream</span><br>
+                        input.read(array);<br>
+                        System.out.println("Data read from the file: ");<br><br>
+                        <span class="style-text">// Convert byte array into string</span><br>
+                        String data = new String(array);<br>
+                        System.out.println(data);<br><br>
+                        <span class="style-text">// Close the input stream</span><br>
+                        input.close();<br>
+                        } catch (Exception e) {<br>
+                        e.getStackTrace();<br>
+                        }<br>
+                        }<br>
+                        }<br><br>
+                        <span class="style-text">
+                            Output: <br>
+                            Available bytes in the file: 39 <br>
+                            Data read from the file: <br>
+                            This is a line of text inside the file</span>
+                    </span>
+                </p>
+                <h5 id="file-Output-Stream" class="level2"><b>FileOutputStream</b></h5>
+                <p class="peragraph">
+                    FileOutputStream is an outputstream for writing data/streams of raw bytes to file or storing data to
+                    file. <br>
+                    <span class="code-snip">
+                        import java.io.FileOutputStream; <br> <br>
+                        public class Main {<br>
+                        public static void main(String[] args) {<br><br>
+                        String data = "This is a line of text inside the file.";<br>
+                        try {<br>
+                        FileOutputStream output = new FileOutputStream("output.txt");<br>
+                        byte[] array = data.getBytes(); <br><br>
+                        // Writes byte to the file <br>
+                        output.write(array);<br>
+                        output.close();<br><br>
+                        }
+                        catch(Exception e) {<br>
+                        e.getStackTrace();<br>
+                        }<br>
+                        }<br>
+                        }<br>
+                        <span class="style-text">
+                            Output: <br>
+                            This is a line of text inside the file</span>
+                    </span>
+                </p>
+                <hr>
+                <h5 id="ObjectInputStream" class="level2"><b>ObjectInputStream</b></h5>
+                <p class="peragraph">
+                    The ObjectInputStream is mainly used to read data written by the ObjectOutputStream.
+                    Basically, the ObjectOutputStream converts Java objects into corresponding streams. This is known as
+                    serialization. Those converted streams can be stored in files or transferred through networks. <br>
+                    Now, if we need to read those objects, we will use the ObjectInputStream that will convert the
+                    streams back to corresponding objects. This is known as deserialization.<br>
+                    <span class="code-snip">
+                        import java.io.FileInputStream; <br>
+                        import java.io.FileOutputStream; <br>
+                        import java.io.ObjectInputStream; <br>
+                        import java.io.ObjectOutputStream; <br>
+                        import java.io.Serializable; <br><br>
+
+                        class Dog implements Serializable { <br>
+
+                        String name;<br>
+                        String breed;<br><br>
+
+                        public Dog(String name, String breed) {<br>
+                        this.name = name;<br>
+                        this.breed = breed;<br>
+                        }<br>
+                        }<br><br>
+                        class Main {<br>
+                        public static void main(String[] args) {<br><br>
+                        <span class="style-text">// Creates an object of Dog class</span><br>
+                        Dog dog = new Dog("Tyson", "Labrador");<br><br>
+                        try {<br>
+                        FileOutputStream file = new FileOutputStream("file.txt");<br><br>
+                        <span class="style-text">// Creates an ObjectOutputStream</span><br>
+                        ObjectOutputStream output = new ObjectOutputStream(file);<br><br>
+                        <span class="style-text">// Writes objects to the output stream</span><br>
+                        output.writeObject(dog);<br>
+                        FileInputStream fileStream = new FileInputStream("file.txt");<br><br>
+                        <span class="style-text">// Creates an ObjectInputStream</span><br>
+                        ObjectInputStream input = new ObjectInputStream(fileStream);<br><br>
+                        <span class="style-text">// Reads the objects</span><br>
+                        Dog newDog = (Dog) input.readObject();<br>
+                        System.out.println("Dog Name: " + newDog.name);<br>
+                        System.out.println("Dog Breed: " + newDog.breed);<br>
+                        output.close();<br>
+                        input.close();<br> <br>
+                        }
+                        catch (Exception e) {<br>
+                        e.getStackTrace(); }<br>
+                        }<br>
+                        }<br>
+
+                        <span class="style-text">
+                            Output: <br>
+                            Dog Name: Tyson <br>
+                            Dog Breed: Labrador
+                        </span>
+                    </span>
+                </p>
+                <h5 id="ObjectOutputStream" class="level2"><b>ObjectOutputStream</b></h5>
+                <p class="peragraph">
+                    Basically, the ObjectOutputStream encodes Java objects using the class name and object values. And,
+                    hence generates corresponding streams. This process is known as serialization.
+                    Those converted streams can be stored in files and can be transferred among networks.<br>
+                </p>
+                <hr>
+                <h5 id="BufferedInputStream" class="level2"><b>BufferedInputStream</b></h5>
+                <p class="peragraph">
+                    The BufferedInputStream maintains an internal buffer of 8192 bytes. <br>
+                    During the read operation in BufferedInputStream, a chunk of bytes is read from the disk and stored
+                    in the internal buffer. And from the internal buffer bytes are read individually. <br>
+                    Hence, the number of communication to the disk is reduced. This is why reading bytes is faster using
+                    the BufferedInputStream.<br>
+                    <span class="code-snip">
+                        import java.io.BufferedInputStream; <br>
+                        import java.io.FileInputStream;<br><br>
+                        class Main {<br><br>
+                        public static void main(String[] args) {<br>
+                        try {<br>
+                        <span class="style-text">// Creates a FileInputStream</span><br>
+                        FileInputStream file = new FileInputStream("input.txt");<br>
+
+                        <span class="style-text">// Creates a BufferedInputStream</span><br>
+                        BufferedInputStream input = new BufferedInputStream(file);<br>
+
+                        <span class="style-text">// Reads first byte from file</span><br>
+                        int i = input .read();<br>
+
+                        while (i != -1) {<br>
+                        System.out.print((char) i);<br>
+                        <span class="style-text">// Reads next byte from the file</span><br>
+                        i = input.read(); }<br><br>
+                        input.close();<br>
+                        }<br><br>
+
+                        catch (Exception e) {<br>
+                        e.getStackTrace(); }<br>
+                        }<br>
+                        }<br>
+                        <span class="style-text">
+                            Output: <br>
+                            This is a line of text inside the file.
+                        </span>
+                    </span>
+                </p>
+                <h5 id="BufferedOutputStream" class="level2"><b>BufferedOutputStream</b></h5>
+                <p class="peragraph">
+                    The BufferedOutputStream maintains an internal buffer of 8192 bytes. <br>
+                    During the write operation, the bytes are written to the internal buffer instead of the disk. Once
+                    the buffer is filled or the stream is closed, the whole buffer is written to the disk. <br>
+                    Hence, the number of communication to the disk is reduced. This is why writing bytes is faster using
+                    BufferedOutputStream.<br>
+                    <span class="code-snip">
+                        import java.io.FileOutputStream; <br>
+                        import java.io.BufferedOutputStream; <br><br>
+                        public class Main {<br>
+                        public static void main(String[] args) {<br>
+                        String data = "This is a line of text inside the file";<br><br>
+                        try { <br>
+                        <span class="style-text">// Creates a FileOutputStream</span><br>
+                        FileOutputStream file = new FileOutputStream("output.txt");<br>
+                        <span class="style-text">// Creates a BufferedOutputStream</span><br>
+                        BufferedOutputStream output = new BufferedOutputStream(file);<br>
+                        byte[] array = data.getBytes();<br>
+                        <span class="style-text">// Writes data to the output stream</span><br>
+                        output.write(array);<br>
+                        <span class="style-text">// Flushes data to the destination</span> <br>
+                        buffer.flush(); <br>
+                        output.close();<br>
+                        } catch (Exception e) {<br>
+                        e.getStackTrace(); }<br>
+                        }<br>
+                        }<br>
+                        <span class="style-text">
+                            Output: <br>
+                            This is a line of text inside the file.
+                        </span>
+                    </span>
+                </p>
+                <hr>
+                <h4 id="ReaderAndWriter" class="level1"><b>Reader</b></h4>
+                <p class="peragraph">
+                    Reader , is the base class for all Reader subclasses in the Java IO API. A Java Reader is like a
+                    Java InputStream except that it is character based rather than byte based. In other words, a Java
+                    Reader is intended for reading text (characters), whereas an InputStream is intended for reading raw
+                    bytes. <br>
+                </p>
+                <img class="content-img" src="Images/content-img/java-reader-class.jpg" alt="java Reader class">
+                <p class="peragraph"><b>Methods of Reader</b></p>
+                <table class="table table-bordered" id="table1">
+                    <thead>
+                        <tr>
+                            <th scope="col">Method</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">ready()</th>
+                            <td>checks if the reader is ready to be read</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">read(char[] array)</th>
+                            <td>reads the characters from the stream and stores in the specified array</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">read(char[] array, int start, int length)</th>
+                            <td>reads the number of characters equal to length from the stream and stores in the
+                                specified array starting from the start</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">close()</th>
+                            <td>Closes the stream and releases any system resources associated with it.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 id="" class="level1"><b>Writer</b></h4>
+                <p class="peragraph">
+                    The Java Writer class (java Writer) is the base class for all Writer subclasses in the Java
+                    IO API. A Writer is like an OutputStream except that it is character based rather than byte based.
+                    In other words, a Writer is intended for writing text, whereas an OutputStream is intended for
+                    writing raw bytes.<br>
+                </p>
+                <img class="content-img" src="Images/content-img/java-writer-class.jpg" alt="java Writer class">
+                <p class="peragraph"><b>Methods of Writer</b></p>
+                <table class="table table-bordered" id="table1">
+                    <thead>
+                        <tr>
+                            <th scope="col">Method</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">write(char[] array)</th>
+                            <td>writes the characters from the specified array to the output stream</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">write(String data)</th>
+                            <td>writes the specified string to the writer</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">append(char c)</th>
+                            <td>inserts the specified character to the current writer</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">flush()</th>
+                            <td> forces to write all the data present in the writer to the corresponding destination
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">close()</th>
+                            <td>closes the writer</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h5 id="InputStreamReader" class="level2"><b>InputStreamReader</b></h5>
+                <p class="peragraph">
+                    The InputStreamReader class works with other input streams. It is also known as a bridge between
+                    byte streams and character streams. This is because the InputStreamReader reads bytes from the input
+                    stream as characters.<br>
+                    <span class="code-snip">
+                        import java.io.InputStreamReader; <br>
+                        import java.io.FileInputStream; <br><br>
+                        class Main { <br>
+                        public static void main(String[] args) {<br>
+                        <span class="style-text">// Creates an array of character </span><br>
+                        char[] array = new char[100]; <br>
+                        try { <br>
+                        <span class="style-text">// Creates a FileInputStream </span><br>
+                        FileInputStream file = new FileInputStream("input.txt");<br>
+                        <span class="style-text">// Creates an InputStreamReader</span> <br>
+                        InputStreamReader input = new InputStreamReader(file); <br><br>
+                        <span class="style-text">// Reads characters from the file</span><br>
+                        input.read(array);<br>
+                        System.out.println("Data in the stream:");<br>
+                        System.out.println(array);<br>
+                        <span class="style-text">// Closes the reader</span><br>
+                        input.close();<br>
+                        }catch(Exception e) {<br>
+                        e.getStackTrace(); } <br>
+                        }<br>
+                        }<br><br>
+                        <span class="style-text">
+                            Output: <br>
+                            Data in the stream: <br>
+                            This is a line of text inside the file.
+                        </span>
+                    </span>
+                </p>
+                <h5 id="OutputStreamWriter" class="level2"><b>OutputStreamWriter</b></h5>
+                <p class="peragraph">
+                    The OutputStreamWriter class works with other output streams. It is also known as a bridge between
+                    byte streams and character streams. This is because the OutputStreamWriter converts its characters
+                    into bytes.<br>
+                    <span class="code-snip">
+                        import java.io.FileOutputStream; <br>
+                        import java.io.OutputStreamWriter;<br><br>
+                        public class Main {<br><br>
+                        public static void main(String args[]) {<br>
+                        String data = "This is a line of text inside the file.";<br>
+                        try {<br>
+                        <span class="style-text">// Creates a FileOutputStream</span><br>
+                        FileOutputStream file = new FileOutputStream("output.txt");<br>
+                        <span class="style-text">// Creates an OutputStreamWrite</span><br>
+                        OutputStreamWriter output = new OutputStreamWriter(file);<br>
+                        <span class="style-text">// Writes string to the file</span><br>
+                        output.write(data);<br>
+                        <span class="style-text">// Closes the writer </span><br>
+                        output.close();<br>
+                        } catch (Exception e) {<br>
+                        e.getStackTrace(); }<br>
+                        }<br>
+                        }<br>
+                        <span class="style-text">
+                            Output: <br>
+                            This is a line of text inside the file.
+                        </span>
+                    </span>
+                </p>
+                <hr>
+                <h5 id="FileReader" class="level2"><b>FileReader</b></h5>
+                <p class="peragraph">
+                    The Java FileReader class, java. io. FileReader makes it possible to read the contents of a file as
+                    a stream of characters. It works much like the FileInputStream except the FileInputStream reads
+                    bytes, whereas the FileReader reads characters.<br>
+                    <span class="code-snip">
+                        import java.io.FileReader; <br>
+                        class Main {<br>
+                        public static void main(String[] args) {<br>
+                        <span class="style-text">// Creates an array of character</span><br>
+                        char[] array = new char[100];<br>
+                        try {<br>
+                        <span class="style-text">// Creates a reader using the FileReader</span> <br>
+                        FileReader input = new FileReader("input.txt"); <br>
+                        <span class="style-text">// Reads characters</span><br>
+                        input.read(array);<br>
+                        System.out.println("Data in the file: ");<br>
+                        System.out.println(array);<br>
+                        <span class="style-text">// Closes the reader</span><br>
+                        input.close();<br>
+                        }
+                        catch(Exception e) {<br>
+                        e.getStackTrace(); } <br>
+                        }<br>
+                        }<br>
+                        <span class="style-text">
+                            Output: <br>
+                            Data in the file: <br>
+                            This is a line of text inside the file.
+                        </span>
+                    </span>
+                </p>
+                <h5 id="FileWriter" class="level2"><b>FileWriter</b></h5>
+                <p class="peragraph">
+                    FileWriter is used to write to character files. Its write() methods allow you to write character(s)
+                    or strings to a file. FileWriters are usually wrapped by higher-level Writer objects, such as
+                    BufferedWriter or PrintWriter , which provide better performance and higher-level, more flexible
+                    methods to write data.<br>
+                    <span class="code-snip">
+                        import java.io.FileWriter; <br> <br>
+                        public class Main {<br>
+                        public static void main(String args[]) {<br>
+                        String data = "This is the data in the output file";<br>
+                        try {<br>
+                        <span class="style-text">// Creates a FileWriter</span><br>
+                        FileWriter output = new FileWriter("output.txt");<br>
+                        <span class="style-text">// Writes the string to the file</span><br>
+                        output.write(data);<br>
+                        <span class="style-text">// Closes the writer</span><br>
+                        output.close();<br>
+                        }catch (Exception e) {<br>
+                        e.getStackTrace();}<br>
+                        }<br>
+                        }<br>
+                        <span class="style-text">
+                            Output: <br>
+                            This is a line of text inside the file.
+                        </span>
+                    </span>
+                </p>
+                <hr>
+                <h5 id="BufferedReader" class="level2"><b>BufferedReader</b></h5>
+                <p class="peragraph">
+                    The BufferedReader maintains an internal buffer of 8192 characters. <br>
+                    During the read operation in BufferedReader, a chunk of characters is read from the disk and stored
+                    in the internal buffer. And from the internal buffer characters are read individually. <br>
+                    Hence, the number of communication to the disk is reduced. This is why reading characters is faster
+                    using BufferedReader.<br>
+                    <span class="code-snip">
+                        import java.io.FileReader;<br>
+                        import java.io.BufferedReader;<br><br>
+                        class Main {<br>
+                        public static void main(String[] args) {<br>
+                        <span class="style-text">// Creates an array of character</span><br>
+                        char[] array = new char[100];<br>
+                        try {<br>
+                        <span class="style-text">// Creates a FileReader</span><br>
+                        FileReader file = new FileReader("input.txt");<br>
+                        <span class="style-text">// Creates a BufferedReader</span><br>
+                        BufferedReader input = new BufferedReader(file);<br>
+                        <span class="style-text">// Reads characters</span><br>
+                        input.read(array);<br>
+                        System.out.println("Data in the file: ");<br>
+                        System.out.println(array);<br>
+                        <span class="style-text">// Closes the reader</span><br>
+                        input.close();<br>
+                        }catch(Exception e) {<br>
+                        e.getStackTrace();}<br>
+                        }<br>
+                        }<br>
+                        <span class="style-text">
+                            Output: <br>
+                            Data in the file: <br>
+                            This is a line of text inside the file.
+                        </span>
+                    </span>
+                </p>
+                <h5 id="BufferedWriter" class="level2"><b>BufferedWriter</b></h5>
+                <p class="peragraph">
+                    The BufferedWriter maintains an internal buffer of 8192 characters. <br>
+                    During the write operation, the characters are written to the internal buffer instead of the disk.
+                    Once the buffer is filled or the writer is closed, the whole characters in the buffer are written to
+                    the disk. <br>
+                    Hence, the number of communication to the disk is reduced. This is why writing characters is faster
+                    using BufferedWriter.<br>
+                    <span class="code-snip">
+                        import java.io.FileWriter; <br>
+                        import java.io.BufferedWriter; <br><br>
+                        public class Main {<br>
+                        public static void main(String args[]) {<br>
+                        String data = "This is the data in the output file";<br>
+                        try {<br>
+                        <span class="style-text">// Creates a FileWriter<br></span>
+                        FileWriter file = new FileWriter("output.txt");<br>
+                        <span class="style-text">// Creates a BufferedWriter</span><br>
+                        BufferedWriter output = new BufferedWriter(file);<br>
+                        <span class="style-text">// Writes the string to the file</span><br>
+                        output.write(data);<br>
+                        <span class="style-text">// Closes the writer</span><br>
+                        output.close();<br>
+                        }catch (Exception e) {<br>
+                        e.getStackTrace();}<br>
+                        }<br>
+                        }<br>
+                        <span class="style-text">
+                            Output: <br>
+                            This is a line of text inside the file.
+                        </span>
+                    </span>
+                </p>
+                <hr>
+
+
+
+                <div id="footer" class="container d-flex align-items-center justify-content-between">
+                    <a href="collection.html" class="btn btn-outline-info"><i class="bi bi-chevron-double-left"></i>  Previous</a>
+                    <a href="thread.html" class="btn btn-outline-info">Next  <i class="bi bi-chevron-double-right"></i></a>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web Server</title>
+
+    <link href="Images/favicon.png" rel="icon">
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <!-- <a href="index.html" class="logo"><img src="Images/logo.png" alt="" class="img-fluid"></a> -->
+            <a href="index.html" class="logo">Java Reading Materials</a>
+
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img id="java-icon" src="Images/java-icon.png" alt="" class="img-fluid">Java
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="index.html">Java Standard Edition </a>
+                          <a class="dropdown-item" href="enterprise.html">Java Enterprise Edition </a>
+                          <a class="dropdown-item" href="#">Java Micro Edition </a>
+                        </div>
+                      </li>
+                    <li></i><a class="nav-link active" href="index.html"> Database</a></li>
+                </ul>
+                <i class="bi mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav leftCol" id="sidenavigation">
+                <nav id="navSelector" class="nav flex-column">
+                    <h4 class="sidenav-title"><b><a href="index.html">Standard Edition</a></b></h4>
+                    <h4 class="sidenav-title"><b><a href="webserver.html">Enterprise Edition</a></b></h4>
+                    <ul class="sidenav-title02">
+                        <li><a href="webserver.html">Web Server</a></li>
+                        <li><a href="http.html">HTTP</a></li>
+                        <li><a href="tcp.html">TCP/IP</a></li>
+                    </ul>
+                    <ul>
+                        <li class="select selected"><span><a href="#tcp"><b>TCP</b></a></span></li>
+                    </ul>
+                    <ul>
+                        <li class="select"><span><a href="#ip"><b>IP</b></a></span></li>
+                    </ul>
+                    <ul>
+                        <li class="select"><span><a href="#tcp/ip"><b>TCP/IP connection</b></a></span></li>
+                    </ul>
+                    <ul class="sidenav-title02">
+                        <li><a href="mvc.html">MVC</a></li>
+                        <li><a href="servlet.html">Servlet</a></li>
+                        <li><a href="filter.html">Filter</a></li>
+                        <li><a href="jsp.html">JSP</a></li>
+                        <li><a href="database.html">Database</a></li>
+                    </ul>
+                    <h4 class="sidenav-title"><b><a href="index.html"> Micro Edition</a></b></h4>
+
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                </nav>
+            </div>
+
+            <div class="col-sm-9 rightCol" id="contentbody">
+                <h3 class="page-title"><b>TCP</b></h3>
+                <hr>
+                <h4 id="tcp" class="level1"><b>TCP</b></h4>
+                <p class="peragraph">
+                    TCP stands for Transmission Control Protocol a communications standard that enables application
+                    programs and computing devices to exchange messages over a network. It is designed to send packets
+                    across the internet and ensure the successful delivery of data and messages over networks. <br> <br>
+                    TCP organizes data so that it can be transmitted between a server and a client. It guarantees the
+                    integrity of the data being communicated over a network. Before it transmits data, TCP establishes a
+                    connection between a source and its destination, which it ensures remains live until communication
+                    begins. It then breaks large amounts of data into smaller packets, while ensuring data integrity is
+                    in place throughout the process. <br>
+                    As a result, high-level protocols that need to transmit data all use TCP Protocol.
+                </p>
+                <h4 id="ip" class="level1"><b>IP</b></h4>
+                <p class="peragraph">
+                    The Internet Protocol (IP) is the method for sending data from one device to another across the
+                    internet. Every device has an IP address that uniquely identifies it and enables it to communicate
+                    with and exchange data with other devices connected to the internet. <br> <br>
+                    IP is responsible for defining how applications and devices exchange packets of data with each
+                    other. It is the principal communications protocol responsible for the formats and rules for
+                    exchanging data and messages between computers on a single network or several internet-connected
+                    networks. It does this through the Internet Protocol Suite (TCP/IP), a group of communications
+                    protocols that are split into four abstraction layers.
+                </p>
+                <h4 id="tcp/ip" class="level1"><b>TCP/IP connection</b></h4>
+                <p class="peragraph">
+                    TCP, a connection is established and a 3-way handshake is made. First, the source send an SYN
+                    “initial request” packet to the target server in order to start the dialogue. Then the target server
+                    then sends a SYN-ACK packet to agree to the process. Lastly, the source sends an ACK packet to the
+                    target to confirm the process, after which the message contents can be sent. <br>
+                </p>
+                <img class="content-img" src="Images/content-img/TCP handshake.png" alt="TCP/IP connection ">
+
+
+
+
+
+                <div id="footer" class="container d-flex align-items-center justify-content-between">
+                    <a href="http.html" class="btn btn-outline-info"><i class="bi bi-chevron-double-left"></i>  Previous</a>
+                    <a href="mvc.html" class="btn btn-outline-info">Next  <i class="bi bi-chevron-double-right"></i></a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

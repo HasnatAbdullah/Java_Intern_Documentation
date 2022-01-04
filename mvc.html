@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web Server</title>
+
+    <link href="Images/favicon.png" rel="icon">
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <!-- <a href="index.html" class="logo"><img src="Images/logo.png" alt="" class="img-fluid"></a> -->
+            <a href="index.html" class="logo">Java Reading Materials</a>
+
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img id="java-icon" src="Images/java-icon.png" alt="" class="img-fluid">Java
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="index.html">Java Standard Edition </a>
+                          <a class="dropdown-item" href="enterprise.html">Java Enterprise Edition </a>
+                          <a class="dropdown-item" href="#">Java Micro Edition </a>
+                        </div>
+                      </li>
+                    <li></i><a class="nav-link active" href="index.html"> Database</a></li>
+                </ul>
+                <i class="bi mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav leftCol" id="sidenavigation">
+                <nav id="navSelector" class="nav flex-column">
+                    <h4 class="sidenav-title"><b><a href="index.html">Standard Edition</a></b></h4>
+                    <h4 class="sidenav-title"><b><a href="webserver.html">Enterprise Edition</a></b></h4>
+                    <ul class="sidenav-title02">
+                        <li><a href="webserver.html">Web Server</a></li>
+                        <li><a href="http.html">HTTP</a></li>
+                        <li><a href="tcp.html">TCP/IP</a></li>
+                        <li><a href="mvc.html">MVC</a></li>
+                    </ul>
+                    <ul>
+                        <li class="select selected" data-toggle="collapse" data-target="#a"><span><a href="#mvc"><b>MVC <i class="bi bi-arrow-down-circle"></i></b></a></span>
+                            <ul id="a" class=" collapse">
+                                <li class="no-collapsable"><a href="#model"><b>Model</b></a></li>
+                                <li class="no-collapsable"><a href="#view"><b>View</b></a></li>
+                                <li class="no-collapsable"><a href="#controller"><b>Controller</b></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="sidenav-title02">
+                        <li><a href="servlet.html">Servlet</a></li>
+                        <li><a href="filter.html">Filter</a></li>
+                        <li><a href="jsp.html">JSP</a></li>
+                        <li><a href="database.html">Database</a></li>
+                    </ul>
+                    <h4 class="sidenav-title"><b><a href="index.html"> Micro Edition</a></b></h4>
+
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                </nav>
+            </div>
+
+            <div class="col-sm-9 rightCol" id="contentbody">
+                <h3 class="page-title"><b>MVC</b></h3>
+                <hr>
+                <h4 id="mvc" class="level1"><b>MVC</b></h4>
+                <p class="peragraph">
+                    The Model-View-Controller (MVC) is an architectural pattern that separates an application into three
+                    main logical components: the model, the view, and the controller. Each of these components are built
+                    to handle specific development aspects of an application. MVC is one of the most frequently used
+                    industry-standard web development framework to create scalable and extensible projects. <br>
+                </p>
+                <img class="content-img" src="Images/content-img/MVC.jpg" alt="MVC">
+                <h5 id="model" class="level2"><b>Model</b></h5>
+                <p class="peragraph">
+                    The Model component corresponds to all the data-related logic that the user works with. This can
+                    represent either the data that is being transferred between the View and Controller components or
+                    any other business logic-related data.
+                </p>
+                <h5 id="view" class="level2"><b>View</b></h5>
+                <p class="peragraph">
+                    The View component is used for all the UI logic of the application. For example, the Customer view
+                    will include all the UI components such as text boxes, dropdowns, etc. that the final user interacts
+                    with.
+                </p>
+                <h5 id="controller" class="level2"><b>Controller</b></h5>
+                <p class="peragraph">
+                    Controllers act as an interface between Model and View components to process all the business logic
+                    and incoming requests, manipulate data using the Model component and interact with the Views to
+                    render the final output.
+                </p>
+
+
+
+
+                <div id="footer" class="container d-flex align-items-center justify-content-between">
+                    <a href="tcp.html" class="btn btn-outline-info"><i class="bi bi-chevron-double-left"></i>  Previous</a>
+                    <a href="servlet.html" class="btn btn-outline-info">Next  <i class="bi bi-chevron-double-right"></i></a>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

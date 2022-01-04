@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Socket</title>
+
+    <link href="Images/favicon.png" rel="icon">
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <!-- <a href="index.html" class="logo"><img src="Images/logo.png" alt="" class="img-fluid"></a> -->
+            <a href="index.html" class="logo">Java Reading Materials</a>
+
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img id="java-icon" src="Images/java-icon.png" alt="" class="img-fluid">Java
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="index.html">Java Standard Edition </a>
+                          <a class="dropdown-item" href="enterprise.html">Java Enterprise Edition </a>
+                          <a class="dropdown-item" href="#">Java Micro Edition </a>
+                        </div>
+                      </li>
+                    <li></i><a class="nav-link active" href="index.html"> Database</a></li>
+                </ul>
+                <i class="bi mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav leftCol" id="sidenavigation">
+                <nav class="nav flex-column">
+                    <h4 class="sidenav-title"><b><a href="index.html">Standard Edition</a></b></h4>
+                    <ul class="sidenav-title02">
+                        <li><a href="index.html">Java Basics</a></li>
+                        <li><a href="oop.html">OOP</a></li>
+                        <li><a href="lamda.html">Lambda Expression</a></li>
+                        <li><a href="generics.html">Generics</a></li>
+                        <li><a href="collection.html">Collections API</a></li>
+                        <li><a href="io.html">Java I/O Streams</a></li>
+                        <li><a href="thread.html">Threading</a></li>
+                        <li><a href="socket.html">Socket</a></li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#Socket"><b>Socket</b></a></span>
+                            <ul>
+                                <li><a href="#Protocol">Protocol</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#JavaSocket"><b>Java Socket Programming</b></a></span>
+                            <ul>
+                                <li><a href="#ClientSocket">Client Socket</a></li>
+                                <li><a href="#ServerSocket">Server Socket</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#ExampleofJavaSocket"><b>Example of Java Socket Programming</b></a></span>
+                        </li>
+                    </ul>
+                    <ul class="sidenav-title02">
+                        <li><a href="stream.html">Stream API</a></li>
+                        <li><a href="reflection.html">Java Reflection</a></li>
+                    </ul>
+                    <h4 class="sidenav-title"><b><a href="webserver.html">Enterprise Edition</a></b></h4>
+                    <h4 class="sidenav-title"><b><a href="index.html"> Micro Edition</a></b></h4>
+
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                </nav>
+            </div>
+
+            <div class="col-sm-9 rightCol" id="contentbody">
+                <h3 class="page-title"><b>Socket</b></h3>
+                <hr>
+                <h4 id="Socket" class="level1"><b>Socket</b></h4>
+                <p class="peragraph">A socket is one endpoint of a two-way communication link between two programs
+                    running on the network. The socket is bound to a port number so that the TCP layer can identify the
+                    application that data is destined to be sent. <br> <br>
+                    Sockets provide the communication mechanism between two computers using TCP. A client program
+                    creates a socket on its end of the communication and attempts to connect that socket to a server.
+                    <br>
+                </p>
+                <h5 id="Protocol" class="level2"><b>Protocol</b></h5>
+                <p class="peragraph">
+                    <b>TCP: </b> Transmission Control Protocol provides reliable communication between the sender and
+                    receiver. TCP is used along with the Internet Protocol referred as TCP/IP. <br>
+                    <b>UDP: </b> User Datagram Protocol provides a connection-less protocol service by allowing packet
+                    of data to be transferred along two or more nodes <br> <br>
+                    Before exchanging data, computers must establish a link that is for connection-oriented protocols.
+                    UDP (User Datagram Protocol) is the only option for connectionless protocol. For exchanging data TCP
+                    is used which is connection-oriented protocol.
+                </p>
+                <h4 id="JavaSocket" class="level1"><b>Java Socket Programming</b></h4>
+                <img class="content-img" src="Images/content-img/socket-programming.png" alt="socket programing">
+                <h5 id="ClientSocket" class="level2"><b>Client Socket</b></h5>
+                <p class="peragraph">
+                    Client socket programming, the client will first wait for the server to start. Once the server is up
+                    and running, it will send the requests to the server. After that, the client will wait for the
+                    response from the server.
+                    <span class="code-snip">
+                        Socket s=new Socket("localhost",6666);
+                    </span>
+                </p>
+                <h5 id="ServerSocket" class="level2"><b>Server Socket</b></h5>
+                <p class="peragraph">
+                    Server socket programming,,the server will instantiate its object and wait for the client request.
+                    Once the client sends the
+                    request, the server will communicate back with the response.
+                    <span class="code-snip">
+                        ServerSocket ss=new ServerSocket(6666);
+                        Socket s=ss.accept();
+                    </span>
+                </p>
+                <h4 id="ExampleofJavaSocket" class="level1"><b>Example of Java Socket Programming</b></h4>
+                <p class="peragraph">
+                    <b>Server Side</b>
+                    <span class="code-snip">
+                        import java.io.*; <br>
+                        import java.net.*; <br><br>
+                        public class MyServer { <br>
+                        public static void main(String[] args){ <br><br>
+                        try{ <br>
+                        ServerSocket ss=new ServerSocket(6666);<br>
+                        Socket s=ss.accept();//establishes connection<br>
+                        DataInputStream dis=new DataInputStream(s.getInputStream());<br>
+                        String str=(String)dis.readUTF();<br>
+                        System.out.println("message= "+str);<br>
+                        ss.close();<br>
+                        }catch(Exception e){System.out.println(e);}<br>
+                        }
+                        }
+                    </span>
+                    <b>Client Side</b>
+                    <span class="code-snip">
+                        import java.io.*; <br>
+                        import java.net.*; <br>
+                        public class MyClient { <br><br>
+                        public static void main(String[] args) { <br><br>
+                        try{<br>
+                        Socket s=new Socket("localhost",6666);<br>
+                        DataOutputStream dout=new DataOutputStream(s.getOutputStream());<br>
+                        dout.writeUTF("Hello Server");<br>
+                        dout.flush();<br>
+                        dout.close();<br>
+                        s.close();<br>
+                        }catch(Exception e){System.out.println(e);}<br>
+                        }
+                        }
+                    </span>
+                </p>
+
+
+
+                <div id="footer" class="container d-flex align-items-center justify-content-between">
+                    <a href="thread.html" class="btn btn-outline-info"><i class="bi bi-chevron-double-left"></i>  Previous</a>
+                    <a href="stream.html" class="btn btn-outline-info">Next  <i class="bi bi-chevron-double-right"></i></a>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Generics</title>
+
+    <link href="Images/favicon.png" rel="icon">
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <!-- <a href="index.html" class="logo"><img src="Images/logo.png" alt="" class="img-fluid"></a> -->
+            <a href="index.html" class="logo">Java Reading Materials</a>
+
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img id="java-icon" src="Images/java-icon.png" alt="" class="img-fluid">Java
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="index.html">Java Standard Edition </a>
+                          <a class="dropdown-item" href="enterprise.html">Java Enterprise Edition </a>
+                          <a class="dropdown-item" href="#">Java Micro Edition </a>
+                        </div>
+                      </li>
+                    <li></i><a class="nav-link active" href="index.html"> Database</a></li>
+                </ul>
+                <i class="bi mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav leftCol" id="sidenavigation">
+                <nav class="nav flex-column">
+                    <h4 class="sidenav-title"><b><a href="index.html">Standard Edition</a></b></h4>
+                    <ul class="sidenav-title02">
+                        <li><a href="index.html">Java Basics</a></li>
+                        <li><a href="oop.html">OOP</a></li>
+                        <li><a href="lamda.html">Lambda Expression</a></li>
+                        <li><a href="generics.html">Generics</a></li>
+                        <li><a href="collection.html">Collections API</a></li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#collections"><b>Collections API</b></a></span>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#collection-hierarchy"><b>Collection Hierarchy</b></a></span>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#list"><b>List</b></a></span>
+                            <ul>
+                                <li><a href="#arrayList">ArrayList</a></li>
+                                <li><a href="#linkedList">LinkedList</a></li>
+                                <li><a href="#vector">Vector</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#queue"><b>Queue</b></a></span>
+                            <ul>
+                                <li><a href="#priority-queue">PriorityQueue</a></li>
+                                <li><a href="#array-deque">ArrayDeque</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#set"><b>Set</b></a></span>
+                            <ul>
+                                <li><a href="#hash-set">HashSet</a></li>
+                                <li><a href="#linked-hash-set">LinkedHashSet</a></li>
+                                <li><a href="#tree-set">TreeSet</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#map"><b>Map</b></a></span>
+                            <ul>
+                                <li><a href="#hash-map">HashMap</a></li>
+                                <li><a href="#linked-hash-map">linkedHashMap</a></li>
+                                <li><a href="#tree-map">TreeMap</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#string-frequency-by-map"><b>String Frequency By Map</b></a></span>
+                        </li>
+                    </ul>
+                    <ul class="sidenav-title02">
+                        <li><a href="io.html">Java I/O Streams</a></li>
+                        <li><a href="thread.html">Threading</a></li>
+                        <li><a href="socket.html">Socket</a></li>
+                        <li><a href="stream.html">Stream API</a></li>
+                        <li><a href="reflection.html">Java Reflection</a></li>
+                    </ul>
+                    <h4 class="sidenav-title"><b><a href="webserver.html">Enterprise Edition</a></b></h4>
+                    <h4 class="sidenav-title"><b><a href="index.html"> Micro Edition</a></b></h4>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    
+                </nav>
+            </div>
+
+            <div class="col-sm-9 rightCol" id="contentbody">
+                <h3 class="page-title"><b>Collections</b></h3>
+                <hr>
+                <h4 id="collections" class="level1"><b>Collections</b></h4>
+                <p class="peragraph">Collection Framework in java is a centralized and unified theme to store and
+                    manipulate the group of objects. Java Collection Framework provides some pre-defined classes and
+                    interfaces to handle the group of objects. Using collection framework, you can store the objects as
+                    a list or as a set or as a queue or as a map and perform operations like adding an object or
+                    removing an object or sorting the objects without much hard work.
+                </p>
+                <hr>
+                <h4 id="collection-hierarchy" class="level1"><b>Collection Hierarchy</b></h4>
+                <img class="content-img" src="Images/content-img/collection-hierarchy.png" alt="Collection Hierarchy">
+                <p class="peragraph">e➝ extends, I➝ implements <br>
+                    The utility package, (java.util) contains all the classes and interfaces that are required by the
+                    collection framework. The collection framework contains an interface named an iterable interface
+                    which provides the iterator to iterate through all the collections. This interface is extended by
+                    the main collection interface which acts as a root for the collection framework. All the collections
+                    extend this collection interface thereby extending the properties of the iterator and the methods of
+                    this interface. The given figure illustrates the hierarchy of the collection framework. <br>
+                </p>
+                <hr>
+                <h4 id="list" class="level1"><b>List</b></h4>
+                <p class="peragraph">
+                    This is a child interface of the collection interface. This interface is dedicated to the data of
+                    the list type in which we can store all the ordered collection of the objects. This also allows
+                    duplicate data to be present in it. This list interface is implemented by various classes like
+                    ArrayList, Vector, Stack, etc. Since all the subclasses implement the list, we can instantiate a
+                    list object with any of these classes.
+                </p>
+                <img class="content-img" src="Images/content-img/list-hierarchy.jpg" alt="List Hierarchy">
+                <p class="peragraph"><b>Here are some properties of lists</b></p>
+                <ul class="random-li">
+                    <li>lements of the lists are ordered using Zero based index.</li>
+                    <li>You can access the elements of lists using an integer index.</li>
+                    <li>Elements can be inserted at a specific position using integer index. Any pre-existing elements
+                        at or beyond that position are shifted right.</li>
+                    <li>Elements can be removed from a specific position. The elements beyond that position are shifted
+                        left.</li>
+                    <li>A list may contain duplicate elements.</li>
+                    <li>A list may contain multiple null elements.</li>
+                </ul>
+                <p class="peragraph"><b>Java List Methods</b></p>
+                <table class="table table-bordered" id="table1">
+                    <thead>
+                        <tr>
+                            <th scope="col">Modifier & Type</th>
+                            <th scope="col">Method</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">add(E e)</th>
+                            <td>Appends the specified element to the end of this list (optional operation).</td>
+                        </tr>
+                        <tr>
+                            <td>void</td>
+                            <th scope="row">add(int index, E element)</th>
+                            <td>Inserts the specified element at the specified position in this list (optional
+                                operation).</td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">addAll(Collection
+                                &lt;? extends E&gt; c)</th>
+                            <td>Appends all of the elements in the specified collection to the end of this list, in the
+                                order that they are returned by the specified collection's iterator.</td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">addAll(int index, Collection&lt;? extends E&gt; c)</th>
+                            <td>Inserts all of the elements in the specified collection into this list at the specified
+                                position.</td>
+                        </tr>
+                        <tr>
+                            <td>void</td>
+                            <th scope="row">clear()</th>
+                            <td>Removes all of the elements from this list.</td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">contains(Object o)</th>
+                            <td>Returns true if this list contains the specified element.</td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">containsAll(Collection&lt;?&gt; c)</th>
+                            <td>Returns true if this list contains all of the elements of the specified collection.</td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">equals(Object o)</th>
+                            <td>Compares the specified object with this list for equality.</td>
+                        </tr>
+                        <tr>
+                            <td>E</td>
+                            <th scope="row">get(int index)</th>
+                            <td>Returns the element at the specified position in this list.</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                            <th scope="row">indexOf(Object o)</th>
+                            <td>Returns the index of the first occurrence of the specified element in this list, or -1
+                                if this list does not contain the element.</td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">isEmpty()</th>
+                            <td>Returns true if this list contains no elements.</td>
+                        </tr>
+                        <tr>
+                            <td>Iterator &lt;E&gt;</td>
+                            <th scope="row">iterator()</th>
+                            <td>Returns an iterator over the elements in this list in proper sequence.</td>
+                        </tr>
+                        <tr>
+                            <td>ListIterator &lt;E&gt;</td>
+                            <th scope="row">listIterator(int index)</th>
+                            <td>Returns a list iterator over the elements in this list (in proper sequence), starting at
+                                the specified position in the list.</td>
+                        </tr>
+                        <tr>
+                            <td>E</td>
+                            <th scope="row">remove(int index)</th>
+                            <td>Removes the element at the specified position in this list (optional operation).</td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">remove(Object o)</th>
+                            <td>Removes the first occurrence of the specified element from this list, if it is present.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">removeAll(Collection&lt;?&gt; c)</th>
+                            <td>Removes from this list all of its elements that are contained in the specified
+                                collection</td>
+                        </tr>
+                        <tr>
+                            <td>default void</td>
+                            <th scope="row">replaceAll(UnaryOperator&lt;E&gt; operator)</th>
+                            <td>Replaces each element of this list with the result of applying the operator to that
+                                element.</td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">retainAll(Collection&lt;?&gt; c)</th>
+                            <td>Retains only the elements in this list that are contained in the specified collection.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>E</td>
+                            <th scope="row">set(int index, E element)</th>
+                            <td>Replaces the element at the specified position in this list with the specified element.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                            <th scope="row">size()</th>
+                            <td>Returns the number of elements in this list.</td>
+                        </tr>
+                        <tr>
+                            <td>default void</td>
+                            <th scope="row">sort(Comparator&lt;? super E&gt; c)</th>
+                            <td>Sorts this list according to the order induced by the specified Comparator.</td>
+                        </tr>
+                        <tr>
+                            <td>default Spliterator&lt;E&gt;</td>
+                            <th scope="row">spliterator()</th>
+                            <td>Creates a Spliterator over the elements in this list.</td>
+                        </tr>
+                        <tr>
+                            <td>List&lt;E&gt;</td>
+                            <th scope="row">subList(int fromIndex, int toIndex)</th>
+                            <td>Returns a view of the portion of this list between the specified fromIndex, inclusive,
+                                and toIndex, exclusive.</td>
+                        </tr>
+                        <tr>
+                            <td>Object[]</td>
+                            <th scope="row">toArray()</th>
+                            <td>Returns an array containing all of the elements in this list in proper sequence.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h5 id="arrayList" class="level2"><b>ArrayList</b></h5>
+                <p class="peragraph">
+                    ArrayList, in simple terms, can be defined as re-sizable array. ArrayList is same like normal array
+                    but it can grow and shrink dynamically to hold any number of elements. ArrayList is a sequential
+                    collection of objects which increases or decreases in size as we add or delete the elements. <br>
+                    <b>Following are few key points to note about ArrayList: </b><br>
+                </p>
+                <ul class="random-li">
+                    <li>ArrayList is a re-sizable array, also called a dynamic array.</li>
+                    <li>ArrayList internally uses an array to store the elements. Just like arrays.</li>
+                    <li>ArrayList allows duplicate and null values.</li>
+                    <li>ArrayList is an ordered collection. It maintains the insertion order of the elements.</li>
+                    <li>ArrayList is not synchronized. If multiple threads try to modify an ArrayList at the same
+                        time, then the final outcome will be non-deterministic.</li>
+                </ul>
+                <p class="peragraph">
+                    <b> Create an ArrayList object called name that will store strings:</b>
+                    <span class="code-snip">
+                        import java.util.ArrayList; <span class="style-text"> // import the ArrayList class </span>
+                        <br><br>
+                        ArrayList&lt;String&gt; nameList = new ArrayList&lt;String&gt;(); <span class="style-text"> //
+                            Create an ArrayList object</span> <br>
+                    </span>
+                    <b> Add elements to the ArrayList useing the add() method</b>
+                    <span class="code-snip">
+                        import java.util.ArrayList; <br> <br>
+                        public class Main { <br>
+                        public static void main(String[] args) { <br>
+                        ArrayList&lt;String&gt; nameList = new ArrayList&lt;String&gt;(); <br>
+                        cars.add("Hasan"); <br>
+                        cars.add("Shafayet"); <br>
+                        cars.add("Abir"); <br>
+                        } <br>
+                        } <br> <br>
+                        <span class="style-text"> Output: [Hasan, Shafayet, Abir] </span>
+                    </span>
+                    <b> Access elements to the ArrayList useing the get() method</b>
+                    <span class="code-snip">
+                        nameList.get(0);<br>
+                        <span class="style-text"> Output: Hasan</span>
+                    </span>
+                    <b> Change elements to the ArrayList useing the set() method</b>
+                    <span class="code-snip">
+                        nameList.set(0, "Lambda");<br>
+                        <span class="style-text">Output: [Lambda, Shafayet, Abir]</span>
+                    </span>
+                    <b> Find out size of the ArrayList useing the size() method</b>
+                    <span class="code-snip">
+                        nameList.size();<br>
+                        <span class="style-text">Output: 3</span>
+                    </span>
+                    <b> Remove elements to the ArrayList useing the remove() method</b>
+                    <span class="code-snip">
+                        nameList.remove(0);<br>
+                        <span class="style-text">Output: [Shafayet, Abir]</span>
+                    </span>
+                    <b> To remove all elements to the ArrayList useing the clear() method</b>
+                    <span class="code-snip">
+                        nameList.clear();<br>
+                        <span class="style-text">Output: []</span>
+                    </span>
+                </p>
+                <h5 id="linkedList" class="level2"><b> LinkedList</b></h5>
+                <p class="peragraph">The LinkedList class in Java is an implementation of doubly linked list which can
+                    be used both as a List as well as Queue. The LinkedList in java can have any type of elements
+                    including null and duplicates. Elements can be inserted and can be removed from both the ends and
+                    can be retrieved from any arbitrary position.</b><br>
+                    <b>Following are some key points to note about LinkedList: </b>
+                </p>
+                <ul class="random-li">
+                    <li>Java LinkedList maintains the insertion order of the elements.</li>
+                    <li>LinkedList can have duplicate and null values.</li>
+                    <li>he LinkedList class implements Queue and Deque interfaces. Therefore, It can also be used as a
+                        Queue, Deque or Stack.</li>
+                    <li>Java LinkedList is not thread-safe. </li>
+                </ul>
+                <img class="content-img" src="Images/content-img/java-linkedlist-representration.jpg"
+                    alt="java linkedlist representration">
+                <p class="peragraph">
+                    <b>Some key differences between LinkedList and ArrayList:</b>
+                </p>
+                <table class="table table-bordered" id="table1">
+                    <thead>
+                        <tr>
+                            <th scope="col"> ArrayList</th>
+                            <th scope="col">LinkedList</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ArrayList Store the elements sequentially based on their index.</td>
+                            <td>LinkdList uses a doubly-linkde list to store its elements.</td>
+                        </tr>
+                        <tr>
+                            <td>ArrayList consumes less memory LinkedList</td>
+                            <td>LinkedList consumes more memory than an ArrayList because it also stores the next and
+                                previous references along with the data.</td>
+                        </tr>
+                        <tr>
+                            <td>You can access an element in an ArrayList in O(1) time.</td>
+                            <td>it takes O(n) time to access an element in a LinkedList because it needs to traverse to
+                                the desired element by following the next/prev references.</td>
+                        </tr>
+                        <tr>
+                            <td>Adding or removing elements are usually slower in an ArrayList compared to LinkedList.
+                                This is because the elements in the ArrayList needs to be shifted if a new element is
+                                added in the middle of the ArrayList.</td>
+                            <td>Adding or removing elements are usually faster in an LinkedList compared to ArrayList.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="peragraph">
+                    However, while the ArrayList class and the LinkedList class can be used in the same way, they are
+                    built very differently.
+                </p>
+                <p class="peragraph">
+                    <b> Create an LinkedList object called name that will store strings:</b>
+                    <span class="code-snip">
+                        import java.util.LinkedList; <span class="style-text"> // import the LinkedList class </span>
+                        <br><br>
+                        LinkedList&lt;String&gt; nameList = new LinkedList&lt;String&gt;(); <span class="style-text"> //
+                            Create an LinkedList object</span> <br>
+                    </span>
+                    <b> Add elements to the LinkedList useing the add() method</b>
+                    <span class="code-snip">
+                        import java.util.LinkedList; <br> <br>
+                        public class Main { <br>
+                        public static void main(String[] args) { <br>
+                        LinkedList&lt;String&gt; nameList = new LinkedList&lt;String&gt;(); <br>
+                        cars.add("Hasan"); <br>
+                        cars.add("Shafayet"); <br>
+                        cars.add("Abir"); <br>
+                        } <br>
+                        } <br> <br>
+                        <span class="style-text"> Output: [Hasan, Shafayet, Abir] </span>
+                    </span>
+                    <b> Access elements to the LinkedList useing the get() method</b>
+                    <span class="code-snip">
+                        nameList.get(0);<br>
+                        <span class="style-text"> Output: Hasan</span>
+                    </span>
+                    <b> Change elements to the LinkedList useing the set() method</b>
+                    <span class="code-snip">
+                        nameList.set(0, "Lambda");<br>
+                        <span class="style-text">Output: [Lambda, Shafayet, Abir]</span>
+                    </span>
+                    <b> Find out size of the LinkedList useing the size() method</b>
+                    <span class="code-snip">
+                        nameList.size();<br>
+                        <span class="style-text">Output: 3</span>
+                    </span>
+                    <b> Remove elements to the LinkedList useing the remove() method</b>
+                    <span class="code-snip">
+                        nameList.remove(0);<br>
+                        <span class="style-text">Output: [Shafayet, Abir]</span>
+                    </span>
+                    <b> To remove all elements to the LinkedList useing the clear() method</b>
+                    <span class="code-snip">
+                        nameList.clear();<br>
+                        <span class="style-text">Output: []</span>
+                    </span>
+                </p>
+                <h5 id="vector" class="level2"><b>Vector</b></h5>
+                <p class="peragraph">
+                    The Vector Class is also dynamically grow-able and shrink-able collection of objects like an
+                    ArrayList class. But, the main difference between ArrayList and Vector is that Vector class is
+                    synchronized. That means, only one thread can enter into vector object at any moment of time. <br>
+                    <br>
+                    <b>Vector</b> class has same features as <b> ArrayList.</b> Vector class also extends
+                    <b>AbstractList</b> class and
+                    implements <b> List interface.</b> It also implements 3 marker interfaces – <b> RandomAccess,
+                        Cloneable and
+                        Serializable.</b> <br> <br>
+                    Vector class is preferred over ArrayList class when you are developing a multi threaded application.
+                    But, precautions need to be taken because vector may reduce the performance of your application as
+                    it is thread safety and only one thread is allowed to have object lock at any moment of time and
+                    remaining threads have to wait until a thread releases the object lock which is held by it. So, it
+                    is always recommended that if you don’t need thread safety environment, it is better to use
+                    ArrayList class than the Vector class. <br> <br>
+                    <b>Following are few key points to note about Vector: </b><br>
+                </p>
+                <ul class="random-li">
+                    <li>The main feature of Vector class is that it is thread safety. All methods of Vector class are
+                        synchronized so that only one thread can execute them at any given time. This feature of Vector
+                        class is useful when you need thread safety code.</li>
+                    <li>Thread safety property of Vector class effects the performance of an application as it makes
+                        threads to wait for object lock.</li>
+                </ul>
+                <hr>
+                <h4 id="queue" class="level1"><b>Queue</b></h4>
+                <p class="peragraph">
+                    A Queue is a First In First Out (FIFO) data structure.<br>
+                    The process of adding an element at the back of the Queue is called Enqueue, and the process of
+                    removing an element from the front of the Queue is called Dequeue. <br>
+                </p>
+                <img class="content-img" src="Images/content-img/queue-hierarchy.jpg" alt="queue hierarchy">
+                <h5 id="priority-queue" class="level2"><b>PriorityQueue</b></h5>
+                <p class="peragraph">
+                    A priority queue in Java is a special type of queue wherein all the elements are ordered as per
+                    their natural ordering or based on a custom Comparator supplied at the time of creation. <br> <br>
+                    The front of the priority queue contains the least element according to the specified ordering, and
+                    the rear of the priority queue contains the greatest element. <br>
+                    So when you remove an element from the priority queue, the least element according to the specified
+                    ordering is removed first. <br>
+                </p>
+                <img class="content-img" src="Images/content-img/priority-queue-data-structure.jpg"
+                    alt="priority queue data structure">
+                <p class="peragraph"><b>Java PriorityQueue Methods</b></p>
+                <table class="table table-bordered" id="table1">
+                    <thead>
+                        <tr>
+                            <th scope="col">Modifier & Type</th>
+                            <th scope="col">Method</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Constructors</td>
+                            <th scope="row">PriorityQueue()</th>
+                            <td>Creates a PriorityQueue with the default initial capacity (11) that orders its elements
+                                according to their natural ordering.</td>
+                        </tr>
+                        <tr>
+                            <td>Constructors</td>
+                            <th scope="row">PriorityQueue(Collection&lt;? extends E&gt; c)</th>String
+                            <td>Creates a PriorityQueue containing the elements in the specified collection.</td>
+                        </tr>
+                        <tr>
+                            <td>Constructors</td>
+                            <th scope="row">PriorityQueue(int initialCapacity, Comparator&lt;? super E&gt; comparator)
+                            </th>
+                            <td>Creates a PriorityQueue with the specified initial capacity that orders its elements
+                                according to the specified comparator.</td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">add(E e)</th>
+                            <td>Inserts the specified element into this priority queue.</td>
+                        </tr>
+                        <tr>
+                            <td>void</td>
+                            <th scope="row">clear()</th>
+                            <td>Removes all of the elements from this priority queue.</td>
+                        </tr>
+                        <tr>
+                            <td>Comparator&lt;? super E&gt;</td>
+                            <th scope="row">comparator()</th>
+                            <td>Returns the comparator used to order the elements in this queue, or null if this queue
+                                is sorted according to the natural ordering of its elements.</td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">contains(Object o)</th>
+                            <td>Returns true if this queue contains the specified element.</td>
+                        </tr>
+                        <tr>
+                            <td>Iterator&lt;E&gt;</td>
+                            <th scope="row">iterator()</th>
+                            <td>Returns an iterator over the elements in this queue.</td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">offer(E e)</th>
+                            <td>Inserts the specified element into this priority queue.</td>
+                        </tr>
+                        <tr>
+                            <td>E</td>
+                            <th scope="row">peek()</th>
+                            <td>Retrieves, but does not remove, the head of this queue, or returns null if this queue is
+                                empty.</td>
+                        </tr>
+                        <tr>
+                            <td>E</td>
+                            <th scope="row">poll()</th>
+                            <td>Retrieves and removes the head of this queue, or returns null if this queue is empty.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">remove(Object o)</th>
+                            <td>Removes a single instance of the specified element from this queue, if it is present.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                            <th scope="row">size()</th>
+                            <td>Returns the number of elements in this collection.</td>
+                        </tr>
+                        <tr>
+                            <td>Object[]</td>
+                            <th scope="row">toArray()</th>
+                            <td>Returns an array containing all of the elements in this queue.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="peragraph"><b>Creating a Priority Queue</b> <br>
+                    Create a PriorityQueue of integers and add some integers to it. After adding the integers, we’ll
+                    remove them
+                    one by one from the priority queue and see how the smallest integer is removed first followed by the
+                    next smallest integer and so on. <br>
+                    <span class="code-snip">
+                        import java.util.PriorityQueue; <br><br>
+                        public class CreatePriorityQueueExample { <br>
+                        public static void main(String[] args) { <br>
+                        <span class="style-text">// Create a Priority Queue </span><br>
+                        PriorityQueue&lt;Integer&gt; numbers = new PriorityQueue&lt;&gt;();<br>
+
+                        <span class="style-text">// Add items to a Priority Queue (ENQUEUE) </span><br>
+                        numbers.add(750); <br>
+                        numbers.add(500); <br>
+                        numbers.add(900); <br>
+                        numbers.add(100); <br> <br>
+                        <span class="style-text">// Remove items from the Priority Queue (DEQUEUE) </span> <br>
+                        while (!numbers.isEmpty()) { <br>
+                        System.out.println(numbers.remove()); <br>
+                        } <br>
+                        }<br>
+                        }<br> <br>
+                        <span class="style-text">Output: <br> 100 <br>
+                            500 <br>
+                            750 <br>
+                            900</span>
+                    </span> <br>
+                    <b>Creating a Priority Queue with a custom Comparator</b> <br>
+                    <span class="code-snip"> import java.util.Comparator; <br>
+                        import java.util.PriorityQueue; <br><br>
+                        public class PriorityQueueCustomComparatorExample {<br>
+                        public static void main(String[] args) { <br> <br>
+                        <span class="style-text">// A custom comparator that compares two Strings by their length. <br>
+                            //using lambda expression like this =&gt; </span><br>
+                        Comparator&lt;String&gt; stringLengthComparator = (s1, s2) -&gt; { <br>
+                        return s1.length() - s2.length();}; <br> <br>
+                        <span class="style-text">// Create a Priority Queue with a custom Comparator </span><br>
+                        PriorityQueue&lt;String&gt; namePriorityQueue = new
+                        PriorityQueue&lt;&gt;(stringLengthComparator); <br>
+                        <span class="style-text">// Add items to a Priority Queue (ENQUEUE) </span><br>
+                        namePriorityQueue.add("Lisa"); <br>
+                        namePriorityQueue.add("Robert"); <br>
+                        namePriorityQueue.add("John"); <br>
+                        namePriorityQueue.add("Chris"); <br>
+                        namePriorityQueue.add("Angelina"); <br>
+                        namePriorityQueue.add("Joe"); <br> <br>
+                        <span class="style-text">// Remove items from the Priority Queue (DEQUEUE) </span><br>
+                        while (!namePriorityQueue.isEmpty()) { <br>
+                        System.out.println(namePriorityQueue.remove()); <br>
+                        }} <br>
+                        } <br> <br>
+                        <span class="style-text">Output: <br> Joe <br>
+                            John <br>
+                            Lisa <br>
+                            Chris <br>
+                            Robert <br>
+                            Angelina <br>
+                        </span>
+                    </span>
+                    </span>
+                </p>
+                <hr>
+                <h4 id="set" class="level1"><b>Set</b></h4>
+                <p class="peragraph">
+                    A set is an unordered collection of objects in which duplicate values cannot be stored. This
+                    collection is used when we wish to avoid the duplication of the objects and wish to store only the
+                    unique objects. This set interface is implemented by various classes like HashSet, TreeSet,
+                    LinkedHashSet, etc. Since all the subclasses implement the set, we can instantiate a set object with
+                    any of these classes.<br><br>
+                    <b>Use set for storing unique object in random order.</b>
+                </p>
+                <ul class="random-li">
+                    <li>Set is a type of unordered collection so element are not maintained any order.</li>
+                    <li>Set dosen't allow any duplicate elements.</li>
+                    <li>Set permits only one null value.</li>
+                    <li>Set can be traversed only in forward direction with help of iterator.</li>
+                </ul>
+                <img class="content-img" src="Images/content-img/set-hierarchy.jpg" alt="set hierarchy">
+                <p class="peragraph"><b>Methods of Set</b></p>
+                <table class="table table-bordered" id="table1">
+                    <thead>
+                        <tr>
+                            <th scope="col">Modifier & Type</th>
+                            <th scope="col">Method</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>int</td>
+                            <th scope="row">size()</th>
+                            <td>Returns the number of elements in the set.</td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">isEmpty()</th>
+                            <td>Checks whether the set is empty or not.</td>
+                        </tr>
+                        <tr>
+                            <td>boolean </td>
+                            <th scope="row">contains(Object o)</th>
+                            <td>Checks whether this set has specified element.</td>
+                        </tr>
+                        <tr>
+                            <td>Iterator&lt;E&gt;</td>
+                            <th scope="row">iterator()</th>
+                            <td>Returns an iterator over the set.</td>
+                        </tr>
+                        <tr>
+                            <td>Object[]</td>
+                            <th scope="row">toArray()</th>
+                            <td>It returns an array containing all elements of the set.</td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">add(E e)</th>
+                            <td>This method adds specified element to this set only if that element doesn’t present
+                                already. </td>
+                        </tr>
+                        <tr>
+                            <td>boolean </td>
+                            <th scope="row">remove(Object o)</th>
+                            <td>Removes the specified element from this set.</td>
+                        </tr>
+                        <tr>
+                            <td>boolean </td>
+                            <th scope="row">containsAll(Collection&lt;?&gt; c)</th>
+                            <td>It checks whether this set contains all elements of passed collection.</td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">addAll(Collection&lt;? extends E&gt; c)</th>
+                            <td>Adds all elements of the passed collection to this set if they are not already present.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">removeAll(Collection&lt;?&gt; c)</th>
+                            <td>Removes all elements of this set which are also elements of passed collection.</td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">retainAll(Collection&lt;?&gt; c)</th>
+                            <td>Retains only those elements in this set which are also elements of passed collection.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>void</td>
+                            <th scope="row">clear()</th>
+                            <td>Removes all elements in this set</td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">equals(Object o)</th>
+                            <td>Compares the specified object with this set for equality.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h5 id="hash-set" class="level2"><b>HashSet</b></h5>
+                <p class="peragraph">
+                    The HashSet class in Java is an implementation of Set interface. HashSet is a collection of objects
+                    which contains only unique elements. Duplicates are not allowed in HashSet. HashSet gives constant
+                    time performance for insertion, removal and retrieval operations. It allows only one null
+                    element. <br>
+                    The HashSet internally uses HashMap to store the objects. <br> <br>
+                    <b>Few key points to note about HashSet:</b>
+                </p>
+                <ul class="random-li">
+                    <li>HashSet cannot contain duplicate values.</li>
+                    <li>HashSet allows only one null value.</li>
+                    <li>HashSet is an unordered collection. </li>
+                    <li>HashSet internally uses a HashMap to store its elements.</li>
+                    <li>HashSet is not thread-safe.</li>
+                </ul>
+                <p class="peragraph">
+                    <b>Creating a HashSet and adding new elements to it.</b> <br>
+                    <span class="code-snip">
+                        import java.util.HashSet; <br>
+                        import java.util.Set; <br><br>
+                        public class CreateHashSetExample { <br>
+                        public static void main(String[] args) {<br>
+                        <span class="style-text">// Creating a HashSet </span>
+                        Set<String> daysOfWeek = new HashSet<>();<br><br>
+
+                                <span class="style-text">// Adding new elements to the HashSet</span> <br>
+                                daysOfWeek.add("Monday");<br>
+                                daysOfWeek.add("Tuesday");<br>
+                                daysOfWeek.add("Wednesday");<br>
+                                daysOfWeek.add("Thursday");<br>
+                                daysOfWeek.add("Friday");<br>
+                                daysOfWeek.add("Saturday");<br>
+                                daysOfWeek.add("Sunday");<br><br>
+
+                                <span class="style-text">// Adding duplicate elements will be ignored</span><br>
+                                daysOfWeek.add("Monday");<br><br>
+
+                                System.out.println(daysOfWeek);<br>
+                                }}<br><br>
+                                <span class="style-text">
+                                    #Output: <br>
+                                    [Monday, Thursday, Friday, Sunday, Wednesday, Tuesday, Saturday]
+                                </span>
+                    </span>
+                </p>
+                <h5 id="linked-hash-set" class="level2"><b>LinkedHashSet</b></h5>
+                <p class="peragraph">
+                    The LinkedHashSet in java is an ordered version of HashSet which internally maintains one doubly
+                    linked list running through it’s elements. This doubly linked list is responsible for maintaining
+                    the insertion order of the elements. Unlike HashSet which maintains no order, LinkedHashSet
+                    maintains insertion order of elements. i.e elements are placed in the order they are inserted.
+                    LinkedHashSet is recommended over HashSet if you want a unique collection of objects in an insertion
+                    order. <br>
+                </p>
+                <ul class="random-li">
+                    <li>LinkedHashSet cannot contain duplicate values.</li>
+                    <li>LinkedHashSet allows only one null value.</li>
+                    <li>LinkedHashSet maintain insertion order. This is the main difference between LinkedHashSet and
+                        HashSet.</li>
+                    <li>Like HashSet this class offers constant time performance for the basic operation.(add, remove,
+                        and size)</li>
+                    <li>LinkedHashSet not synchronized.</li>
+                </ul>
+                <p class="peragraph">
+                    <span class="code-snip">
+                        public class LinkedHashSetExample{ <br>
+
+                        public static void main(String[] args){ <br> <br>
+                        <span class="style-text">//Creating LinkedHashSet </span><br>
+                        LinkedHashSet<String> set = new LinkedHashSet<String>(); <br>
+                                <span class="style-text">//Adding elements to LinkedHashSet </span><br>
+                                set.add("JAVA"); <br>
+                                set.add("J2EE"); <br>
+                                set.add("STRUTS"); <br>
+                                set.add("JSP"); <br>
+                                set.add("JDBC"); <br>
+                                set.add("HIBERNATE"); <br><br>
+                                <span class="style-text">//Printing elements of LinkedHashSet </span><br>
+                                System.out.println(set); <br>
+                                } <br>
+                                } <br><br>
+
+                                <span class="style-text">Output : [JAVA, J2EE, STRUTS, JSP, JDBC, HIBERNATE] </span>
+                    </span>
+                </p>
+                <h5 id="tree-set" class="level2"><b>TreeSet</b></h5>
+                <p class="peragraph">
+                    The TreeSet class internally uses a TreeMap to store elements. The elements in a TreeSet are sorted
+                    according to their natural ordering. You may also provide a custom Comparator to the TreeSet at the
+                    time of creation to let it sort the elements based on the supplied comparator. <br>
+                </p>
+                <ul class="random-li">
+                    <li>TreeSet cannot contain duplicate elements.</li>
+                    <li>The elements in a TreeSet are sorted as per their natural ordering, or based on a custom
+                        Comparator that is supplied at the time of creation of the TreeSet.</li>
+                    <li>TreeSet cannot contain null value.</li>
+                    <li>TreeSet internally uses a TreeMap to store elements.</li>
+                    <li>TreeSet class is not thread-safe.</li>
+                </ul>
+                <p class="peragraph">The elements in TreeSet are sorted according to specified Comparator. If no
+                    Comparator is specified, elements will be placed according to their <b> natural ascending </b>
+                    order. <br>
+                    <span class="code-snip">
+                        public class TreeSetExample{ <br> <br>
+                        public static void main(String[] args){<br>
+                        <span class="style-text">//Creating a TreeSet </span><br>
+
+                        TreeSet&lt;Integer&gt; set = new TreeSet&lt;Integer&gt;(); <br><br>
+
+                        <span class="style-text">//Adding elements to TreeSet </span><br>
+                        set.add(20); <br>
+                        set.add(10); <br>
+                        set.add(40); <br>
+                        set.add(80);<br>
+                        set.add(30);<br>
+                        <span class="style-text">//Printing elements of TreeSet </span><br>
+                        System.out.println(set); <br>
+                        } <br>
+                        } <br><br>
+                        <span class="style-text"> Output : [10, 20, 30, 40, 80] </span><br>
+                    </span>
+                </p>
+                <hr>
+                <h4 id="map" class="level1"><b>Map</b></h4>
+                <p class="peragraph">
+                    A Map is an object that maps keys to values. Map are stored in key/value pairs. A map cannot contain
+                    duplicate keys. Keys are unique values associated with individual Values. Each key can map to at
+                    most one value. <br>
+                    The Java Map interface is not a subtype of the Collection interface. Therefore it behaves a bit
+                    different from the rest of the collection types. <br> <br>
+                    The Map interface in java is one of the four top level interfaces of Java Collection Framework along
+                    with List, Set and Queue interfaces. But, unlike others, it doesn’t inherit from Collection
+                    interface. Instead it starts it’s own interface hierarchy for maintaining the key-value
+                    associations. Map is an object of key-value pairs where each key is associated with a value. <br>
+                </p>
+                <ul class="random-li">
+                    <li> Map interface is a part of Java Collection Framework, but it doesn’t inherit Collection
+                        Interface.</li>
+                    <li>Map interface stores the data as a key-value pairs where each key is associated with a value.
+                    </li>
+                    <li>A map can not have duplicate keys but can have duplicate values.</li>
+                    <li>Each key at most must be associated with one value.</li>
+                    <li>Each key-value pairs of the map are stored as <b> Map.Entry </b>objects. Map.Entry is an inner
+                        interface of Map interface.</li>
+                    <li> <i> Order of elements in map is implementation dependent: </i>
+                        <ul>
+                            <li>HashMap doesn’t maintain any order of elements. </li>
+                            <li>LinkedHashMap maintains insertion order of elements. </li>
+                            <li>TreeMap places the elements according to supplied Comparator.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <img class="content-img" src="Images/content-img/map-hierarchy.jpg" alt="map hierarchy">
+                <p class="peragraph"><b>Methods Of Map Interface</b></p>
+                <table class="table table-bordered" id="table1">
+                    <thead>
+                        <tr>
+                            <th scope="col">Modifier & Type</th>
+                            <th scope="col">Method</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>int</td>
+                            <th scope="row">size()</th>
+                            <td>Returns number of key-value pairs in this map.</td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">isEmpty()</th>
+                            <td>Checks whether this map is empty or not.</td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">containsKey(Object key)</th>
+                            <td>Returns true if this map contains a mapping for the specified key.</td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">containsValue(Object value)</th>
+                            <td>Returns true if this map contains one or more keys associated with the specified value.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>V</td>
+                            <th scope="row">get(Object key)</th>
+                            <td>Returns value associated with the specified key.</td>
+                        </tr>
+                        <tr>
+                            <td>V</td>
+                            <th scope="row">put(K key, V value)</th>
+                            <td>Adds the specified key-value pair to this map. If the specified key already exist in the
+                                map, old value will be replaced by the specified value.</td>
+                        </tr>
+                        <tr>
+                            <td>V</td>
+                            <th scope="row">remove(Object key)</th>
+                            <td>Removes the specified key along with it’s value from this map.</td>
+                        </tr>
+                        <tr>
+                            <td>void </td>
+                            <th scope="row">putAll(Map&lt;? extends K, ? extends V&gt; m)</th>
+                            <td>Copies all key-value pairs from the specified map to this map.</td>
+                        </tr>
+                        <tr>
+                            <td>void </td>
+                            <th scope="row">clear()</th>
+                            <td>Removes all mappings from this map.</td>
+                        </tr>
+                        <tr>
+                            <td>Set</td>
+                            <th scope="row">&lt;K&gt; keySet()</th>
+                            <td>Returns a set containing all keys of this map. </td>
+                        </tr>
+                        <tr>
+                            <td>Collection</td>
+                            <th scope="row">&lt;V&gt; values()</th>
+                            <td>Returns a collection of values of this map.</td>
+                        </tr>
+                        <tr>
+                            <td>Set</td>
+                            <th scope="row">&lt;Map.Entry&lt;K, V&gt;&gt;</th>
+                            <td>Returns set view of the mappings contained in this map.</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                            <th scope="row">hashCode()</th>
+                            <td>Returns hashcode value of this map.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h5 id="hash-map" class="level2"><b>HashMap</b></h5>
+                <p class="peragraph">
+                    Java HashMap is a hash table based implementation of Java’s Map interface. A Map, as you might know,
+                    is a collection of key-value pairs. It maps keys to values.<br>
+                    <b>Few key points to note about HashMaps:</b> <br>
+                </p>
+                <ul class="random-li">
+                    <li>HashMap holds the data in the form of key-value pairs where each key is associated with one
+                        value. </li>
+                    <li>HashMap doesn’t allow duplicate keys. But it can have duplicate values. </li>
+                    <li> HashMap can have multiple null values and only one null key.</li>
+                    <li>HashMap maintains no order.</li>
+                    <li>HashMap gives constant time performance for the operations like get() and put() methods. </li>
+                    <li>HashMap is not synchronized. </li>
+                </ul>
+                <p class="peragraph"><b>Methods Of HashMap</b></p>
+                <table class="table table-bordered" id="table1">
+                    <thead>
+                        <tr>
+                            <th scope="col">Modifier & Type</th>
+                            <th scope="col">Method</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>V</td>
+                            <th scope="row">put(K key, V value)</th>
+                            <td>This method inserts specified key-value mapping in the map. If map already has a mapping
+                                for the specified key, then it rewrites that value with new value.</td>
+                        </tr>
+                        <tr>
+                            <td>void</td>
+                            <th scope="row">putAll(Map m)</th>
+                            <td>This method copies all of the mappings of the map m to this map.</td>
+                        </tr>
+                        <tr>
+                            <td> V</td>
+                            <th scope="row">get(Object key)</th>
+                            <td>This method returns the value associated with a specified key.</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                            <th scope="row">size()</th>
+                            <td>This method returns the number of key-value pairs in this map.</td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">isEmpty()</th>
+                            <td>This method checks whether this map is empty or not.</td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">containsKey(Object key)</th>
+                            <td>This method checks whether this map contains the mapping for the specified key.</td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">containsValue(Object value)</th>
+                            <td>This method checks whether this map has one or more keys mapping to the specified value.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>V</td>
+                            <th scope="row">remove(Object key)</th>
+                            <td>This method removes the mapping for the specified key.</td>
+                        </tr>
+                        <tr>
+                            <td>void</td>
+                            <th scope="row">clear()</th>
+                            <td>This method removes all the mappings from this map.</td>
+                        </tr>
+                        <tr>
+                            <td>Set</td>
+                            <th scope="row">&lt;K&gt; keySet()</th>
+                            <td>This method returns the Set view of the keys in the map.</td>
+                        </tr>
+                        <tr>
+                            <td>Collection</td>
+                            <th scope="row">&lt;V&gt; values()</th>
+                            <td>This method returns Collection view of the values in the map.</td>
+                        </tr>
+                        <tr>
+                            <td> Set</td>
+                            <th scope="row">&lt;Map.Entry&lt;K,V&gt;&gt; entrySet()</th>
+                            <td>This method returns the Set view of all the mappings in this map.</td>
+                        </tr>
+                        <tr>
+                            <td>V</td>
+                            <th scope="row">putIfAbsent(K key, V value)</th>
+                            <td>This method maps the given value with specified key if this key is currently not
+                                associated with a value or mapped to a null.</td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">remove(Object key, Object value)</th>
+                            <td>This method removes the entry for the specified key if this key is currently mapped to a
+                                specified value.</td>
+                        </tr>
+                        <tr>
+                            <td>V</td>
+                            <th scope="row">replace(K key, V value)</th>
+                            <td>This method replaces the current value of the specified key with new value.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="peragraph"><b>Code Example of HashMap</b></p>
+                <p class="peragraph"><span class="code-snip">
+                        import java.util.HashMap; <br>
+                        import java.util.Iterator; <br>
+                        import java.util.Map; <br>
+                        import java.util.Set; <br><br>
+
+                        public class HashMap01 { <br>
+                        public static void main(String[] args) { <br>
+                        HashMap&lt;Integer, String&gt; map = new HashMap&lt;&gt;(); <br>
+                        map.put(1, "Bhuyan"); <br>
+                        map.put(2, "Shafayet"); <br>
+                        map.put(3, "Al"); <br>
+                        map.put(4, "Abdullah"); <br>
+                        map.put(5, "Abir"); <br><br>
+
+                        System.out.println("Size of Map: "+ map.size());<br><br>
+
+                        Set&lt;Map.Entry&lt;Integer, String&gt;&gt; set = map.entrySet();<br>
+                        Iterator&lt;Map.Entry&lt;Integer, String&gt;&gt; itr = set.iterator();<br><br>
+
+                        while (itr.hasNext()){<br>
+                        Map.Entry&lt;Integer, String&gt; entry = itr.next();<br>
+                        System.out.println(entry.getKey() + " = " + entry.getValue());<br>
+                        }<br><br>
+
+                        Map&lt;Integer, String&gt; clonemap= (Map&lt;Integer, String&gt;) map.clone(); <br>
+                        System.out.println("=============="); <br>
+                        System.out.println("Clone Map"); <br>
+                        clonemap.replace(5, "Metu's"); <br>
+                        clonemap.forEach((k, v)-&gt; System.out.println(k +" = "+ v)); <br><br>
+
+                        System.out.println("==============");<br>
+                        System.out.println("Original Map");<br>
+                        map.forEach((k, v)-&gt; System.out.println(k +" = "+ v));<br><br>
+
+                        System.out.println("==============");<br>
+                        System.out.println("Copy of map");<br>
+                        Map&lt;Integer, String&gt; map2 = new HashMap&lt;&gt;();<br><br>
+
+                        map2.putAll(map);<br>
+                        map2.replace(5, "Metu");<br>
+                        System.out.println("Contains Key 2?: "+map2.containsKey(2));<br>
+                        System.out.println("Contains Value, Metu?: "+map2.containsValue("Metu"));<br>
+                        System.out.println("Value of key=2 ?: "+map2.get(2));<br>
+                        map2.clear();<br>
+                        System.out.println(map2.isEmpty());<br>
+                        map2.forEach((k, v)-&gt; System.out.println(k +" = "+ v));<br>
+                        }<br>
+                        }<br>
+                        <span class="style-text">Size of Map: 5 <br>
+                            1 = Bhuyan <br>
+                            2 = Shafayet <br>
+                            3 = Al <br>
+                            4 = Abdullah <br>
+                            5 = Abir <br>
+                            ============== <br> <br>
+                            Clone Map <br>
+                            1 = Bhuyan <br>
+                            2 = Shafayet <br>
+                            3 = Al <br>
+                            4 = Abdullah <br>
+                            5 = Metu's <br>
+                            ============== <br> <br>
+                            Original Map <br>
+                            1 = Bhuyan <br>
+                            2 = Shafayet <br>
+                            3 = Al <br>
+                            4 = Abdullah <br>
+                            5 = Abir <br>
+                            ============== <br> <br>
+                            Copy of map <br>
+                            Contains Key 2?: true <br>
+                            Contains Value, Metu?: true <br>
+                            Value of key=2 ?: Shafayet <br>
+                            true <br></span>
+                    </span>
+                </p>
+                <h5 id="linked-hash-map" class="level2"><b>LinkedHashMap</b></h5>
+                <p class="peragraph">
+                    LinkedHashMap is a Hash table and linked list implementation of the Map interface, with predictable
+                    iteration order. This implementation differs from HashMap in that it maintains a doubly-linked list
+                    running through all of its entries. This linked list defines the iteration ordering, which is
+                    normally the order in which keys were inserted into the map (insertion-order). <br>
+                    <b>Few key points to note about LinkedHashMap:</b> <br>
+                </p>
+                <ul class="random-li">
+                    <li>Unlike HashMap, the iteration order of the elements in a LinkedHashMap is predictable.</li>
+                    <li>A LinkedHashMap cannot contain duplicate keys.</li>
+                    <li>LinkedHashMap can have multiple null values and the one null key.</li>
+                    <li>Just like HashMap, LinkedHashMap is not thread-safe.</li>
+                    <li>Just like HashMap, LinkedHashMap gives constant time performance for the operations like get()
+                        and put() methods. </li>
+                </ul>
+                <p class="peragraph"><b>Code Example of LinkedHashMap</b>
+                    <span class="code-snip">import java.util.LinkedHashMap;<br>
+                        public class CreateLinkedHashMapExample {<br><br>
+                        public static void main(String[] args) {<br>
+                        <span class="style-text">// Creating a LinkedHashMap </span><br>
+                        LinkedHashMap&lt;String, Integer&gt; wordNumberMapping = new LinkedHashMap&lt;&gt;();<br><br>
+                        <span class="style-text">// Adding new key-value pairs to the LinkedHashMap </span><br>
+                        wordNumberMapping.put("one", 1);<br>
+                        wordNumberMapping.put("two", 2);<br>
+                        wordNumberMapping.put("three", 3);<br>
+                        wordNumberMapping.put("four", 4);<br><br>
+                        <span class="style-text">// Add a new key-value pair only if the key does not exist in the
+                            LinkedHashMap, or is
+                            mapped to `null` <br></span>
+                        wordNumberMapping.putIfAbsent("five", 5);<br><br>
+                        System.out.println(wordNumberMapping);<br>
+                        }
+                        } <br><br>
+                        <span class="style-text"># Output <br>
+                            {one=1, two=2, three=3, four=4, five=5}</span>
+                    </span>
+                </p>
+                <h5 id="tree-map" class="level2"><b>TreeMap</b></h5>
+                <p class="peragraph">
+                    Java TreeMap is a Red-Black tree based implementation of Java’s Map interface. <br>
+                    The entries in a TreeMap are always sorted based on the natural ordering of the keys, or based on a
+                    custom Comparator that you can provide at the time of creation of the TreeMap. <br> <br>
+                    The TreeMap class is part of Java’s collection framework. It implements the NavigableMap interface,
+                    which in turn extends the SortedMap interface.<br>
+                    The SortedMap interface provides functionalities to maintain the ordering of keys. And the
+                    NavigableMap interface provides functionalities to navigate through the map. <br>
+                    <b>Few key points to note about TreeMap:</b> <br>
+                </p>
+                <ul class="random-li">
+                    <li>A TreeMap is always sorted based on keys. The sorting order follows the natural ordering of
+                        keys. You may also provide a custom Comparator to the TreeMap at the time of creation to let it
+                        sort the keys using the supplied Comparator.</li>
+                    <li>A TreeMap cannot contain duplicate keys.</li>
+                    <li>TreeMap cannot contain the null key. However, It can have null values.</li>
+                    <li>TreeMap is not synchronized.</li>
+                </ul>
+                <p class="peragraph"><b>Constructor Of TreeMap</b></p>
+                <table class="table table-bordered" id="table1">
+                    <thead>
+                        <tr>
+                            <th scope="col">Constructor</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">TreeMap()</th>
+                            <td>Constructs a new, empty tree map, using the natural ordering of its keys.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">TreeMap(Comparator&lt;? super K&gt; comparator)</th>
+                            <td>Constructs a new, empty tree map, ordered according to the given comparator.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">TreeMap(Map&lt;? extends K,? extends V&gt; m)</th>
+                            <td>Constructs a new tree map containing the same mappings as the given map, ordered
+                                according to the natural ordering of its keys.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">TreeMap(SortedMap&lt;K,? extends V&gt; m)</th>
+                            <td>Constructs a new tree map containing the same mappings and using the same ordering as
+                                the specified sorted map.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="peragraph"><b>Methods Of TreeMap</b></p>
+                <table class="table table-bordered" id="table1">
+                    <thead>
+                        <tr>
+                            <th scope="col">Modifier & Type</th>
+                            <th scope="col">Method</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Map.Entry&lt;K,V&gt;</td>
+                            <th scope="row">ceilingEntry(K key)</th>
+                            <td>Returns a key-value mapping associated with the least key greater than or equal to the
+                                given key, or null if there is no such key.</td>
+                        </tr>
+                        <tr>
+                            <td>K</td>
+                            <th scope="row">ceilingKey(K key)</th>
+                            <td>Returns the least key greater than or equal to the given key, or null if there is no
+                                such key.</td>
+                        </tr>
+                        <tr>
+                            <td>void</td>
+                            <th scope="row">clear()</th>
+                            <td>Removes all of the mappings from this map.</td>
+                        </tr>
+                        <tr>
+                            <td>Object</td>
+                            <th scope="row">clone()</th>
+                            <td>Returns a shallow copy of this TreeMap instance.</td>
+                        </tr>
+                        <tr>
+                            <td>Comparator&lt;? super K&gt;</td>
+                            <th scope="row">comparator()</th>
+                            <td>Returns the comparator used to order the keys in this map, or null if this map uses the
+                                natural ordering of its keys.</td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">containsKey(Object key)</th>
+                            <td>Returns true if this map contains a mapping for the specified key.</td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <th scope="row">containsValue(Object value)</th>
+                            <td>Returns true if this map maps one or more keys to the specified value.</td>
+                        </tr>
+                        <tr>
+                            <td>Map.Entry&lt;K, V&gt;</td>
+                            <th scope="row">firstEntry()</th>
+                            <td>Returns a key-value mapping associated with the least key in this map, or null if the
+                                map is empty.</td>
+                        </tr>
+                        <tr>
+                            <td>V</td>
+                            <th scope="row">get(Object key)</th>
+                            <td>Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key.</td>
+                        </tr>
+                        <tr>
+                            <td>V</td>
+                            <th scope="row">put(K key, V value)</th>
+                            <td>Associates the specified value with the specified key in this map.</td>
+                        </tr>
+                        <tr>
+                            <td>void</td>
+                            <th scope="row">putAll(Map&lt;? extends K,? extends V&gt; map)</th>
+                            <td>Copies all of the mappings from the specified map to this map.</td>
+                        </tr>
+                        <tr>
+                            <td>V</td>
+                            <th scope="row">remove(Object key)</th>
+                            <td>Removes the mapping for this key from this TreeMap if present.</td>
+                        </tr>
+                        <tr>
+                            <td>V</td>
+                            <th scope="row">replace(K key, V value)</th>
+                            <td>Replaces the entry for the specified key only if it is currently mapped to some value.</td>
+                        </tr>
+                        <tr>
+                            <td>void</td>
+                            <th scope="row">replaceAll(BiFunction&lt;? super K,? super V,? extends V&gt; function)</th>
+                            <td>Replaces each entry's value with the result of invoking the given function on that entry until all entries have been processed or the function throws an exception.</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                            <th scope="row">size()</th>
+                            <td>Returns the number of key-value mappings in this map.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="peragraph"><b>Code Example of TreeMap</b>
+                    <span class="code-snip">
+                        import java.util.TreeMap; <br> <br>
+                        public class Treemap01 { <br> <br>
+                        public static void main(String[] args) { <br> <br>
+                        TreeMap&lt;String, Integer&gt; tMap = new TreeMap&lt;&gt;(); <br>
+                        tMap.put("XXX", 1220); <br>
+                        tMap.put("YVV", 1221); <br>
+                        tMap.put("ZC", 1222); <br>
+                        tMap.put("A", 1223); <br>
+                        tMap.put("CVVVV", 1224); <br>
+                        tMap.put("Bd", 1225); <br>
+                        tMap.put("Ed", 1226); <br>
+                        tMap.put("D", 1227); <br> <br> <br>
+                        tMap.forEach((key, val)-&gt; System.out.println(key + " = "+val)); <br>
+                        }
+                        } <br> <br>
+
+                        <span class="style-text"># Output <br>
+                            A = 1223 <br>
+                            Bd = 1225 <br>
+                            CVVVV = 1224 <br>
+                            D = 1227 <br>
+                            Ed = 1226 <br>
+                            XXX = 1220 <br>
+                            YVV = 1221 <br>
+                            ZC = 1222</span>
+                    </span>
+                </p>
+                <hr>
+                <h4 id="map" class="level1"><b>String Frequency By Map</b></h4>
+                <p class="peragraph">
+                    <br>
+                </p>
+
+
+
+                <div id="footer" class="container d-flex align-items-center justify-content-between">
+                    <a href="generics.html" class="btn btn-outline-info"><i class="bi bi-chevron-double-left"></i>  Previous</a>
+                    <a href="io.html" class="btn btn-outline-info">Next  <i class="bi bi-chevron-double-right"></i></a>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

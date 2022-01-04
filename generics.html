@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Generics</title>
+
+    <link href="Images/favicon.png" rel="icon">
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <!-- <a href="index.html" class="logo"><img src="Images/logo.png" alt="" class="img-fluid"></a> -->
+            <a href="index.html" class="logo">Java Reading Materials</a>
+
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img id="java-icon" src="Images/java-icon.png" alt="" class="img-fluid">Java
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="index.html">Java Standard Edition </a>
+                          <a class="dropdown-item" href="enterprise.html">Java Enterprise Edition </a>
+                          <a class="dropdown-item" href="#">Java Micro Edition </a>
+                        </div>
+                      </li>
+                    <li></i><a class="nav-link active" href="index.html"> Database</a></li>
+                </ul>
+                <i class="bi mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav leftCol" id="sidenavigation">
+                <nav class="nav flex-column">
+                    <h4 class="sidenav-title"><b><a href="index.html">Standard Edition</a></b></h4>
+                    <ul class="sidenav-title02">
+                        <li><a href="index.html">Java Basics</a></li>
+                        <li><a href="oop.html">OOP</a></li>
+                        <li><a href="lamda.html">Lambda Expression</a></li>
+                        <li><a href="generics.html">Generics</a></li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#generic"><b>Generics</b></a></span>
+                            <ul>
+                                <li><a href="#adv-of-generics">Advantage of Java Generics</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#genericd-example"><b>Generics Examples</b></a></span>
+                            <ul>
+                                <li><a href="#generics-single">Generics for single type parameter</a></li>
+                                <li><a href="#generics-multilayer">Generics for multiple type parameter</a></li>
+                                <li><a href="#object">Object (Unsafe type)</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="sidenav-title02">
+                        <li><a href="collection.html">Collections</a></li>
+                        <li><a href="io.html">Java I/O Streams</a></li>
+                        <li><a href="thread.html">Threading</a></li>
+                        <li><a href="socket.html">Socket</a></li>
+                        <li><a href="stream.html">Stream API</a></li>
+                        <li><a href="reflection.html">Java Reflection</a></li>
+                    </ul>
+                    <h4 class="sidenav-title"><b><a href="webserver.html">Enterprise Edition</a></b></h4>
+                    <h4 class="sidenav-title"><b><a href="index.html"> Micro Edition</a></b></h4>
+
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                </nav>
+            </div>
+
+            <div class="col-sm-9 rightCol" id="contentbody">
+                <h3 class="page-title"><b>Generics</b></h3>
+                <hr>
+                <h4 id="generic" class="level1"><b>Generics</b></h4>
+                <p class="peragraph">
+                    <b> Generics</b> mean <b> parameterized</b> types. The idea is to allow type (Integer, String etc,
+                    and user-defined
+                    types) to be a parameter to methods, classes, and interfaces. Using Generics, it is possible to
+                    create classes that work with different data types. <br>
+                    An entity such as class, interface, or method that operates on a parameterized type is called a
+                    generic entity.
+                    <br>
+                    <span class="code-snip">
+                        <span class="style-text"> // To create an instance of generic class </span> <br>
+                        BaseType &lt; Type &gt; obj = new BaseType &lt; Type &gt;()
+                    </span>
+                    When we declare an instance of a generic type, the type argument passed to the type parameter must
+                    be a reference type. We cannot use primitive data types like <b> int, char or double</b>.
+                </p>
+                <h5 id="adv-of-generics" class="level2"><b>Advantage of Java Generics</b></h5>
+                <ul class="random-li">
+                    <li><b> Type-safety: </b> We can hold only a single type of objects in generics. It doesn?t allow to
+                        store other objects.</li>
+                    <li><b>Type casting is not required: </b>There is no need to typecast the object. </li>
+                    <li><b> Compile-Time Checking: </b>It is checked at compile time so problem will not occur at
+                        runtime.
+                        The good programming strategy says it is far better to handle the problem at compile time
+                        than runtime.</li>
+                </ul>
+                <hr>
+                <h4 id="genericd-example" class="level1"><b>Generics Examples</b></h4>
+                <h5 id="generics-single" class="level2"><b>Generics for single type parameter</b></h5>
+                <p class="peragraph">
+                    <span class="code-snip">
+                        <span class="style-text">// We use &lt; &gt; to specify Parameter type </span> <br>
+                        class Test &lt; T &gt;{ <br>
+                        <span class="style-text">// An object of type T is declared </span> <br>
+                        T obj; <br>
+                        Test(T obj){ <br>
+                        this.obj = obj; <br>
+                        } <span class="style-text"> // constructor </span> <br> <br>
+                        public T getObject() { <br>
+                        return this.obj; <br>
+                        } <br>
+                        } <br> <br>
+
+                        <span class="style-text">// Driver class to test above </span><br>
+                        class Main{<br> <br>
+                        public static void main (String[] args){ <br>
+                        <span class="style-text"> // instance of Integer type </span> <br>
+                        Test &lt;Integer &gt; iObj = new Test&lt;Integer &gt;(15); <br>
+                        System.out.println(iObj.getObject()); <br> <br>
+
+                        <span class="style-text">// instance of String type</span> <br>
+                        Test &lt;String&gt; sObj = new Test&lt;String&gt;("Hello"); <br>
+                        System.out.println(sObj.getObject());<br>
+                        } <br>
+                        } <br>
+                    </span>
+                </p>
+                <h5 id="generics-multilayer" class="level2"><b>Generics for multiple type parameter</b></h5>
+                <p class="peragraph">
+                    <span class="code-snip">
+                        <span class="style-text">// A Simple Java program to show multiple type parameters in Java Generics</span> <br> <br>
+
+                        <span class="style-text">// We use &lt;&gt; to specify Parameter type</span> <br>
+                            class Test &lt;T, U&gt;{ <br>
+                                T obj1; <span class="style-text">// An object of type T  </span><br>
+                                U obj2; <span class="style-text">// An object of type U <br> </span><br>
+
+                                <span class="style-text">// constructor </span><br>
+                                Test(T obj1, U obj2){ <br>
+                                this.obj1 = obj1; <br>
+                                this.obj2 = obj2;  <br>
+                                } <br> <br>
+
+                                <span class="style-text">// To print objects of T and U </span><br>
+                                public void print(){ <br>
+                                System.out.println(obj1); <br>
+                                System.out.println(obj2); <br>
+                                } <br>
+                                } <br> <br>
+
+                                <span class="style-text">// Driver class to test above</span> <br>
+                                class Main{ <br>
+                                public static void main (String[] args){ <br>
+                                Test &lt; String, Integer&gt; obj = new Test &lt;String, Integer &gt;("Hello", 15); <br>
+                                    obj.print();<br>
+                                } <br>
+                                } <br>
+                    </span>
+                </p>
+                <h5 id="object" class="level2"><b>Object (Unsafe type)</b></h5>
+                <p class="peragraph">
+                    The Object is the superclass of all other classes and Object reference can refer to any type object. These features lack type safety. <br> 
+                     <b> public class Object </b>
+                </p>
+
+
+
+
+                <div id="footer" class="container d-flex align-items-center justify-content-between">
+                    <a href="lamda.html" class="btn btn-outline-info"><i class="bi bi-chevron-double-left"></i>  Previous</a>
+                    <a href="collection.html" class="btn btn-outline-info">Next  <i class="bi bi-chevron-double-right"></i></a>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

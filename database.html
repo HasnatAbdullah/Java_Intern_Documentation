@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Java Intern Skill Development Materials</title>
+
+    <link href="Images/favicon.png" rel="icon">
+
+    <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <!-- <a href="index.html" class="logo"><img src="Images/logo.png" alt="" class="img-fluid"></a> -->
+            <a href="index.html" class="logo">Java Reading Materials</a>
+
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img id="java-icon" src="Images/java-icon.png" alt="" class="img-fluid">Java
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="index.html">Java Standard Edition </a>
+                          <a class="dropdown-item" href="enterprise.html">Java Enterprise Edition </a>
+                          <a class="dropdown-item" href="#">Java Micro Edition </a>
+                        </div>
+                      </li>
+                    <li></i><a class="nav-link active" href="index.html"> Database</a></li>
+                </ul>
+                <i class="bi mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav leftCol" id="sidenavigation">
+                <nav id="navSelector" class="nav flex-column">
+                    <h4 class="sidenav-title"><b><a href="index.html">Standard Edition</a></b></h4>
+                    <h4 class="sidenav-title"><b><a href="index.html">Enterprise Edition</a></b></h4>
+                    <ul class="sidenav-title02">
+                        <li><a href="webserver.html">Web Server</a></li>
+                        <li><a href="http.html">HTTP</a></li>
+                        <li><a href="tcp.html">TCP/IP</a></li>
+                        <li><a href="mvc.html">MVC</a></li>
+                        <li><a href="servlet.html">Servlet</a></li>
+                        <li><a href="filter.html">Servlet Filter</a></li>
+                        <li><a href="jsp.html">JSP</a></li>
+                        <li><a href="database.html">Database</a></li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#"><b>......</b></a></span>
+                        <ul>
+                            <li><a href="#">.......</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+
+                    <h4 class="sidenav-title"><b><a href="index.html"> Micro Edition</a></b></h4>
+
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                </nav>
+            </div>
+
+            <div class="col-sm-9 rightCol" id="contentbody">
+                <h3 class="page-title"><b>Database</b></h3>
+                <hr>
+
+                <h5 id="acid-principle" class="level1"><b>RDBMS vs DBMS (ACID)</b></h5>
+                <p class="peragraph">A transaction is a unit of work that is performed against a database. 
+                    Transactions are units or sequences of work accomplished in a logical order, 
+                    whether in a manual fashion by a user or automatically by some sort of a database program.
+                </p>
+                <p class="peragraph">
+                    The difference between RDBMS and DBMS is that of ACID princples.
+                    <ul class="random-li">
+                        <li><b>Atomicity : </b>Which ensures that all operations within the work unit are completed successfully. Otherwise, the transaction is aborted at the point of failure and all the previous operations are rolled back to their former state.</li>
+                        <li><b>Consistency : </b>Which ensures that the database properly changes states upon a successfully committed transaction.</li>
+                        <li><b>Isolation : </b>Which enables transactions to operate independently of and transparent to each other.</li>
+                        <li><b>Durability : </b>Which ensures that the result or effect of a committed transaction persists in case of a system failure.</li>
+                        
+                    </ul>
+
+                </p>
+                <h4 id="sql" class="level1"><b>SQL</b></h4>
+                <p class="peragraph">SQL is a language to operate databases; SQL is Structured Query Language, which is a computer language for storing, 
+                    manipulating and retrieving data stored in a relational database.
+                    SQL is the standard language for Relational Database System. 
+                    <br> 
+                    <br> 
+                    The Relational Database Management Systems (RDBMS) like MySQL, 
+                    MS Access, Oracle, Sybase, Informix, Postgres and SQL Server use 
+                    SQL as their standard database language.
+                    <br>
+                </p>
+                <h5 id="mysql" class="level2"><b>MySQL</b></h5>
+                <p class="peragraph">MySQL is an open-source relational database management system.
+                </p>
+                <h5 id="xampp" class="level2"><b>XAMPP</b></h5>
+                <p class="peragraph">XAMPP is a cross-platform web server that is free and open-source. XAMPP is a short form for Cross-Platform,
+                </p>
+                <hr>
+
+                <h4 id="datatype" class="level2"><b>Datatype</b></h4>
+                <p class="peragraph">
+                    SQL Data Type is an attribute that specifies the type of data of any object. Each column, variable and expression has a related data type in SQL. You can use these data types while creating your tables. You can choose a data type for a table column based on your requirement.
+                </p>
+                    <p class="peragraph">In MySQL there are three main data types:
+                        <ul class="random-li">
+                            <li>String Data Types.</li>
+                            <li>Numeric Data Types</li>
+                            <li>Date and Time Data Types</li>
+                        </ul>                
+                    </p>
+                <h4 id="varchar-vs-text" class="level2"><b>Varchar vs Text</b></h4>
+                <p class="peragraph"><b>Text </b></p>
+                <ul class="random-li">
+                    <li>Fixed max size of 65535 characters (you cannot limit the max size).</li>
+                    <li>Takes 2 + c bytes of disk space, where c is the length of the stored string.</li>
+                    <li>Cannot be (fully) part of an index. One would need to specify a prefix length.</li>
+                </ul>
+                <p class="peragraph"><b>VARCHAR </b></p>
+                <ul class="random-li">
+                    <li>Variable max size of M characters.</li>
+                    <li>M needs to be between 1 and 65535.</li>
+                    <li>Takes 1 + c bytes (for M ≤ 255) or 2 + c (for 256 ≤ M ≤ 65535) bytes of disk space where c is the length of the stored string.</li>
+                    <li>Can be part of an index.</li>
+                </ul>
+                <hr>
+
+                <h4 id="sql-operations" class="level1"><b>SQL Operations</b></h4>
+                <h5 id="create" class="level2"><b>Create</b></h5>
+                <p class="peragraph">Creates a new table, a view of a table, or other object in the database. 
+                    <br>
+                    <span class="code-snip">
+                        CREATE DATABASE databasename;
+                    </span>
+                </p>
+                <h5 id="drop" class="level2"><b>Drop</b></h5>
+                <p class="peragraph">Deletes an entire table, a view of a table or other objects in the database.
+                    <br>
+                    <span class="code-snip">
+                        DROP DATABASE databasename;
+                    </span>
+                </p>
+                <h5 id="insert" class="level2"><b>Insert</b></h5>
+                <p class="peragraph">Creates a record.
+                    </br>
+                    <span class="code-snip">
+                        INSERT INTO table_name( column1, column2....columnN) <br>
+                        VALUES ( value1, value2....valueN);<br>
+                    </span>
+                </p>
+                <h5 id="update" class="level2"><b>Update</b></h5>
+                <p class="peragraph">Modifies records.
+                    </br>
+                    <span class="code-snip">
+                        UPDATE table_name <br>
+                        SET column1 = value1, column2 = value2....columnN=valueN<br>
+                        [ WHERE  CONDITION ];<br>
+                    </span>
+                </p>
+                <h5 id="delete" class="level2"><b>Delete</b></h5>
+                <p class="peragraph">Deletes records.
+                    </br>
+                    <span class="code-snip">
+                        DELETE FROM table_name<br>
+                        WHERE  {CONDITION};<br>
+                    </span>
+                    
+                </p>
+                <h5 id="aggregate" class="level2"><b>Aggregate</b></h5>
+                <p class="peragraph">There are several built-in functions like avg(), sum(), count(), etc., to perform what is known as the aggregate data calculations against a table or a specific table column.
+                </br>
+                <span class="code-snip">
+                    SELECT COUNT(*) AS "RECORDS" FROM CUSTOMERS;
+                </span>
+                </p>
+                
+               
+                <h4 id="joining" class="level1"><b>Joining</b></h4>
+                <p class="peragraph">The SQL Joins clause is used to combine records from two or more tables in a database. A JOIN is a means for combining fields from two tables by using values common to each.
+                    <br>
+                    <span class="code-snip"> 
+                        SELECT ID, NAME, AGE, AMOUNT<br>
+                        FROM CUSTOMERS, ORDERS<br>
+                        <b>WHERE</b> CUSTOMERS.ID = ORDERS.CUSTOMER_ID;<br>
+
+                    </span>
+                </p>
+                <h5 id="inner-join" class="level2"><b>Inner join</b></h5>
+                <p class="peragraph"> Returns rows when there is a match in both tables.
+                    <br>
+                    <span class="code-snip"> 
+                        SELECT table1.column1, table2.column2...<br>
+                        FROM table1<br>
+                        INNER JOIN table2<br>
+                        ON table1.common_field = table2.common_field;<br>
+                    </span>
+                </p>
+                <h5 id="left-join" class="level2"><b>Left Join</b></h5>
+                <p class="peragraph">Returns all rows from the left table, even if there are no matches in the right table.
+                    <br>
+                    <span class="code-snip"> 
+                        SELECT table1.column1, table2.column2...<br>
+                        FROM table1<br>
+                        LEFT JOIN table2<br>
+                        ON table1.common_field = table2.common_field;<br>
+                    </span>
+                </p>
+                <h5 id="right-join" class="level2"><b>Right join</b></h5>
+                <p class="peragraph">Returns all rows from the right table, even if there are no matches in the left table.
+                    <br>
+                    <span class="code-snip"> 
+                        SELECT table1.column1, table2.column2...<br>
+                        FROM table1<br>
+                        RIGHT JOIN table2<br>
+                        ON table1.common_field = table2.common_field;<br>
+                    </span>
+                </p>
+               
+                
+               
+            </div>
+        </div>
+    </div>
+
+
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

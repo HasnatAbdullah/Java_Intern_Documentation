@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Java Intern Skill Development Materials</title>
+
+    <link href="Images/favicon.png" rel="icon">
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <!-- <a href="index.html" class="logo"><img src="Images/logo.png" alt="" class="img-fluid"></a> -->
+            <a href="index.html" class="logo">Java Reading Materials</a>
+
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img id="java-icon" src="Images/java-icon.png" alt="" class="img-fluid">Java
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="index.html">Java Standard Edition </a>
+                          <a class="dropdown-item" href="enterprise.html">Java Enterprise Edition </a>
+                          <a class="dropdown-item" href="#">Java Micro Edition </a>
+                        </div>
+                      </li>
+                    <li></i><a class="nav-link active" href="index.html"> Database</a></li>
+                </ul>
+                <i class="bi mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav leftCol" id="sidenavigation">
+                <nav id="navSelector" class="nav flex-column">
+                    <h4 class="sidenav-title"><b><a href="index.html">Standard Edition</a></b></h4>
+                    <ul class="sidenav-title02">
+                        <li><a href="basic.html">Java Basics</a></li>
+                    </ul>
+                    <ul>
+                        <li class="select selected" data-toggle="collapse" data-target="#a"><span><a href="#data-type"><b>Data Types <i class="bi bi-arrow-down-circle"></i> </b></a></span>
+                            <ul id="a" class=" collapse">
+                                <li class="no-collapsable"><a href="#primitive-data-type">Primitive Data Type</a></li>
+                                <li class="no-collapsable"><a href="#non-primitivedatatype">Non-Primitive Data Type</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="select" data-toggle="collapse" data-target="#b"><span><a href="#naming-convention"><b>Naming Conventions  <i class="bi bi-arrow-down-circle"></i></b></a></span>
+                            <ul id="b" class="collapse">
+                                <li><a class="no-collapsable" href="#class-and-interface">Classes and Interfaces</a></li>
+                                <li><a class="no-collapsable" href="#methods1">Methods</a></li>
+                                <li><a class="no-collapsable" href="#variables">Variables</a></li>
+                                <li><a class="no-collapsable" href="#constant-variables">Constant Variables</a></li>
+                                <li><a class="no-collapsable" href="#packages">Packages</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="select" data-toggle="collapse" data-target="#c"><span><a href="#operators"><b>Operators <i class="bi bi-arrow-down-circle"></i></b></a></span>
+                            <ul id="c" class="collapse">
+                                <li><a class="no-collapsable" href="#operators">Operator Precedence</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="select"><span><a href="#methods"><b>Methods</b></a></span></li>
+                    </ul>
+                    <ul>
+                        <li class="select"><span><a href="#expressions"><b>Expressions</b></a></span></li>
+                    </ul>
+                    <ul>
+                        <li class="select"><span><a href="#conditions"><b>Conditions</b></a></span></li>
+                    </ul>
+                    <ul>
+                        <li class="select" data-toggle="collapse" data-target="#d"><span><a href="#loop"><b>Loop <i class="bi bi-arrow-down-circle"></i></b></a></span>
+                            <ul id="d" class="collapse">
+                                <li><a class="no-collapsable" href="#for-loop">For Loop</a></li>
+                                <li><a class="no-collapsable" href="#enhanced-for-loop">Enhanced For Loop</a></li>
+                                <li><a class="no-collapsable" href="#while-loop">While Loop</a></li>
+                                <li><a class="no-collapsable" href="#do-while-loop">Do-While loop</a></li>
+                                <li><a class="no-collapsable" href="#">Nested Loops</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="sidenav-title02">
+                        <li><a href="oop.html">OOP</a></li>
+                        <li><a href="lamda.html">Lambda Expression</a></li>
+                        <li><a href="generics.html">Generics</a></li>
+                        <li><a href="collection.html">Collections</a></li>
+                        <li><a href="io.html">Java I/O Streams</a></li>
+                        <li><a href="thread.html">Threading</a></li>
+                        <li><a href="socket.html">Socket</a></li>
+                        <li><a href="stream.html">Stream API</a></li>
+                        <li><a href="reflection.html">Java Reflection</a></li>
+                    </ul>
+                    <h4 class="sidenav-title"><b><a href="webserver.html">Enterprise Edition</a></b></h4>
+                    <h4 class="sidenav-title"><b><a href="index.html"> Micro Edition</a></b></h4>
+
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                </nav>
+            </div>
+
+            <div class="col-sm-9 rightCol" id="contentbody">
+                <h3 class="page-title"><b>Java Basics</b></h3>
+                <hr>
+                <h4 id="data-type" class="level1"><b>Data Types</b></h4>
+                <p class="peragraph">The Java programming language is statically-typed, which means that all
+                    variables
+                    must first be declared before they can be used. This involves stating the variable's type and name.
+                    <br> <span class="code-snip">
+                        int gear = 1; </span>
+                    Doing so tells your program that a field named "gear" exists, holds numerical data, and has an
+                    initial value of "1". A variable's data type determines the values it may contain, plus the
+                    operations that may be performed on it.
+                </p>
+                <img class="content-img" src="Images/content-img/Data-types-in-Java.jpg" alt="Data Types in Java">
+                <h5 id="primitive-data-type" class="level2"><b>Primitive Data Type</b></h5>
+                <p class="peragraph">There are eight primitive data types in Java:
+                </p>
+                <table class="table table-bordered" id="table1">
+                    <thead>
+                        <tr>
+                            <th scope="col">Data Type</th>
+                            <th scope="col">Size</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Syntax</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>byte</td>
+                            <td>1 byte</td>
+                            <td>Stores whole numbers from -128 to 127</td>
+                            <td>byte byteVar; <br> byte b = 126; </td>
+                        </tr>
+                        <tr>
+                            <td>short</td>
+                            <td>2 bytes</td>
+                            <td>Stores whole numbers from -32,768 to 32,767 </td>
+                            <td>short shortVar; <br> short s = 56;</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                            <td>4 bytes</td>
+                            <td>Stores whole numbers from -2,147,483,648 to 2,147,483,647 </td>
+                            <td>int intVar; <br>int i = 89; </td>
+                        </tr>
+                        <tr>
+                            <td>long</td>
+                            <td>8 bytes</td>
+                            <td>Stores whole numbers from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</td>
+                            <td>long longVar; <br> long a = 100000L, long b = -200000L</td>
+                        </tr>
+                        <tr>
+                            <td>float</td>
+                            <td>4 bytes</td>
+                            <td>Stores fractional numbers. Sufficient for storing 6 to 7 decimal digits </td>
+                            <td>float floatVar; <br> float f = 4.7333434f;</td>
+                        </tr>
+                        <tr>
+                            <td>double</td>
+                            <td>8 bytes</td>
+                            <td>Stores fractional numbers. Sufficient for storing 15 decimal digits</td>
+                            <td>double doubleVar; <br> double d = 4.355453532;</td>
+                        </tr>
+                        <tr>
+                            <td>boolean</td>
+                            <td>1 bit</td>
+                            <td>Stores true or false values</td>
+                            <td>boolean booleanVar; <br>boolean b = true;</td>
+                        </tr>
+                        <tr>
+                            <td>char</td>
+                            <td>2 bytes</td>
+                            <td>Stores a single character/letter or ASCII values</td>
+                            <td>char charVar;<br>char ch = 'G';</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h5 id="non-primitivedatatype" class="level2"><b>Non-Primitive Data Type</b></h5>
+                <p class="peragraph">The Reference Data Types will contain a memory address of variable value because
+                    the reference types won’t store the variable value directly in memory. They are strings, class,
+                    objects, interface, arrays, etc.<br>
+                </p>
+                <h6 class="level3"><b>String:</b></h6>
+                <p class="peragraph">Strings are defined as an array of characters. The difference between a character
+                    array and a string in Java is, the string is designed to hold a sequence of characters in a single
+                    variable whereas, a character array is a collection of separate char type entities.<br>
+                    <span class="code-snip">
+                        // Declare String without using new operator <br>
+                        String s = "hello"; <br>
+                        // Declare String using new operator <br>
+                        String s1 = new String("hello");
+                    </span>
+                </p>
+                <h6 class="level3"><b>Class:</b></h6>
+                <p class="peragraph">A class is a user-defined blueprint or prototype from which objects are created. It
+                    represents the set of properties or methods that are common to all objects of one type.<br>
+                </p>
+                <h6 class="level3"><b>Object:</b></h6>
+                <p class="peragraph">It is a basic unit of Object-Oriented Programming and represents the real-life
+                    entities. A typical Java program creates many objects, which as you know, interact by invoking
+                    methods.<br>
+                </p>
+                <h6 class="level3"><b>Interface</b></h6>
+                <p class="peragraph">Like a class, an interface can have methods and variables, but the methods declared
+                    in an interface are by default abstract (only method signature, nobody).<br>
+                </p>
+                <h6 class="level3"><b>Arrays:</b></h6>
+                <p class="peragraph"> An array is a group of like-typed variables that are referred to by a common name.
+                    Arrays in Java work differently than they do in C/C++. The following are some important points about
+                    Java arrays. <br>
+                </p>
+                <hr>
+                <h4 id="naming-convention" class="level1"><b>Naming Conventions</b></h4>
+                <h5 id="class-and-interface" class="level2"><b>Classes and Interfaces</b></h5>
+                <p class="peragraph">Class names should be nouns, in mixed cases with the first letter of each internal
+                    word capitalized. <br>
+                    Interface names should also be capitalized just like class names.
+                    <br>
+                    <span class="code-snip">
+                        Classes: <br>
+                        public class Employee <br>
+                        { <br>
+                        //code snippet <br>
+                        } <br>
+                        Interfaces : <br>
+                        interface Printable <br>
+                        { <br>
+                        //code snippet <br>
+                        } <br>
+                    </span>
+                </p>
+                <h5 id="methods1" class="level2"><b>Methods</b></h5>
+                <p class="peragraph">Methods should be verbs, in mixed case with the first letter lowercase and with the
+                    first letter of each internal word capitalized.
+                    <br>
+                    <span class="code-snip">
+                        class Employee <br>
+                        {<br>
+                        //method <br>
+                        void draw() <br>
+                        { <br>
+                        //code snippet <br>
+                        } <br>
+                        } <br>
+                    </span>
+                </p>
+                <h5 id="variables" class="level2"><b>Variables</b></h5>
+                <p class="peragraph">Variable names should be short yet meaningful. <br>
+                    Variables can also start with either underscore('_') or dollar sign '$' characters.
+                    Should be mnemonic i.e, designed to indicate to the casual observer the intent of its use. <br>
+                    One-character variable names should be avoided except for temporary variables.
+                    Common names for temporary variables are i, j, k, m, and n for integers; c, d, and e for characters.
+                    </br>
+                    <span class="code-snip">
+                        class Employee <br>
+                        { <br>
+                        //variable <br>
+                        int id; <br>
+                        //code snippet <br>
+                        }
+                    </span>
+                </p>
+                <h5 id="constant-variables" class="level2"><b>Constant Variables</b></h5>
+                <p class="peragraph">Should be all uppercase with words separated by underscores (“_”).
+                    There are various constants used in predefined classes like Float, Long, String etc.
+                    </br>
+                    <span class="code-snip">
+                        static final int MIN_WIDTH = 4; <br>
+                        static final int MAX_WIDTH = 999; <br>
+                        static final int GET_THE_CPU = 1; <br>
+                    </span>
+                </p>
+                <h5 id="packages" class="level2"><b>Packages</b></h5>
+                <p class="peragraph">The prefix of a unique package name is always written in all-lowercase ASCII
+                    letters and should be one of the top-level domain names, like com, edu, gov, mil, net, org. <br>
+                    Subsequent components of the package name vary according to an organization’s own internal naming
+                    conventions.
+                    </br>
+                    <span class="code-snip">
+                        java.util.Scanner ; <br>
+                        java.io.*; <br>
+                        class Employee <br>
+                        { <br>
+                        //code snippet <br>
+                        } <br>
+                    </span>
+                    As the name suggests in the first case we are trying to access the Scanner class from the java.util
+                    package and in other all classes(* standing for all) input-output classes making it so easy for
+                    another programmer to identify.<br>
+                </p>
+                <h4 id="operators" class="level1"><b>Operators</b></h4>
+                <p class="peragraph">Operators are special symbols that perform specific operations on one, two, or
+                    three operands, and then return a result.
+                    All binary operators except for the assignment operators are evaluated from left to right;
+                    assignment operators are evaluated right to left.
+                    <br>
+                </p>
+                <table class="table table-bordered" id="table1">
+                    <thead>
+                        <tr>
+                            <th scope="col">Operators</th>
+                            <th scope="col">Precedence</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>postfix</td>
+                            <td>expr++ expr--</td>
+                        </tr>
+                        <tr>
+                            <td>unary</td>
+                            <td>++expr --expr +expr -expr ~ !</td>
+                        </tr>
+                        <tr>
+                            <td>multiplicative</td>
+                            <td>* / %</td>
+                        </tr>
+                        <tr>
+                            <td>additive</td>
+                            <td>+ -</td>
+                        </tr>
+                        <tr>
+                            <td>shift</td>
+                            <td>
+                                <<>> >>>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>relational</td>
+                            <td>
+                                <>
+                                    <=>= instanceof
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>equality</td>
+                            <td>== !=</td>
+                        </tr>
+                        <tr>
+                            <td>bitwise AND</td>
+                            <td>&</td>
+                        </tr>
+                        <tr>
+                            <td>bitwise exclusive OR</td>
+                            <td>^</td>
+                        </tr>
+                        <tr>
+                            <td>bitwise inclusive OR</td>
+                            <td>|</td>
+                        </tr>
+                        <tr>
+                            <td>logical AND</td>
+                            <td>&&</td>
+                        </tr>
+                        <tr>
+                            <td>logical OR</td>
+                            <td>||</td>
+                        </tr>
+                        <tr>
+                            <td>ternary</td>
+                            <td>? :</td>
+                        </tr>
+                        <tr>
+                            <td>assignment</td>
+                            <td>= += -= *= /= %= &= ^= |= <<=>>= >>>=</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 id="methods" class="level1"><b>Methods</b></h4>
+                <p class="peragraph">A method is a block of code which only runs when it is called. You can pass data,
+                    known as parameters, into a method. Methods are used to perform certain actions, and they are also
+                    known as functions.
+                    <br>
+                    <span class="code-snip">
+                        <span class="style-text">Create a method inside Main:</span> <br><br>
+                        public class Main { <br>
+                        static void myMethod() { <br>
+                        // code to be executed <br>
+                        } <br>
+                        } <br>
+                        <span class="style-text">Inside main, call the myMethod() method: </span><br><br>
+                        public class Main { <br>
+                        static void myMethod() { <br>
+                        System.out.println("Hello!"); <br>
+                        } <br>
+
+                        public static void main(String[] args) { <br>
+                        myMethod(); <br>
+                        } <br>
+                        } <br>
+                    </span>
+                </p>
+                <h4 id="expressions" class="level1"><b>Expressions</b></h4>
+                <p class="peragraph">An expression is a construct made up of variables, operators, and method
+                    invocations, which are constructed according to the syntax of the language, that evaluates to a
+                    single value. You've already seen examples of expressions, illustrated in bold below:
+                    <br>
+                    <span class="code-snip">
+                        int cadence = 0; <br>
+                        anArray[0] = 100; <br>
+                        System.out.println("Element 1 at index 0: " + anArray[0]); <br><br>
+
+                        int result = 1 + 2; // result is now 3 <br>
+                        if (value1 == value2) <br>
+                        System.out.println("value1 == value2"); <br>
+                    </span>
+                </p>
+                <h4 id="conditions" class="level1"><b>Conditions</b></h4>
+                <p class="peragraph">Java supports the usual logical conditions from mathematics:</p>
+                <ul class="random-li">
+                    <li>Less than: a < b</li>
+                    <li>Less than or equal to: a <= b </li>
+                    <li>Greater than: a > b</li>
+                    <li>Greater than or equal to: a >= b</li>
+                    <li>Equal to a == b</li>
+                    <li>Not Equal to: a != b</li>
+                </ul>
+                <p class="peragraph">You can use these conditions to perform different actions for different decisions.
+                    Java has the following conditional statements:
+                <ul class="random-li">
+                    <li>Use if to specify a block of code to be executed, if a specified condition is true</li>
+                </ul>
+                <span class="code-snip">
+                    if (20 > 18) { <br>
+                    System.out.println("20 is greater than 18"); <br>
+                    } <br>
+                </span>
+                <ul class="random-li">
+                    <li>Use else to specify a block of code to be executed, if the same condition is false</li>
+                </ul>
+                <span class="code-snip">
+                    int time = 20; <br>
+                    if (time < 18) { <br>
+                        System.out.println("Good day."); <br>
+                        } else { <br>
+                        System.out.println("Good evening."); <br>
+                        }<br>
+                </span>
+                <ul class="random-li">
+                    <li>Use else if to specify a new condition to test, if the first condition is false</li>
+                </ul>
+                <span class="code-snip">
+                    int time = 22; <br>
+                    if (time < 10) { <br>
+                        System.out.println("Good morning."); <br>
+                        } else if (time < 20) { <br>
+                            System.out.println("Good day."); <br>
+                            } else { <br>
+                            System.out.println("Good evening.");<br>
+                            } <br>
+                </span>
+                <ul class="random-li">
+                    <li>Short Hand If...Else Or ternary operator </li>
+                </ul>
+                <span class="code-snip">
+                    int time = 20; <br>
+                    String result = (time < 18) ? "Good day." : "Good evening." ; <br>
+                        System.out.println(result); <br>
+                </span>
+                <ul class="random-li">
+                    <li>Use switch to specify many alternative blocks of code to be executed </li>
+                </ul>
+                <span class="code-snip">
+                    switch(expression) { <br>
+                    case x: <br>
+                    // code block <br>
+                    break; <br>
+                    case y: <br>
+                    // code block <br>
+                    break; <br>
+                    default: <br>
+                    // code block <br>
+                    } <br>
+                </span>
+                </p>
+                <h4 id="loop" class="level1"><b>Loop</b></h4>
+                <p class="peragraph">Looping in programming languages is a feature which facilitates the execution of a
+                    set of instructions/functions repeatedly while some condition evaluates to true.
+                    Java provides three ways for executing the loops. While all the ways provide similar basic
+                    functionality, they differ in their syntax and condition checking time.
+                    </br>
+                </p>
+                <h5 id="for-loop" class="level2"><b>For Loop</b></h5>
+                <p class="peragraph"> For loop provides a concise way of writing the loop structure. Unlike a while
+                    loop, a for statement consumes the initialization, condition and increment/decrement in one line
+                    thereby providing a shorter, easy to debug structure of looping.
+                    </br>
+                    <span class="code-snip">
+                        The syntax of a for loop is as shown below. <br>
+                        // For(initialization; condition ; increment) <br>
+                        for(int counter = 1; counter <= 10; counter++){ <br>
+                            System.out.println(counter); <br>
+                            } <br>
+                    </span>
+                </p>
+                <h5 id="enhanced-for-loop" class="level2"><b>Enhanced For Loop</b></h5>
+                <p class="peragraph"> The for-each loop is used to traverse array or collection in Java. It is easier to
+                    use than simple for loop because we don't need to increment value and use subscript notation. <br>
+                    It works on the basis of elements and not the index. It returns element one by one in the defined
+                    variable.
+                    </br>
+                    <span class="code-snip">
+                        <span class="style-text">// Syntex</span> <br><br>
+
+                        for( [datatype] [variable_name] : [collection_name] )
+                        { <br>
+                        //Statements; <br>
+                        } <br><br>
+
+
+                        <span class="style-text">// Example of Enhanced For Loop</span> <br><br>
+
+                        public class EnhancedFor { <br>
+                        public static void main(String[] args) { <br>
+                        String array[] = { <br>
+                        "C", <br>
+                        "Java", <br>
+                        "Python" <br>
+                        }; <br>
+                        for (String a: array) { <br>
+                        System.out.println(a); <br>
+                        } <br>
+                        } <br>
+                        } <br>
+                    </span>
+                </p>
+                <h5 id="while-loop" class="level2"><b>While loop</b></h5>
+                <p class="peragraph"> The Java while loop is used to iterate a part of the program repeatedly until the
+                    specified Boolean condition is true. As soon as the Boolean condition becomes false, the loop
+                    automatically stops. <br>
+                    The while loop is considered as a repeating if statement. If the number of iteration is not fixed,
+                    it is recommended to use the while loop.
+                    </br>
+                    <span class="code-snip">
+                        <span class="style-text"> //The basic syntax of Java while loop is: </span> <br>
+                        while(boolean condition) <br>
+                        {<br>
+                        //statements; <br>
+                        } <br><br>
+
+                        int counter = 1; // Control variable initialized <br>
+
+                        <span class="style-text"> // Condition for loop continuation</span> <br>
+                        while (counter <= 10) <br>
+                            { <br>
+                            System.out.println(counter);<br>
+                            counter++; // Increment the control variable <br>
+                            } <br>
+                    </span>
+                </p>
+                <h5 id="do-while-loop" class="level2"><b>Do While loop</b></h5>
+                <p class="peragraph">The Java do-while loop is used to iterate a part of the program repeatedly, until
+                    the specified condition is true. If the number of iteration is not fixed and you must have to
+                    execute the loop at least once, it is recommended to use a do-while loop. <br>
+                    Java do-while loop is called an exit control loop. Therefore, unlike while loop and for loop, the
+                    do-while check the condition at the end of loop body. The Java do-while loop is executed at least
+                    once because condition is checked after loop body.
+                    </br>
+                    <span class="code-snip">
+
+                        int counter = 1; <span class="style-text">// Control variable initialized </span> <br>
+                        do{ <br>
+                        System.out.println(counter); <br>
+                        counter--; <span class="style-text"> // Decrements the control variable </span> <br>
+                        }
+                        while(counter <= 10); <span class="style-text"> // Condition statement </span> <br>
+                    </span>
+                </p>
+
+
+                <div id="footer" class="container d-flex align-items-center justify-content-between">
+                    <a href="index.html" class="btn btn-outline-info"><i class="bi bi-chevron-double-left"></i>  Previous</a>
+                    <a href="oop.html" class="btn btn-outline-info">Next  <i class="bi bi-chevron-double-right"></i></a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

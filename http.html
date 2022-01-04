@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web Server</title>
+
+    <link href="Images/favicon.png" rel="icon">
+
+    <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <!-- <a href="index.html" class="logo"><img src="Images/logo.png" alt="" class="img-fluid"></a> -->
+            <a href="index.html" class="logo">Java Reading Materials</a>
+
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img id="java-icon" src="Images/java-icon.png" alt="" class="img-fluid">Java
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="index.html">Java Standard Edition </a>
+                          <a class="dropdown-item" href="enterprise.html">Java Enterprise Edition </a>
+                          <a class="dropdown-item" href="#">Java Micro Edition </a>
+                        </div>
+                      </li>
+                    <li></i><a class="nav-link active" href="index.html"> Database</a></li>
+                </ul>
+                <i class="bi mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav leftCol" id="sidenavigation">
+                <nav id="navSelector" class="nav flex-column">
+                    <h4 class="sidenav-title"><b><a href="index.html">Standard Edition</a></b></h4>
+                    <h4 class="sidenav-title"><b><a href="webserver.html">Enterprise Edition</a></b></h4>
+                    <ul class="sidenav-title02">
+                        <li><a href="webserver.html">Web Server</a></li>
+                        <li><a href="http.html">HTTP</a></li>
+                    </ul>
+                    <ul>
+                        <li class="select selected" data-toggle="collapse" data-target="#a"><span><a href="#http"><b>HTTP</b></a></span></li>
+                    </ul>
+                    <ul>
+                        <li class="select" data-toggle="collapse" data-target="#b"><span><a href="#basic"><b>Basic Features of HTTP <i class="bi bi-arrow-down-circle"></i></b></a></span>
+                            <ul id="b" class=" collapse">
+                                <li class="no-collapsable"><a href="#con">Connectionless</a></li>
+                                <li class="no-collapsable"><a href="#med">Media Independent</a></li>
+                                <li class="no-collapsable"><a href="#sta">Stateless</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="select" data-toggle="collapse" data-target="#c"><span><a href="#mess"><b>HTTP Message <i class="bi bi-arrow-down-circle"></i></b></a></span>
+                            <ul id="c" class=" collapse">
+                                <li class="no-collapsable"><a href="#start-line">Message Start-Line</a></li>
+                                <li class="no-collapsable"><a href="#m-h-f">Header Fields</a></li>
+                                <li class="no-collapsable"><a href="#m-b">Message Body</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="select" data-toggle="collapse" data-target="#d"><span><a href="#request"><b>HTTP - Requests <i class="bi bi-arrow-down-circle"></i></b></a></span>
+                            <ul id="d" class=" collapse">
+                                <li class="no-collapsable"><a href="#req-line">Request-Line</a></li>
+                                <li class="no-collapsable"><a href="#req-method">Request Method</a></li>
+                                <li class="no-collapsable"><a href="#req-uri">Request-URI</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="select" data-toggle="collapse" data-target="#e"><span><a href="#response"><b>HTTP - Response <i class="bi bi-arrow-down-circle"></i></b></a></span>
+                            <ul id="e" class=" collapse">
+                                <li class="no-collapsable"><a href="#resp-line">Response-Line</a></li>
+                                <li class="no-collapsable"><a href="#resp-v">HTTP version</a></li>
+                                <li class="no-collapsable"><a href="#resp-code">Status Code</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="select" data-toggle="collapse" data-target="#f"><span><a href="#caching"><b>HTTP - Caching <i class="bi bi-arrow-down-circle"></i></b></a></span>
+                            <ul id="f" class=" collapse">
+                                <li class="no-collapsable"><a href="#cache-req">Cache Request</a></li>
+                                <li class="no-collapsable"><a href="#cache-resp">Cache Response </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="select"><span><a href="#session"><b>HTTP session</b></a></span>
+                    </ul>
+                    <ul>
+                        <li class="select"><span><a href="#cookie"><b>HTTP cookies</b></a></span>
+                    </ul>
+                    <ul>
+                        <li class="select"><span><a href="#csrf"><b>CSRF token</b></a></span>
+                    </ul>
+                    <ul>
+                        <li class="select"><span><a href="#cors"><b>CORS token</b></a></span>
+                    </ul>
+                    <ul class="sidenav-title02">
+                        <li><a href="tcp.html">TCP/IP</a></li>
+                        <li><a href="mvc.html">MVC</a></li>
+                        <li><a href="servlet.html">Servlet</a></li>
+                        <li><a href="filter.html">Filter</a></li>
+                        <li><a href="jsp.html">JSP</a></li>
+                        <li><a href="database.html">Database</a></li>
+                    </ul>
+                    <h4 class="sidenav-title"><b><a href="index.html"> Micro Edition</a></b></h4>
+
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                </nav>
+            </div>
+
+            <div class="col-sm-9 rightCol" id="contentbody">
+                <h3 class="page-title"><b>HTTP</b></h3>
+                <hr>
+                <h4 id="http" class="level1"><b>HTTP</b></h4>
+                <p class="peragraph">
+                    HTTP is an application-level protocol for distributed, collaborative, hypermedia information
+                    systems. This is the foundation for data communication for the World Wide Web. <br>
+                    HTTP is a stateless protocol (It dosen't store any previous communication history or record). <br>
+                    <b>Versions of HTTP: </b>
+                </p>
+                <ul class="random-li">
+                    <li> <b>HTTP 1.0 - </b> Use new connection for each request/response.</li>
+                    <li><b>HTTP 1.1 - </b> Connection maybe used for one or more request response exchange.</li>
+                </ul>
+                <h4 id="basic" class="level1"><b>Basic Features of HTTP</b></h4>
+                <h5 id="con" class="level2"><b>HTTP is Connectionless</b></h5>
+                <p class="peragraph">
+                    The HTTP client, i.e., a browser initiates an HTTP request and after a request is made, the client
+                    waits for the response. The server processes the request and sends a response back after which
+                    client disconnect the connection. So client and server knows about each other during current request
+                    and response only. Further requests are made on new connection.
+                </p>
+                <h5 id="med" class="level2"><b>HTTP is Media Independent</b></h5>
+                <p class="peragraph">
+                    It means, any type of data can be sent by HTTP as long as both the client and the server know how to
+                    handle the data content. It is required for the client as well as the server to specify the content
+                    type using appropriate <b> MIME-type </b>.
+                </p>
+                <h6 class="level3"><b>MIME-type</b></h6>
+                <p class="peragraph">
+                    <b>MIME - Multipurpose Internet Mail Extensions</b> indicates the nature and format of a document,
+                    file, or assortment of bytes.
+                    <br> <b>Structure of MIME type: </b>
+                    <span class="code-snip">
+                        type/subtype;parameter=value; <br>
+                        <span class="style-text">
+                            [text/plain] <br>
+                            [multipart/form-data] <br>
+                            [text/html] <br>
+                        </span>etc.
+                    </span>
+                </p>
+                <h5 id="sta" class="level2"><b>HTTP is Stateless</b></h5>
+                <p class="peragraph">
+                    HTTP is connectionless and it is a direct result of HTTP being a stateless protocol. The server and
+                    client are aware of each other only during a current request. <br>
+                    <b>Basic Architecture of HTTP</b>
+                </p>
+                <img class="content-img" src="Images/content-img/HTTP - architecture.gif" alt="http - architecture">
+                <h4 id="mess" class="level1"><b>HTTP Message</b></h4>
+                <p class="peragraph">
+                    HTTP is based on the client-server architecture model and a stateless request/response protocol that
+                    operates by exchanging messages across a reliable TCP/IP connection. <br>
+                    An HTTP "client" is a program that establishes a connection to a
+                    server for the purpose of sending one or more HTTP request messages. An HTTP "server" is a program
+                    that
+                    accepts connections in order to serve HTTP requests by sending HTTP response messages. <br> <br>
+                    HTTP makes use of the Uniform Resource Identifier (URI) to identify a given resource and to
+                    establish a connection. Once the connection is established, HTTP messages are passed in a format
+                    similar to that (MIME). <br>
+                    <span class="code-snip">
+                        <span class="style-text"> HTTP-message = &lt; Request &gt; | &lt; Response &gt; ; HTTP/1.1
+                            messages </span>
+                    </span>
+                    HTTP requests and HTTP responses use a generic message format for transferring the required data.
+                </p>
+                <h5 id="start-line" class="level2"><b>HTTP Start-line</b></h5>
+                <p class="peragraph">
+                    <b> A start-line will have the following generic syntax: </b>
+                    <span class="code-snip">
+                        <span class="style-text">start-line = Request-Line | Status-Line</span> <br> <br>
+                        GET /hello.htm HTTP/1.1 (This is Request-Line sent by the client) <br>
+                        HTTP/1.1 200 OK (This is Status-Line sent by the server)
+                    </span>
+                </p>
+                <h5 id="m-h-f" class="level2"><b>HTTP Headers</b></h5>
+                <p class="peragraph">
+                    HTTP header fields provide required information about the request or response, or about the object
+                    sent in the message body.
+                    <b>Example of Header</b>
+                    <span class="code-snip">
+                        GET /hello.htm HTTP/1.1 <br>
+                        User-Agent: Mozilla/4.0 (compatible; MSIE5.01; Windows NT) <br>
+                        Host: www.tutorialspoint.com <br>
+                        Accept-Language: en-us <br>
+                        Accept-Encoding: gzip, deflate <br>
+                        Connection: Keep-Alive <br>
+                    </span>
+                </p>
+                <h5 id="m-b" class="level2"><b>HTTP Message body</b></h5>
+                <p class="peragraph">
+                    The message body part is optional for an HTTP message but if it is available, then it is used to
+                    carry the entity-body associated with the request or response. <br>
+                    <span class="code-snip">
+                        &lt;html&gt;<br>
+                        &emsp; &lt;body&gt;<br>
+                        &emsp;&emsp; &lt;h1&gt;Hello, World!&lt;/h1&gt; <br>
+                        &emsp; &lt;/body&gt;<br>
+                        &lt;/html&gt;
+                    </span>
+                </p>
+                <h4 id="request" class="level1"><b>HTTP - Requests</b></h4>
+                <p class="peragraph">
+                    An HTTP client sends request to a server in the form of a request message. <br>
+                </p>
+                <h5 id="req-line" class="level2"><b>HTTP Request Line</b></h5>
+                <p class="peragraph">
+                    <span class="code-snip">
+                        Request-Line = Method | Request-URI | HTTP-Version <br>
+                        <span class="style-text">GET /hello.htm HTTP/1.1</span>
+                    </span>
+                </p>
+                <h5 id="req-method" class="level2"><b>Request Method</b></h5>
+                <p class="peragraph">
+                    The request method indicates the method to be performed on the resource identified by the given
+                    Request-URI.
+                </p>
+                <h6 class="level3"><b>GET</b></h6>
+                <p class="peragraph">
+                    The GET method is used to retrieve information from the given server using a given URI. Requests
+                    using GET should only retrieve data and should have no other effect on the data.
+                </p>
+                <h6 class="level3"><b>POST</b></h6>
+                <p class="peragraph">
+                    A POST request is used to send data to the server, for example, customer information, file upload,
+                    etc. using HTML forms.
+                </p>
+                <h6 class="level3"><b>HEAD</b></h6>
+                <p class="peragraph">
+                    Same as GET, but transfers the status line and header section only.
+                </p>
+                <h6 class="level3"><b>PUT</b></h6>
+                <p class="peragraph">
+                    Replaces all current representations of the target resource with the uploaded content.
+                </p>
+                <h5 id="req-uri" class="level2"><b>Request-URI</b></h5>
+                <p class="peragraph">
+                    The Request-URI is a Uniform Resource Identifier and identifies the resource upon which to apply the
+                    request.
+                    <span class="code-snip">
+                        Request-URI = "*" | absoluteURI | abs_path | authority
+                    </span>
+                    <b>absoluteURI: </b> absoluteURI is used when an HTTP request is being made to a proxy. The proxy is
+                    requested to forward
+                    the request or service from a valid cache, and return the response. <br>
+                    <span class="code-snip"> GET &emsp; http://www.w3.org/pub/WWW/TheProject.html &emsp; HTTP/1.1
+                    </span>
+                    <b>abs_path: </b> The most common form of Request-URI is that used to identify a resource on an
+                    origin server or gateway. Note that the absolute path cannot be empty; if none is present in the
+                    original URI, it MUST be given as "/" (the server root).
+                    <span class="code-snip">
+                        GET /pub/WWW/TheProject.html HTTP/1.1 <br>
+                        Host: www.w3.org
+                    </span>
+                </p>
+                <h5 id="" class="level2"><b>Request Header Fields</b></h5>
+                <p class="peragraph">The request-header fields allow the client to pass additional information about the
+                    request, and
+                    about the client itself, to the server. These fields act as request modifiers.
+                </p>
+                <h5 id="" class="level2"><b>Examples of Request Message</b></h5>
+                <p class="peragraph">
+                    <span class="code-snip">
+                        GET /hello.htm HTTP/1.1 <br>
+                        User-Agent: Mozilla/4.0 (compatible; MSIE5.01; Windows NT) <br>
+                        Host: www.tutorialspoint.com <br>
+                        Accept-Language: en-us <br>
+                        Accept-Encoding: gzip, deflate <br>
+                        Connection: Keep-Alive <br>
+                    </span>
+                </p>
+                <h4 id="response" class="level1"><b>HTTP - Response</b></h4>
+                <p class="peragraph">
+                    An HTTP response is made by a server to a client. The aim of the response is to provide the client
+                    with the resource it requested.<br>
+                </p>
+                <h5 id="resp-line" class="level2"><b>HTTP Response Line</b></h5>
+                <p class="peragraph">
+                    <span class="code-snip">
+                        Status-Line = HTTP-Version | Status-Code | Reason-Phrase
+                    </span>
+                </p>
+                <h6 id="resp-v" class="level3"><b>HTTP-Version </b></h6>
+                <p class="peragraph">A server supporting HTTP version 1.1 will return the following version information:
+                    <br>
+                    <b> HTTP-Version = HTTP/1.1 </b>
+                </p>
+                <h6 id="resp-code" class="level3"><b>Status-Code</b></h6>
+                <p class="peragraph">
+                    The Status-Code element is a 3-digit integer where first digit of the Status-Code defines the class
+                    of response and the last two digits do not have any categorization role. <br>
+                    <br>
+                    <b>1xx: Informational - </b> It means the request was received and the process is continuing. <br>
+                    <b>2xx: Success - </b>It means the action was successfully received, understood, and accepted. <br>
+                    <b>3xx: Redirection - </b> It means further action must be taken in order to complete the request.
+                    <br>
+                    <b>4xx: Client Error - </b>It means the request contains incorrect syntax or cannot be fulfilled.
+                    <br>
+                    <b>5xx: Server Error - </b> It means the server failed to fulfill an apparently valid request. <br>
+                </p>
+                <h5 id="" class="level2"><b>Response Header Fields</b></h5>
+                <p class="peragraph">
+                    The response-header fields allow the server to pass additional information about the response which
+                    cannot be placed in the Status- Line.
+                </p>
+                <h5 id="" class="level2"><b>Examples of Response Message</b></h5>
+                <p class="peragraph">
+                    <span class="code-snip"> HTTP/1.1 200 OK <br>
+                        Date: Mon, 27 Jul 2009 12:28:53 GMT<br>
+                        Server: Apache/2.2.14 (Win32)<br>
+                        Last-Modified: Wed, 22 Jul 2009 19:15:56 GMT<br>
+                        Content-Length: 88<br>
+                        Content-Type: text/html<br>
+                        Connection: Closed </span>
+                </p>
+                <h4 id="caching" class="level1"><b>HTTP - Caching </b></h4>
+                <p class="peragraph">
+                    The goal of caching in HTTP/1.1 is to eliminate the need to send requests in many cases, and to
+                    eliminate the need to send full responses in many other cases. <br>
+                    The Cache-Control header allows a client or server to transmit a variety of directives in either
+                    requests or responses.
+                    <span class="code-snip">
+                        Cache-control: no-cache
+                    </span>
+                </p>
+                <h5 id="cache-req" class="level2"><b>Cache Request Directive </b></h5>
+                <p class="peragraph">
+                    <b>no-cache - </b> A cache must not use the response to satisfy a subsequent request without
+                    successful revalidation
+                    with the origin server. <br>
+                    <b>no-store - </b> The cache should not store anything about the client request or server response.
+                    <br>
+                    <b>max-age = seconds - </b> indicates that the client is willing to accept a response whose age is
+                    not greater than the specified time in seconds. <br>
+                    <b>max-stale [= seconds], <br>
+                        min-fresh = seconds, <br>
+                        no-transform, <br>
+                        only-if-cached, etc.</b>
+                </p>
+                <h5 id="cache-resp" class="level2"><b>Cache Response Directive </b></h5>
+                <p class="peragraph">
+                    <b>public - </b> Indicates that the response may be cached by any cache. <br>
+                    <b>private - </b> Indicates that all or part of the response message is intended for a single user
+                    and must not be cached by a shared cache. <br>
+                    <b>no-cache - </b> A cache must not use the response to satisfy a subsequent request without
+                    successful re-validation with the origin server. <br>
+                    etc.
+                </p>
+                <h4 id="session" class="level1">HTTP Session</h4>
+                <p class="peragraph">
+                    he session persists for a specified time period, across more than one connection or page request
+                    from the user. A session usually corresponds to one user, who may visit a site many times. The
+                    server can maintain a session in many ways such as using cookies or rewriting URLs. <br> <br>
+                    Session provides a way to identify a user across more than one page request or visit to a Web site
+                    and to
+                    store information about that user.
+                </p>
+                <h4 id="cookie" class="level1">HTTP Cookies</h4>
+                <p class="peragraph">
+                    An HTTP cookie (web cookie, browser cookie) is a small piece of data that a server sends to a user's
+                    web browser. The browser may store the cookie and send it back to the same server with later
+                    requests. <br>
+                    Typically, an HTTP cookie is used to tell if two requests come from the same browser—keeping a user
+                    logged in, for example. It remembers stateful information for the stateless HTTP protocol. <br>
+                    <b>Usage of Cookies: </b> <br>
+                    <b>Session management - </b> Logins, shopping carts, game scores, or anything else the server should
+                    remember. <br>
+                    <b>Personalization - </b>User preferences, themes, and other settings. <br>
+                    <b>Tracking - </b> Recording and analyzing user behavior. <br> <br>
+                    <b>Example of Cookies</b>
+                    <span class="code-snip">
+                        <span class="style-text"> Set-Cookie:
+                            &lt;cookie-name&gt;=&lt;cookie-value&gt;&lt;/cookie-value&gt; </span> <br><br>
+                        HTTP/2.0 200 OK <br>
+                        Content-Type: text/html <br>
+                        Set-Cookie: yummy_cookie=choco <br>
+                        Set-Cookie: tasty_cookie=strawberry <br>
+                        [page content] <br> <br>
+                        ---------------------------------------------------- <br> <br>
+                        GET /sample_page.html HTTP/1.1 <br>
+                        Host: www.example.org <br>
+                        Cookie: yummy_cookie=choco; tasty_cookie=strawberry
+                    </span>
+                </p>
+                <h4 id="csrf" class="level1">CSRF</h4>
+                <p class="peragraph">
+                    Cross-Site Request Forgery (CSRF) is an attack that forces authenticated users to submit a request
+                    to a Web application against which they are currently authenticated. <br>
+                    CSRF attacks exploit the trust a Web application has in an authenticated user.
+                    A CSRF attack exploits a vulnerability in a Web application if it cannot differentiate between a
+                    request generated by an individual user and a request generated by a user without their consent.
+                </p>
+                <h5 class="level2"><b>CSRF - token</b></h5>
+                <p class="peragraph">
+                    A CSRF token is a secure random token that is used to prevent CSRF attacks. <br> <br>
+                    A CSRF token is a unique, secret, unpredictable value that is generated by the server-side
+                    application and transmitted to the client in such a way that it is included in a subsequent HTTP
+                    request made by the client. When the later request is made, the server-side application validates
+                    that the request includes the expected token and rejects the request if the token is missing or
+                    invalid.
+                </p>
+                <h4 id="cors" class="level1">CORS</h4>
+                <p class="peragraph">
+                    Cross-origin resource sharing (CORS) is a mechanism that allows restricted resources on a web page
+                    to be requested from another domain outside the domain from which the first resource was served.
+                    <br> <br>
+                    A web page may freely embed cross-origin images, stylesheets, scripts, iframes, and videos.[2]
+                    Certain "cross-domain" requests, notably Ajax requests, are forbidden by default by the same-origin
+                    security policy. CORS defines a way in which a browser and server can interact to determine whether
+                    it is safe to allow the cross-origin request.[3] It allows for more freedom and functionality than
+                    purely same-origin requests, but is more secure than simply allowing all cross-origin requests. <br>
+                </p>
+                <h4 class="level1"><b>HTTP authentication</b></h4>
+                <p class="peragraph">
+                    HTTP provides a general framework for access control and authentication. This page is an introduction to the HTTP framework for authentication, and shows how to restrict access to your server using the HTTP "Basic" schema.
+                </p>
+                <img class="content-img" src="Images/content-img/http-authdiagram.png" alt="http authentication diagram">
+
+
+
+
+
+                <div id="footer" class="container d-flex align-items-center justify-content-between">
+                    <a href="webserver.html" class="btn btn-outline-info"><i class="bi bi-chevron-double-left"></i>  Previous</a>
+                    <a href="tcp.html" class="btn btn-outline-info">Next  <i class="bi bi-chevron-double-right"></i></a>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

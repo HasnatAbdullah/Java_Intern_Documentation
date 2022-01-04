@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web Server</title>
+
+    <link href="Images/favicon.png" rel="icon">
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <!-- <a href="index.html" class="logo"><img src="Images/logo.png" alt="" class="img-fluid"></a> -->
+            <a href="index.html" class="logo">Java Reading Materials</a>
+
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img id="java-icon" src="Images/java-icon.png" alt="" class="img-fluid">Java
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="index.html">Java Standard Edition </a>
+                          <a class="dropdown-item" href="enterprise.html">Java Enterprise Edition </a>
+                          <a class="dropdown-item" href="#">Java Micro Edition </a>
+                        </div>
+                      </li>
+                    <li></i><a class="nav-link active" href="index.html"> Database</a></li>
+                </ul>
+                <i class="bi mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav leftCol" id="sidenavigation">
+                <nav id="navSelector" class="nav flex-column">
+                    <h4 class="sidenav-title"><b><a href="index.html">Standard Edition</a></b></h4>
+                    <h4 class="sidenav-title"><b><a href="webserver.html">Enterprise Edition</a></b></h4>
+                    <ul class="sidenav-title02">
+                        <li><a href="webserver.html">Web Server</a></li>
+                    </ul>
+                    <ul>
+                        <li class="select selected" data-toggle="collapse" data-target="#a"><span><a href="#webserver"><b>Web Server <i class="bi bi-arrow-down-circle"></i></b></a></span>
+                            <ul id="a" class=" collapse">
+                                <li class="no-collapsable"><a href="#typeofwebserver">Static vs Dynamic</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="select"><span><a href="#webcon"><b>Web container</b></a></span>
+                    </ul>
+                    <ul class="sidenav-title02">
+                        <li><a href="http.html">HTTP</a></li>
+                        <li><a href="tcp.html">TCP/IP</a></li>
+                        <li><a href="mvc.html">MVC</a></li>
+                        <li><a href="servlet.html">Servlet</a></li>
+                        <li><a href="filter.html">Filter</a></li>
+                        <li><a href="jsp.html">JSP</a></li>
+                        <li><a href="database.html">Database</a></li>
+                    </ul>
+                    <h4 class="sidenav-title"><b><a href="index.html"> Micro Edition</a></b></h4>
+
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                </nav>
+            </div>
+
+            <div class="col-sm-9 rightCol" id="contentbody">
+                <h3 class="page-title"><b>Web Server</b></h3>
+                <hr>
+                <h4 id="webserver" class="level1"><b>Web Server</b></h4>
+                <p class="peragraph">
+                    A web server is software and hardware that uses HTTP and other protocols to respond to client
+                    requests made over the World Wide Web.
+                    <br>The main job of a web server is to display website content through storing, processing and
+                    delivering webpages to users.
+                    <br>
+                    <b>Protocols</b>
+                </p>
+                <ul class="random-li">
+                    <li>HTTP - Hypertext Transfer Protocol</li>
+                    <li>SMTP - Simple Mail Transfer Protocol</li>
+                    <li>FTP - File transfer protocol (etc.)</li>
+                </ul>
+                <img class="content-img" src="Images/content-img/web-server.svg" alt="webserver">
+                <p class="peragraph">
+                    Server can be refer as hardware and software or both working together. <br> <br>
+                    <b>Hardware: </b> webserver is a computer that stores webserver software and website component
+                    files. Ex. HTML, CSS, image etc. Webserver connect to the internet and support physical data
+                    interchange with other devices connected to the web. <br>
+                    <b>Software: </b> A web server software that runs on the web site hosting Server
+                    computer. Its main purpose is serving web pages; which means it waits for requests from web browsers
+                    (also known as clients) and responds by sending the required data back. This client-server
+                    interaction is the hallmark of how the web works.
+                </p>
+                <h5 id="typeofwebserver" class="level2"><b>Static vs Dynamic</b></h5>
+                <h6 id="" class="level3"><b>Static</b></h6>
+                <p class="peragraph">
+                    We call it "static" because the server sends its hosted files as-is to your browser.
+                </p>
+                <h6 id="" class="level3"><b>Dynamic</b></h6>
+                <p class="peragraph">
+                    Dynamic webservers consists of a static web server plus extra software, most commonly an application
+                    server and a
+                    database. We call it "dynamic" because the application server updates the hosted files before
+                    sending content to your browser via the HTTP server.
+                </p>
+                <hr>
+                <h4 id="webcon" class="level1"><b>Web Container</b></h4>
+                <p class="peragraph">
+                    A web container is the component of a web server that interacts with Java servlets. A web container
+                    manages the life cycle of servlets; it maps a URL to a particular servlet while ensuring that the
+                    requester has relevant access-rights. <br> <br>
+                    The web container implements the web component aspect of the Java engineering architecture; it
+                    specifies a run time environment for various components such as security, concurrency, transaction,
+                    and deployment.
+                </p>
+                <img class="content-img" src="Images/content-img/webcontainer.JPG" alt="webserver">
+                <ul class="random-li">
+                    <li>The client sends a request to a web server.</li>
+                    <li>The web server, which contains a servlet, sends that request to the container.</li>
+                    <li>The container passes the request to the respective servlet.</li>
+                    <li>The servlet methods are loaded.</li>
+                    <li>The servlet hands over the relevant response to the container, which passes it to the server.
+                        Eventually, the response reaches the client.</li>
+
+                </ul>
+
+
+
+
+                <div id="footer" class="container d-flex align-items-center justify-content-between">
+                    <a href="enterprise.html" class="btn btn-outline-info"><i class="bi bi-chevron-double-left"></i>  Previous</a>
+                    <a href="http.html" class="btn btn-outline-info">Next  <i class="bi bi-chevron-double-right"></i></a>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

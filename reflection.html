@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Reflection</title>
+
+        <link href="Images/favicon.png" rel="icon">
+
+        <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    </head>
+
+    <body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <!-- <a href="index.html" class="logo"><img src="Images/logo.png" alt="" class="img-fluid"></a> -->
+            <a href="index.html" class="logo">Java Reading Materials</a>
+
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img id="java-icon" src="Images/java-icon.png" alt="" class="img-fluid">Java
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="index.html">Java Standard Edition </a>
+                          <a class="dropdown-item" href="enterprise.html">Java Enterprise Edition </a>
+                          <a class="dropdown-item" href="#">Java Micro Edition </a>
+                        </div>
+                      </li>
+                    <li></i><a class="nav-link active" href="index.html"> Database</a></li>
+                </ul>
+                <i class="bi mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+
+        <div class="container-fluid">
+            <div class="row content">
+                <div class="col-sm-3 sidenav leftCol" id="sidenavigation">
+                    <nav id="navSelector" class="nav flex-column">
+                        <h4 class="sidenav-title"><b><a href="index.html">Standard Edition</a></b></h4>
+                        <ul class="sidenav-title02">
+                            <li><a href="index.html">Java Basics</a></li>
+                            <li><a href="oop.html">OOP</a></li>
+                            <li><a href="lamda.html">Lambda Expression</a></li>
+                            <li><a href="generics.html">Generics</a></li>
+                            <li><a href="collection.html">Collections API</a></li>
+                            <li><a href="io.html">Java I/O Streams</a></li>
+                            <li><a href="thread.html">Threading</a></li>
+                            <li><a href="socket.html">Socket</a></li>
+                            <li><a href="stream.html">Stream API</a></li>
+                            <li><a href="reflection.html">Java Reflection</a></li>
+                        </ul>
+                        <ul>
+                            <li class="select selected" data-toggle="collapse" data-target="#d"><span><a href="#reflection"><b>Java Reflection <i class="bi bi-arrow-down-circle"></i></b></a></span>
+                                <ul id="d" class="collapse">
+                                    <li><a class="no-collapsable" href="#reflect-class">Reflection of Java Classes</a></li>
+                                    <li><a class="no-collapsable" href="#reflect-method">Reflection of Java Methods</a></li>
+                                    <li><a class="no-collapsable" href="#reflect-field">Reflection of Java Fields</a></li>
+                                    <li><a class="no-collapsable" href="#reflect-constructor">Reflection of Java Constructor</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <h4 class="sidenav-title"><b><a href="webserver.html">Enterprise Edition</a></b></h4>
+                        <h4 class="sidenav-title"><b><a href="index.html"> Micro Edition</a></b></h4>
+
+                        <a class="nav-link" href="#"></a>
+                        <a class="nav-link" href="#"></a>
+                        <a class="nav-link" href="#"></a>
+                        <a class="nav-link" href="#"></a>
+                        <a class="nav-link" href="#"></a>
+                    </nav>
+                </div>
+
+                <div class="col-sm-9 rightCol" id="contentbody">
+                    <h3 class="page-title"><b>Java Reflection</b></h3>
+                <hr>
+                <h4 id="reflection" class="level1"><b>Java Reflection</b></h4>
+                <p class="peragraph">
+                    Java Reflection is a process of examining or modifying the run time behavior of a class at run time.<br>
+                    
+                    The <b>java.lang.Class</b> class provides many methods that can be used to get metadata, examine and change the run time behavior of a class.<br>
+                    The <b>java.lang</b> and <b>java.lang.reflect</b> packages provide classes for java reflection.<br>
+                    The Reflection API is mainly used in:
+                    <ul>
+                        <li>(Integrated Development Environment) e.g., Eclipse, MyEclipse, NetBeans etc.</li> 
+                        <li> Debugger</li>
+                        <li> Test Tools etc.</li>
+                    </ul>
+                </p>
+                <h5 id="reflect-class" class="level2"><b>Reflection of Java Classes</b> </h5>
+                <p class="peragraph">
+                    In order to reflect a Java class, we first need to create an object of Class.
+                    <br>
+                    And, using the object we can call various methods to get information about methods, fields, and constructors present in a class.
+                    <br>
+                </p>
+                <p class="peragraph">
+                    There exists three ways to create objects of Class:
+                    <br>
+                    <br>
+                    1. Using forName() method
+                    <span class="code-snip">
+                        class Dog {...}
+
+                        // create object of Class
+                        // to reflect the Dog class
+                        Class a = Class.forName("Dog");
+                    </span>
+                    <br>
+                    2. Using getClass() method
+                    
+                    <span class="code-snip">
+                        // create an object of Dog class
+                    Dog d1 = new Dog();
+
+                    // create an object of Class
+                    // to reflect Dog
+                    Class b = d1.getClass();
+                    </span>
+                    <br>
+                    3. Using .class extension
+                    
+                    <span class="code-snip">
+                        // create an object of Class
+                    // to reflect the Dog class
+                    Class c = Dog.class;
+                    </span>
+                    
+                   
+                </p>
+                    
+
+
+                <h5 id="reflect-method" class="level2"><b>Reflection of Java Methods</b> </h5>
+                <p class="peragraph">
+                    The Method class provides various methods that can be used to get information about the methods present in a class. For example,
+                </p>
+                <p class="peragraph">
+                    Here, the getDeclaredMethod() returns all the methods present inside the class.
+                    <br>
+                    <span class="code-snip">
+                        Method[] methods = obj.getDeclaredMethod();
+                    </span>
+                    <br>
+                    <ul>
+                        <li><B> m.getName()</B> - returns the name of a method<br></li>
+                        <li><B> m.getModifiers()</B> - returns the access modifier of methods in integer form<br></li>
+                        <li><B> m.getReturnType()</B> - returns the return type of methods<br></li>
+
+                    </ul>
+                   
+                    
+                    
+                    
+                   
+                </p>
+
+
+                <h5 id="reflect-field" class="level2"><b>Reflection of Java Fields</b> </h5>
+                <p class="peragraph">
+                    Like methods, we can also inspect and modify different fields of a class using the methods of the Field class. For example,
+                </p>
+                <p class="peragraph">
+                    <br>
+                    <span class="code-snip">
+                        Field field1 = obj.getField("type");
+                    </span>
+                    <br>
+                    Here, we are accessing the public field of the Dog class and assigning it to the object field1 of the Field class.
+                    <br>
+                    We then used various methods of the Field class:
+                    <li><B>field1.set() </B>- sets the value of the field</li>
+                    <li><B>field1.get() </B> - returns the value of field</li>
+                    <li><B>field1.getModifiers() </B>- returns the value of the field in integer form</li>
+
+                </p>
+
+                <h5 id="reflect-constructor" class="level2"><b>Reflection of Java Constructor</b> </h5>
+                <p class="peragraph">
+                    We can also inspect different constructors of a class using various methods provided by the Constructor class. For example,
+                    <br>
+                </p>
+                <p class="peragraph">
+                    We are using reflection to find the information about the constructors of the class. Notice the statement,
+                    <br>
+                    <span class="code-snip">
+                        Constructor[] constructors = obj.getDeclaredConstructor();
+
+                    </span>
+                    <br>
+                    Here, the we are accessing all the constructors present in Dog and assigning them to an array constructors of the Constructor type. <br>
+
+                    We then used object c to get different informations about the constructor.
+                    <br>
+                    <li><B>c.getName() </B>- returns the name of the constructor</li>
+
+                    <li><B>c.getModifiers() </B>- returns the access modifiers of the constructor in integer form</li>
+
+                    <li><B>c.getParameterCount() </B>- returns the number of parameters present in each constructor</li>
+
+                    
+                    
+                    
+                                        
+                                    
+                </p>
+
+
+
+                <div id="footer" class="container d-flex align-items-center justify-content-between">
+                    <a href="stream.html" class="btn btn-outline-info"><i class="bi bi-chevron-double-left"></i>  Previous</a>
+                    <a href="enterprise.html" class="btn btn-outline-info">Next  <i class="bi bi-chevron-double-right"></i></a>
+                </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+
+    </body>
+
+</html>

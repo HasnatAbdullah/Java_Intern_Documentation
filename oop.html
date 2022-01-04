@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OOP (Object oriented programming)</title>
+
+    <link href="Images/favicon.png" rel="icon">
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <!-- <a href="index.html" class="logo"><img src="Images/logo.png" alt="" class="img-fluid"></a> -->
+            <a href="index.html" class="logo">Java Reading Materials</a>
+
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img id="java-icon" src="Images/java-icon.png" alt="" class="img-fluid">Java
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="index.html">Java Standard Edition </a>
+                          <a class="dropdown-item" href="enterprise.html">Java Enterprise Edition </a>
+                          <a class="dropdown-item" href="#">Java Micro Edition </a>
+                        </div>
+                      </li>
+                    <li></i><a class="nav-link active" href="index.html"> Database</a></li>
+                </ul>
+                <i class="bi mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+
+
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav leftCol" id="sidenavigation">
+                <nav id="navSelector" class="nav flex-column">
+                    <h4 class="sidenav-title"><b><a href="index.html">Standard Edition</a></b></h4>
+                    <ul class="sidenav-title02">
+                        <li><a href="index.html">Java Basics</a></li>
+                        <li><a href="oop.html">OOP</a></li>
+                    </ul>
+                    <ul>
+                        <li class="select selected" ><span><a href="#"><b>OOP (Object oriented programming)</b></a></span>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="select"><span><a href="#a"><b>Java Class</b></a></span>
+                            <ul id="a">
+                                <li class="no-collapsable"><a href="#">Methods</a></li>
+                                <li class="no-collapsable"><a href="#">Constructors</a></li>
+                                <li class="no-collapsable"><a href="#">Objects</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="select"><span><a href="#"><b>Java Member</b></a></span>
+                            <ul>
+                                <li><a href="#">Class member</a></li>
+                                <li><a href="#">Object Member</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="select"><span><a href="#"><b>Access Modifiers</b></li>
+                    </ul>
+                    <ul>
+                        <li class="select"><span><a href="#"><b>Encapsulation</b></li>
+                    </ul>
+                    <ul>
+                        <li class="select"><span><a href="#"><b>Inheritance</b></a></span>
+                            <ul>
+                                <li><a href="#">Diamond Problem</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="select"><span><a href="#"><b>Abstraction</b></li>
+                    </ul>
+                    <ul>
+                        <li class="select"><span><a href="#"><b>Polymorphism</b></a></span>
+                            <ul>
+                                <li><a href="#">Overloading</a></li>
+                                <li><a href="#">Overriding</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="select"><span><a href="#"><b>What is a final class in Java?</b></li>
+                    </ul>
+                    <ul class="sidenav-title02">
+                        <li><a href="lamda.html">Lambda Expression</a></li>
+                        <li><a href="generics.html">Generics</a></li>
+                        <li><a href="collection.html">Collections</a></li>
+                        <li><a href="io.html">Java I/O Streams</a></li>
+                        <li><a href="thread.html">Threading</a></li>
+                        <li><a href="socket.html">Socket</a></li>
+                        <li><a href="stream.html">Stream API</a></li>
+                        <li><a href="reflection.html">Java Reflection</a></li>
+                    </ul>
+                    <h4 class="sidenav-title"><b><a href="webserver.html">Enterprise Edition</a></b></h4>
+                    <h4 class="sidenav-title"><b><a href="index.html"> Micro Edition</a></b></h4>
+
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                </nav>
+            </div>
+
+            <div class="col-sm-9 rightCol" id="contentbody">
+                <h3 class="page-title"><b>OOP (Object oriented programming)</b></h3>
+                <hr>
+                <h4 id="#" class="level1"><b>OOP (Object oriented programming)</b></h4>
+                <p class="peragraph">Object-oriented programming is a method of programming based on a hierarchy of
+                    classes, and well-defined and cooperating objects. Procedural programming is about writing
+                    procedures or methods that perform operations on the data, while object-oriented programming is
+                    about creating objects that contain both data and methods.
+                </p>
+                <hr>
+                <h4 id="#" class="level1"><b>Java Class</b></h4>
+                <p class="peragraph">Class are a blueprint or a set of instructions to build a specific type of object.
+                    It is a basic concept of Object-Oriented Programming which revolve around the real-life entities.
+                    Class in Java determines how an object will behave and what the object will contain.
+                    <span class="code-snip">
+                        class ClassName { <br>
+                        <span class="style-text">// fields </span><br>
+                        <span class="style-text">// methods </span><br>
+                        }<br>
+                    </span>
+                </p>
+                <h5 id="#" class="level2"><b>Methods</b></h5>
+                <p class="peragraph">A method is a block of code which only runs when it is called.
+                    You can pass data, known as parameters, into a method. Methods are used to perform
+                    certain actions, and they are also known as functions.
+                    <span class="code-snip">
+                        modifier static returnType nameOfMethod (parameter1, parameter2, ...) {<br>
+                        <span class="style-text">// method body</span><br>
+                        }<br>
+                    </span>
+                </p>
+                <h5 id="#" class="level2"><b>Constructor</b></h5>
+                <p class="peragraph">A constructor in Java is a special method that is used to initialize objects. The
+                    constructor is called when an object of a class is created.
+                    <span class="code-snip">
+                        class Test { <br>
+                        Test() { <br>
+                        <span class="style-text">// constructor body</span><br>
+                        } <br>
+                        } <br>
+                    </span>
+                </p>
+                <h5 id="#" class="level2"><b>Objects</b></h5>
+                <p class="peragraph">An object is any entity that has a state and behavior.
+                    A class is a blueprint for the object.
+                    <span class="code-snip">
+                        class Bicycle { <br>
+
+                        <span class="style-text">// state or field </span> <br>
+                        private int gear = 5; <br>
+
+                        <span class="style-text">// behavior or method</span> <br>
+                        public void braking() { <br>
+                        System.out.println("Working of Braking"); <br>
+                        } <br>
+                        } <br><br>
+
+                        <span class="style-text">// Object Syntax </span> <br>
+                        className object = new className(); <br>
+
+                        <span class="style-text">// for Bicycle class</span> <br>
+                        Bicycle sportsBicycle = new Bicycle(); <br>
+                        Bicycle touringBicycle = new Bicycle(); <br>
+                    </span>
+                </p>
+                <hr>
+                <h4 id="#" class="level1"><b>Java Member</b></h4>
+                <h5 id="#" class="level2"><b>Class member</b></h5>
+                <p class="peragraph">The components of a class, such as its instance variables or methods are called the
+                    members of a class or class members. A class member is declared with an access modifier to specify
+                    how it is accessed by the other classes in Java. Class members are the <b> static </b> members. <br>
+                </p>
+                <h5 id="#" class="level2"><b>Object Member</b></h5>
+                <p class="peragraph">Everything in Java is within classes and objects. Java objects hold a state, state
+                    are variables which are saved together within an object, we call them fields or member
+                    variables.<br>
+                </p>
+                <hr>
+                <h4 id="#" class="level1"><b>Access Modifier</b></h4>
+                <p class="peragraph">The following <b> table </b>shows the <b> access to members </b> permitted by each
+                    modifier.<br>
+                </p>
+                <table class="table table-bordered" id="table1">
+                    <thead>
+                        <tr>
+                            <th scope="col">Modifier</th>
+                            <th scope="col">Class</th>
+                            <th scope="col">Package</th>
+                            <th scope="col">Subclass</th>
+                            <th scope="col">World</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">public</th>
+                            <td>Y</td>
+                            <td>Y</td>
+                            <td>Y</td>
+                            <td>Y</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">protected</th>
+                            <td>Y</td>
+                            <td>Y</td>
+                            <td>Y</td>
+                            <td>N</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">no modifier(Default)</th>
+                            <td>Y</td>
+                            <td>Y</td>
+                            <td>N</td>
+                            <td>N</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">private</th>
+                            <td>Y</td>
+                            <td>N</td>
+                            <td>N</td>
+                            <td>N</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr>
+                <h4 id="#" class="level1"><b>Encapsulation</b></h4>
+                <p class="peragraph">In Java, a class encapsulates the fields, which hold the state of an object, and
+                    the methods, which define the actions of the object. Encapsulation enables you to write reusable
+                    programs. It also enables you to restrict access only to those features of an object that are
+                    declared public. All other fields and methods are private and can be used for internal object
+                    processing. <br>
+                    <span class="code-snip">class Person { <br>
+                        <span class="style-text">// private field</span> <br>
+                        private int age; <br>
+                        <span class="style-text"> // getter method </span> <br>
+                        public int getAge() { <br>
+                        return age; <br>
+                        } <br>
+                        <span class="style-text"> // setter method </span><br>
+                        public void setAge(int age) { <br>
+                        this.age = age; <br>
+                        } <br>
+                        } <br><br>
+                        class Main { <br>
+                        public static void main(String[] args) { <br>
+                        <span class="style-text">// create an object of Person </span><br>
+                        Person p1 = new Person(); <br>
+                        <span class="style-text">// change age using setter </span><br>
+                        p1.setAge(24); <br>
+                        <span class="style-text">// access age using getter </span><br>
+                        System.out.println("My age is " + p1.getAge()); <br>
+                        } <br>
+                        } <br>
+                    </span>
+                </p>
+                <hr>
+                <h4 id="#" class="level1"><b>Inheritance</b></h4>
+                <p class="peragraph">Inheritance can be defined as the process where one class acquires the properties
+                    (methods and fields) of another.
+                    <br>The class which inherits the properties of other is known as subclass (derived class, child
+                    class) and the class whose properties are inherited is known as superclass (base class, parent
+                    class). <br>
+                </p>
+                <h5 id="#" class="level2"><b>Parent /Super Class</b></h5>
+                <p class="peragraph">A base class is a class in an object-oriented programming language, from which
+                    other classes are derived. It facilitates the creation of other classes that can reuse the code
+                    implicitly inherited from the base class (except constructors and destructors). <br>
+                </p>
+                <h5 id="#" class="level2"><b>Child/SubClass</b></h5>
+                <p class="peragraph">A derived class is a Java class that inherits properties from its super class. <br>
+                    <span class="code-snip">class Animal { <br>
+                        <span class="style-text">// methods and fields </span><br>
+                        } <br>
+                        <br>
+                        <span class="style-text">// use of extends keyword </span><br>
+                        <span class="style-text">// to perform inheritance </span><br>
+                        class Dog extends Animal { <br>
+                        <span class="style-text">// methods and fields of Animal </span><br>
+                        <span class="style-text">// methods and fields of Dog </span><br>
+                        } <br>
+                    </span>
+                </p>
+                <h6 class="level3"><b>Diamond Problem:</b></h6>
+                <p class="peragraph">It is an ambiguity that can rise as a consequence of allowing multiple inheritance.
+                    It is a serious problem for other OPPs languages. It is referred to as the diamond Problem.<br>
+                </p>
+                <img class="content-img" src="Images/content-img/Diamond-Problem.png" alt="Diamond Problem">
+                <p class="peragraph"> <b> Solution of diamond problem:</b> Interface Implementation. <br>
+                    An implementation of an interface is a Java program that references the interface using the
+                    implements keyword. The program is required to provide method logic for all non-default methods.
+                    <br>
+                </p>
+                <hr>
+                <h4 id="#" class="level1"><b>Abstraction</b></h4>
+                <p class="peragraph">Abstraction is a process of hiding the implementation details from the user, only
+                    the functionality will be provided to the user. In other words, the user will have the information
+                    on what the object does instead of how it does it.
+                    In Java, abstraction is achieved using <b> Abstract classes </b> and <b> interfaces.</b>
+                    <br>
+                </p>
+                <h5 id="#" class="level2"><b>Abstract classes</b></h5>
+                <span class="code-snip">
+                    abstract class Shape{ <br>
+                    abstract void calculateArea(); <br>
+                    } <br> <br>
+                    class xyz extends Shape{ <br>
+                    <span class="style-text"> @Override </span> <br>
+                    void calculateArea() <br>
+                    { <br>
+                    System.out.println("Area of Shape"); <br>
+                    } <br><br>
+                    public static void main(String args[]){ <br>
+                    Shape obj = new xyz(); <br>
+                    obj.calculateArea();<br>
+                    } <br>
+                    }<br>
+                </span>
+                <h5 id="#" class="level2"><b>Interface</b></h5>
+                <p class="peragraph">An interface is a completely <b>"abstract class" </b> that is used to group related
+                    methods
+                    with empty bodies.
+                    <br>
+                    To access the interface methods, the interface must be <b> "implemented"</b> (kinda like inherited)
+                    by
+                    another class with the implements keyword (instead of extends). <br>
+                    <span class="code-snip">
+                        <span class="style-text">// interface </span><br>
+                        interface Animal { <br>
+                        public void animalSound(); <span class="style-text">// interface method (does not have a body)
+                        </span> <br>
+                        public void run(); <span class="style-text"> // interface method (does not have a body) </span>
+                        <br>
+                        } <br> <br>
+                        class Dog implements Animal { <br>
+                        <span class="style-text"> // The body of animalSound() is provided here </span><br>
+                        <span class="style-text"> // The body of run() is provided here </span><br>
+                        } <br>
+                    </span>
+                </p>
+                <h4 id="#" class="level1"><b>Polymorphism</b></h4>
+                <p class="peragraph">
+                    Polymorphism is a feature of object oriented programming. It is a Greek word where Poly means
+                    multiple and morphs means form. It is the ability of an object to take multiple forms. <br>
+                    Polymorphism in JAVA can be defined as a task that can perform a single action in different ways.
+                    Polymorphism occurs when there is inheritance, i.e. there are many classes that are related to each
+                    other. It allows one to do multiple implementations by defining one interface. <br> <br>
+                    <b> There are two types of Polymorphism:</b>
+                </p>
+                <ul class="random-li">
+                    <li>Run time/dynamic polymorphism (example: overriding)</li>
+                    <li>Compile time/ static polymorphism (example: overloading)</li>
+                </ul>
+                <h5 id="#" class="level2"><b>Overloading</b></h5>
+                <p class="peragraph">
+                    Method overloading is called compile time polymorphism because the decision of which method should
+                    be called is decided in the compile time. Method overloading is done by changing the number of
+                    arguments of the same method or by changing the data types of the arguments of the same method. <br>
+                    <span class="code-snip">
+                        class DisplayOverloading{<br>
+                        public void disp(char c){<br>
+                        System.out.println(c);<br>
+                        }<br>
+                        public void disp(char c, int num){<br>
+                        System.out.println(c + " "+num);<br>
+                        }<br>
+                        }
+                        <br>
+                        <br>
+                        class Sample{ <br>
+                        public static void main(String args[]){ <br>
+                        DisplayOverloading obj = new DisplayOverloading(); <br>
+                        obj.disp('a'); <br>
+                        obj.disp('a',10); <br>
+                        } <br>
+                        } <br>
+                    </span>
+                </p>
+                <h5 id="#" class="level2"><b>Overriding</b></h5>
+                <p class="peragraph">
+                    If a subclass (child class) has the same method as declared in the parent class, it is known as
+                    method overriding in Java. In other words, if a subclass provides the specific implementation of the
+                    method that has been declared by one of its parent classes, it is known as method overriding. It is
+                    used for runtime polymorphism. <br><br>
+                    Static method cannot be overridden. Because the static method belongs to a specific class area
+                    whereas the instance method is bound to an object. <br>
+                    <br>
+                    <span class="code-snip">
+                        class Human{ <br>
+                        <span class="style-text">//Overridden method</span> <br>
+                        public void eat(){<br>
+                        System.out.println("Human is eating"); <br>
+                        }<br>
+                        }<br> <br>
+                        class Boy extends Human{<br>
+                        <span class="style-text">//Overriding method</span><br>
+                        public void eat(){<br>
+                        System.out.println("Boy is eating");<br>
+                        }<br><br>
+                        public static void main( String args[]) {<br>
+                        Boy obj = new Boy();<br>
+                        <span class="style-text">//This will call the child class version of eat()</span><br>
+                        obj.eat();<br>
+                        }<br>
+                        }<br>
+                    </span>
+                </p>
+                <h4 id="#" class="level1"><b>What is a final class in Java? <br>
+                        What happens to string after final classification?</b></h4>
+                <p class="peragraph">
+                    When declaring a class with the final keyword, It enables JVM to make assumptions & optimization. As
+                    final is the reserved keyword of java, and once added to any class, it means reference for that
+                    class is not allowed to be changed. The compiler will check if any referencing is taking place again
+                    then it will produce an error. <br> <br>
+
+                    If we declare any class final & instantiate any final class, then it becomes created in the pool
+                    area, objects created in the pool have a special feature of immutability.
+                    Some of the best examples of immutable java classes are String, Integer, Double, etc. <br>
+                    <br>
+                </p>
+
+
+
+                <div id="footer" class="container d-flex align-items-center justify-content-between">
+                    <a href="basic.html" class="btn btn-outline-info"><i class="bi bi-chevron-double-left"></i>  Previous</a>
+                    <a href="lamda.html" class="btn btn-outline-info">Next  <i class="bi bi-chevron-double-right"></i></a>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+
+
+</body>
+
+</html>

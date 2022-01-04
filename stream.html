@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stream API</title>
+
+    <link href="Images/favicon.png" rel="icon">
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <!-- <a href="index.html" class="logo"><img src="Images/logo.png" alt="" class="img-fluid"></a> -->
+            <a href="index.html" class="logo">Java Reading Materials</a>
+
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img id="java-icon" src="Images/java-icon.png" alt="" class="img-fluid">Java
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="index.html">Java Standard Edition </a>
+                          <a class="dropdown-item" href="enterprise.html">Java Enterprise Edition </a>
+                          <a class="dropdown-item" href="#">Java Micro Edition </a>
+                        </div>
+                      </li>
+                    <li></i><a class="nav-link active" href="index.html"> Database</a></li>
+                </ul>
+                <i class="bi mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav leftCol" id="sidenavigation">
+                <nav class="nav flex-column">
+                    <h4 class="sidenav-title"><b><a href="index.html">Standard Edition</a></b></h4>
+                    <ul class="sidenav-title02">
+                        <li><a href="index.html">Java Basics</a></li>
+                        <li><a href="oop.html">OOP</a></li>
+                        <li><a href="lamda.html">Lambda Expression</a></li>
+                        <li><a href="generics.html">Generics</a></li>
+                        <li><a href="collection.html">Collections API</a></li>
+                        <li><a href="io.html">Java I/O Streams</a></li>
+                        <li><a href="thread.html">Threading</a></li>
+                        <li><a href="socket.html">Socket</a></li>
+                        <li><a href="stream.html">Stream API</a></li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#"><b>Stream</b></a></span>
+                            <ul>
+                                <li><a href="#StreamPipeline">StreamPipeline</a></li>
+                                <li><a href="#Intermediate">Intermediate</a></li>
+                                <li><a href="#TerminalOperations">Terminal Operations</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#CreatingStream"><b>Creating Stream</b></a></span>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#intermediate"><b>Intermediate</b></a></span>
+                            <ul>
+                                <li><a href="#filter">Stream.filter()</a></li>
+                                <li><a href="#map">Stream.map()</a></li>
+                                <li><a href="#sorted">Stream.sorted()</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#terminal"><b>Terminal</b></a></span>
+                            <ul>
+                                <li><a href="#forEach">Stream.forEach()</a></li>
+                                <li><a href="#collect">Stream.collect()</a></li>
+                                <li><a href="#count">Stream.count()</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="sidenav-title02">
+                        <li><a href="reflection.html">Java Reflection</a></li>
+                    </ul>
+                    <h4 class="sidenav-title"><b><a href="webserver.html">Enterprise Edition</a></b></h4>
+                    <h4 class="sidenav-title"><b><a href="index.html"> Micro Edition</a></b></h4>
+
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                </nav>
+            </div>
+
+            <div class="col-sm-9 rightCol" id="contentbody">
+                <h3 class="page-title"><b>Stream</b></h3>
+                <hr>
+                <h4 id="Socket" class="level1"><b>Stream</b></h4>
+                <p class="peragraph">
+                    A stream in Java is a sequence of data. It helps us in performing various operations with the data.
+                    This data can be obtained from several sources such as Collections, Arrays. <br>
+                    Stream API is basically bulk operations and process the objects of collection. A stream does not
+                    store data and, in that sense, is not a data structure. It also never modifies the underlying data
+                    source. <br> <br>
+                    Stream is conceptually a pipeline, in which elements are computed on demand. Stream reduce the code
+                    length.
+                    <br>
+                </p>
+                <img class="content-img" src="Images/content-img/java-streams.png" alt="stream operation">
+                <h5 id="StreamPipeline" class="level2"><b>Stream Pipeline</b></h5>
+                <p class="peragraph">
+                    A stream pipeline is nothing but combined intermediate and terminal operations. <br>
+                    Many stream operations return a stream themselves. This allows operations to be chained to form a
+                    larger pipeline. <br>
+                    Stream operations are divided into <b> intermediate </b> and <b> terminal operations,</b> and are
+                    combined to form
+                    stream pipelines.
+                </p>
+                <h5 id="Intermediate" class="level2"><b>Intermediate</b></h5>
+                <p class="peragraph">
+                    These methods usually accept functional interfaces as parameters and always return a new stream.
+                    <br>
+                    Functional interface parameter!! that means, We can use lambda expressions here. <br>
+                    Using lambda expressions which can participate an 'internal iteration'. <br>
+                    <b>Ex. Filtering, Sorting, Type Conversion, Mapping etc.</b>
+                </p>
+                <h5 id="TerminalOperations" class="level2"><b>Terminal Operations</b></h5>
+                <p class="peragraph">
+                    A terminal stream operation is an operation that starts the internal iteration of the elements,
+                    calls all the listeners, and returns a result. <br>
+                    <b>Ex. Count, Sum, Collecting a collection etc.</b>
+                </p>
+                <hr>
+                <h4 id="CreatingStream" class="level1"><b>Creating Stream</b></h4>
+                <p class="peragraph">
+                    There are several ways to create a Stream in Java. <br>
+                    <b>Stream from a Collection using stream()</b>
+                    <span class="code-snip">
+                        List&lt;String&gt; list = ArrayList&lt;String&gt;(); <br>
+                        list.add("AAA"); <br>
+                        list.add("BBB"); <br>
+                        list.add("CCC"); <br> <br>
+                        Stream&lt;String&gt; streamofStrings = list.stream(); <br>
+                        <span class="style-text">// creating a sequential stream (used most of the time)</span>
+                    </span>
+                    <b>Stream from an Array using Arrays.stream()</b>
+                    <span class="code-snip">
+                        String[] arr= new String[] { "a", "b", "c" };
+                        Stream&lt;String&gt; streamOfStrings = Arrays.stream(arr);
+                    </span>
+                    <b>Creating an Empty Stream using Stream.empty()</b>
+                    <span class="code-snip">
+                        Stream&lt;String&gt; emptyStream = Stream.empty();
+                    </span>
+                </p>
+                <h4 id="intermediate" class="level1"><b>Intermediate</b></h4>
+                <p class="peragraph">
+                    Intermediate operations return the stream itself so you can chain multiple methods calls in a row.
+                    These methods usually accept functional interfaces as parameters and always return a new stream.<br>
+                </p>
+                <h5 id="filter" class="level2"><b>Stream.filter() Method</b></h5>
+                <p class="peragraph">
+                    The filter() method accepts a Predicate to filter all elements of the stream. This operation is
+                    intermediate which enables us to call another stream operation (e.g. forEach()) on the result.
+                    <span class="code-snip">
+                        List&lt;String&gt; memberNames = new ArrayList&lt;&gt;(); <br>
+                        memberNames.add("Amitabh"); <br>
+                        memberNames.add("Shekhar"); <br>
+                        memberNames.add("Aman"); <br><br>
+                        memberNames.stream().filter((s) -> s.startsWith("A")) <br>
+                        .forEach(System.out::println); <br><br>
+                        <span class="style-text">
+                            Output: <br>
+                            Amitabh <br>
+                            Aman
+                        </span>
+                    </span>
+                </p>
+                <h5 id="map" class="level2"><b>Stream.map() Method</b></h5>
+                <p class="peragraph">
+                    The map() intermediate operation converts each element in the stream into another object via the
+                    given function.
+                    <span class="code-snip">
+                        List&lt;String&gt; memberNames = new ArrayList&lt;&gt;(); <br>
+                        memberNames.add("Amitabh"); <br>
+                        memberNames.add("Shekhar"); <br>
+                        memberNames.add("Aman"); <br><br>
+                        memberNames.stream().filter((s) -> s.startsWith("A")) <br>
+                        .map(String::toUpperCase) <br>
+                        .forEach(System.out::println); <br><br>
+                        <span class="style-text">
+                            Output: <br>
+                            AMITABH <br>
+                            AMAN
+                        </span>
+                    </span>
+                </p>
+                <h5 id="sorted" class="level2"><b>Stream.sorted() Method</b></h5>
+                <p class="peragraph">
+                    The sorted() method is an intermediate operation that returns a sorted view of the stream. The
+                    elements in the stream are sorted in natural order unless we pass a custom Comparator.
+                    <span class="code-snip">
+                        List&lt;String&gt; memberNames = new ArrayList&lt;&gt;(); <br>
+                        memberNames.add("Amitabh"); <br>
+                        memberNames.add("Shekhar"); <br>
+                        memberNames.add("Aman"); <br><br>
+                        memberNames.stream().sorted() <br>
+                        .map(String::toUpperCase) <br>
+                        .forEach(System.out::println); <br><br>
+                        <span class="style-text">
+                            Output: <br>
+                            Aman <br>
+                            Amitabh <br>
+                            Shekhar
+                        </span>
+                    </span>
+                </p>
+                <h4 id="terminal" class="level1"><b>Terminal operations</b></h4>
+                <p class="peragraph">
+                    Terminal operations return a result of a certain type after processing all the stream elements.
+                    Once the terminal operation is invoked on a Stream, the iteration of the Stream and any of the
+                    chained streams will get started. Once the iteration is done, the result of the terminal operation
+                    is returned. <br><br>
+                </p>
+                <h5 id="" class="level2"><b>Collection</b></h5>
+                <p class="peragraph">                <span class="code-snip">
+                    List&lt;String&gt; memberNames = new ArrayList&lt;&gt;(); <br>
+                    memberNames.add("Amitabh"); <br>
+                    memberNames.add("Shekhar"); <br>
+                    memberNames.add("Aman"); <br>
+                </span>
+                </p>
+                <h5 id="forEach" class="level2"><b>Stream.forEach() Method</b></h5>
+                <p class="peragraph">
+                    The forEach() method helps in iterating over all elements of a stream and perform some operation on
+                    each of them. The operation to be performed is passed as the lambda expression.
+                    <span class="code-snip">
+                        memberNames.forEach(System.out::println); <br> <br>
+                        <span class="style-text">
+                            Output: <br>
+                            Shekhar <br>
+                            Amitabh <br>
+                            Aman
+                        </span>
+                    </span>
+                </p>
+                <h5 id="collect" class="level2"><b>Stream.collect() method</b></h5>
+                <p class="peragraph">
+                    The collect() method is used to receive elements from a steam and store them in a collection.
+                    <span class="code-snip">
+                        List&lt;String&gt; memNamesInUppercase = memberNames.stream().sorted() <br>
+                        .map(String::toUpperCase) <br>
+                        .collect(Collectors.toList()); <br> <br>
+                        System.out.print(memNamesInUppercase); <br> <br>
+                        <span class="style-text">
+                            [AMAN, AMITABH, SHEKHAR]
+                        </span>
+                    </span>
+                </p>
+                <h5 id="count" class="level2"><b>Stream.count() method</b></h5>
+                <p class="peragraph">
+                    The count() is a terminal operation returning the number of elements in the stream as a long value.
+                    <span class="code-snip">
+                        long totalMatched = memberNames.stream() <br>
+                        .filter((s) -> s.startsWith("A")) <br>
+                        .count(); <br><br>
+
+                        System.out.println(totalMatched); <br> <br>
+                        <span class="style-text">
+                            Output: 2
+                        </span>
+                    </span>
+                </p>
+
+
+
+
+
+                <div id="footer" class="container d-flex align-items-center justify-content-between">
+                    <a href="socket.html" class="btn btn-outline-info"><i class="bi bi-chevron-double-left"></i>  Previous</a>
+                    <a href="reflection.html" class="btn btn-outline-info">Next  <i class="bi bi-chevron-double-right"></i></a>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

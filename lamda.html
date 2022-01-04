@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lambda Expression</title>
+
+    <link href="Images/favicon.png" rel="icon">
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <!-- <a href="index.html" class="logo"><img src="Images/logo.png" alt="" class="img-fluid"></a> -->
+            <a href="index.html" class="logo">Java Reading Materials</a>
+
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img id="java-icon" src="Images/java-icon.png" alt="" class="img-fluid">Java
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="index.html">Java Standard Edition </a>
+                          <a class="dropdown-item" href="enterprise.html">Java Enterprise Edition </a>
+                          <a class="dropdown-item" href="#">Java Micro Edition </a>
+                        </div>
+                      </li>
+                    <li></i><a class="nav-link active" href="index.html"> Database</a></li>
+                </ul>
+                <i class="bi mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav leftCol" id="sidenavigation">
+                <nav class="nav flex-column">
+                    <h4 class="sidenav-title"><b><a href="index.html">Standard Edition</a></b></h4>
+                    <ul class="sidenav-title02">
+                        <li><a href="index.html">Java Basics</a></li>
+                        <li><a href="oop.html">OOP</a></li>
+                        <li><a href="lamda.html">Lambda Expression</a></li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#lambda-expression"><b>Lambda Expression</b></a></span>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#functional-interface"><b>Functional interface</b></a></span>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><span><a href="#lambda-expression-example"><b>Lambda Expression Examples</b></a></span>
+                        </li>
+                    </ul>
+                    <ul class="sidenav-title02">
+                        <li><a href="generics.html">Generics</a></li>
+                        <li><a href="collection.html">Collections</a></li>
+                        <li><a href="io.html">Java I/O Streams</a></li>
+                        <li><a href="thread.html">Threading</a></li>
+                        <li><a href="socket.html">Socket</a></li>
+                        <li><a href="stream.html">Stream API</a></li>
+                        <li><a href="reflection.html">Java Reflection</a></li>
+                    </ul>
+                    <h4 class="sidenav-title"><b><a href="webserver.html">Enterprise Edition</a></b></h4>
+                    <h4 class="sidenav-title"><b><a href="index.html"> Micro Edition</a></b></h4>
+
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>
+                </nav>
+            </div>
+
+            <div class="col-sm-9 rightCol" id="contentbody">
+                <h3 class="page-title"><b>Lambda Expression</b></h3>
+                <hr>
+                <h4 id="lambda-expression" class="level1"><b>Lambda Expression</b></h4>
+                <p class="peragraph">
+                    Lambda expressions basically express instances of functional interfaces, lambda expressions
+                    implement the only abstract function and therefore implement functional interfaces<br>
+                </p>
+                <ul class="random-li">
+                    <li>Enables us to treat functionality as a method argument, or code as data.</li>
+                    <li>A function that can be created without belonging to any class.</li>
+                    <li>A lambda expression can be passed around as if it was an object and executed on demand.</li>
+                </ul>
+                <hr>
+                <h4 id="functional-interface" class="level1"><b>Functional Interface</b></h4>
+                <p class="peragraph">
+                    A functional interface is an interface that contains only one abstract method. They can have only
+                    one functionality to exhibit. From Java 8 onwards, lambda expressions can be used to represent the
+                    instance of a functional interface. A functional interface can have any number of default methods.
+                    <b> Runnable, ActionListener, Comparable </b>are some of the examples of functional interfaces. <br>
+                    Before Java 8, we had to create anonymous inner class objects or implement these interfaces.
+                    <br>
+                    <br>
+                    <i> <b> // Java program to demonstrate functional interface </b></i>
+                    <span class="code-snip">
+                        <span class="style-text">@FunctionalInterface </span><br>
+                        public interface MyFunctionalInterface { <br>
+                        public void execute(); <br>
+                        } <br>
+                    </span>
+                    The above counts as a functional interface in Java because it only contains a single method, and
+                    that method has no implementation. Normally a Java interface does not contain implementations of the
+                    methods it declares, but it can contain implementations in <b> default methods,</b> or in <b> static
+                        methods.</b>
+                    Below is another example of a Java functional interface, with implementations of some of the
+                    methods:
+                    <span class="code-snip">
+                        <span class="style-text">@FunctionalInterface </span><br>
+                        public interface MyFunctionalInterface2{ <br>
+                        public void execute(); <br><br>
+                        public default void print(String text) { <br>
+                        System.out.println(text);<br>
+                        }<br><br>
+
+                        public static void print(String text, PrintWriter writer) throws IOException { <br>
+                        writer.write(text); <br>
+                        } <br>
+                        } <br>
+                    </span>
+                </p>
+                <h4 id="lambda-expression-example" class="level1"><b>Lambda Expression Examples</b></h4>
+                <p class="peragraph"><i> <b> Java program to demonstrate lambda expressions to implement a user defined
+                            functional interface.</i></b>
+                    <br>
+                    <span class="code-snip">
+                        <span class="style-text">// A sample functional interface </span> <br>
+                        <span class="style-text">@FunctionalInterface </span><br>
+                        interface FuncInterface{<br>
+                        <span class="style-text">// An abstract function</span> <br>
+                        void abstractFun(int x); <br>
+                        } <br> <br>
+
+                        class Test{ <br>
+                        public static void main(String args[]){ <br> <br>
+                        <span class="style-text">// lambda expression to implement above <br>
+                            // functional interface. This interface <br>
+                            // by default implements abstractFun()<br></span>
+                        FuncInterface fobj = (int x)->System.out.println(2*x); <br> <br>
+
+                        <span class="style-text">// This calls the above lambda expression and prints 10.</span> <br>
+                        fobj.abstractFun(5); <br>
+                        } <br>
+                        } <br>
+                    </span>
+                </p>
+
+
+
+
+                <div id="footer" class="container d-flex align-items-center justify-content-between">
+                    <a href="oop.html" class="btn btn-outline-info"><i class="bi bi-chevron-double-left"></i>  Previous</a>
+                    <a href="generics.html" class="btn btn-outline-info">Next  <i class="bi bi-chevron-double-right"></i></a>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
