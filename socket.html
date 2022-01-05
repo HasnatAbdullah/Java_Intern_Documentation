@@ -14,6 +14,9 @@
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
@@ -52,7 +55,7 @@
     <div class="container-fluid">
         <div class="row content">
             <div class="col-sm-3 sidenav leftCol" id="sidenavigation">
-                <nav class="nav flex-column">
+                <nav id="navSelector" class="nav flex-column">
                     <h4 class="sidenav-title"><b><a href="index.html">Standard Edition</a></b></h4>
                     <ul class="sidenav-title02">
                         <li><a href="index.html">Java Basics</a></li>
@@ -65,22 +68,32 @@
                         <li><a href="socket.html">Socket</a></li>
                     </ul>
                     <ul>
-                        <li><span><a href="#Socket"><b>Socket</b></a></span>
-                            <ul>
-                                <li><a href="#Protocol">Protocol</a></li>
+                        <li class="select selected" data-toggle="collapse" data-target="#a"><span><a href="#Socket"><b>Socket <i class="bi bi-arrow-down-circle"></i> </b></a></span>
+                            <ul id="a" class=" collapse">
+                                <li class="no-collapsable"><a href="#Protocol">Protocol</a></li>
                             </ul>
                         </li>
                     </ul>
                     <ul>
-                        <li><span><a href="#JavaSocket"><b>Java Socket Programming</b></a></span>
-                            <ul>
-                                <li><a href="#ClientSocket">Client Socket</a></li>
-                                <li><a href="#ServerSocket">Server Socket</a></li>
+                        <li class="select" data-toggle="collapse" data-target="#b"><span><a href="#JavaSocket"><b>Java Socket Programming <i class="bi bi-arrow-down-circle"></i> </b></a></span>
+                            <ul id="b" class=" collapse">
+                                <li class="no-collapsable"><a href="#ClientSocket">Client Socket </a></li>
+
+                                <li class="no-collapsable"><a href="#ServerSocket">Server Socket</a></li>
                             </ul>
                         </li>
                     </ul>
                     <ul>
-                        <li><span><a href="#ExampleofJavaSocket"><b>Example of Java Socket Programming</b></a></span>
+                        <li class="select"><span><a href="#example"><b>Example of Java Socket Programming</b></a></span>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="select" data-toggle="collapse" data-target="#b"><span><a href="#chat-application"><b>A chatting application using socket <i class="bi bi-arrow-down-circle"></i> </b></a></span>
+                            <ul id="b" class=" collapse">
+                                <li class="no-collapsable"><a href="#util ">Util package </a></li>
+                                <li class="no-collapsable"><a href="#server">Server package</a></li>
+                                <li class="no-collapsable"><a href="#client">Client package</a></li>
+                            </ul>
                         </li>
                     </ul>
                     <ul class="sidenav-title02">
@@ -140,7 +153,7 @@
                         Socket s=ss.accept();
                     </span>
                 </p>
-                <h4 id="ExampleofJavaSocket" class="level1"><b>Example of Java Socket Programming</b></h4>
+                <h4 id="example" class="level1"><b>Example of Java Socket Programming</b></h4>
                 <p class="peragraph">
                     <b>Server Side</b>
                     <span class="code-snip">
@@ -180,6 +193,300 @@
 
 
 
+                <h5 id="chat-application" class="level2"><b>A chatting application using socket</b></h5>
+                <p class="peragraph">
+                    There needs to be three distinct packages in this apps source.
+                    <li>util</li>
+                    <li>server</li>
+                    <li>client</li>
+                    <br>
+                    
+                <h4 id="util" class="level1"><b>Util package</b></h4>    
+                    The <b>util</b> package will have the following classes,
+                    <br>
+                    <b>config.java</b>
+                    <br>
+                    <span class="code-snip">
+                        package util;<br>
+                        <br>
+                        public class config {<br>
+                            <br>
+                            public static String host = "127.0.0.1";<br>
+                            public static Integer port = 4045;<br>
+                        }<br>
+                        
+
+
+                    </span>
+                    <br>
+                    <br>
+                    <b>SocketUtil.java</b>
+                    <br>
+                    <span class="code-snip">
+                        package util;<br>
+
+                        import java.io.IOException;<br>
+                        import java.io.ObjectInputStream;<br>
+                        import java.io.ObjectOutputStream;<br>
+                        import java.net.Socket;<br>
+                        <br>
+                        public class SocketUtil {<br>
+                            <br>
+                            Socket socket;<br>
+                            ObjectInputStream objectInputStream;<br>
+                            ObjectOutputStream objectOutputStream;<br>
+                            <br>
+                            public SocketUtil(Socket socket) throws Exception{<br>
+                                this.socket = socket;<br>
+                                this.objectOutputStream = new ObjectOutputStream(socket.getOutputStream());<br>
+                                this.objectInputStream = new ObjectInputStream(socket.getInputStream());<br>
+                            }<br>
+                            <br>
+                            public Object readSocket() throws Exception{<br>
+                                return this.objectInputStream.readObject();<br>
+                            }<br>
+                            <br>
+                            public void writeSocket(Object object) throws Exception{<br>
+                                this.objectOutputStream.writeObject(object);<br>
+                            }<br>
+                            <br>
+                            public void closeSocket() throws IOException {<br>
+                                this.objectOutputStream.close();<br>
+                                this.objectInputStream.close();<br>
+                            }<br>
+                        
+                        }<br>
+                        
+
+
+                    </span>
+                    <br>
+                    <h4 id="server" class="level1"><b>Server package</b></h4>    
+                    The <b>server</b> package will have the following classes,
+                    <br>
+                    <b>server.java</b>
+                    <br>
+                    <span class="code-snip">
+                        package server;<br>
+
+                        import util.SocketUtil;<br>
+                        import util.config;<br>
+                        
+                        import java.io.IOException;<br>
+                        import java.net.ServerSocket;<br>
+                        import java.net.Socket;<br>
+                        <br>
+                        public class server {<br>
+                            <br>
+                            public static void main(String[] args) throws Exception {<br>
+                                <br>
+                                ServerSocket serverSocket = new ServerSocket(config.port);<br>
+                                System.out.println("server has been started at port: " + config.port);<br>
+                                while (true){<br>
+                                    Socket socket = serverSocket.accept();<br>
+                                    SocketUtil socketUtil = new SocketUtil(socket);<br>
+                                    new ReadThreadServer(socketUtil);<br>
+                                    new WriteThreadServer(socketUtil);<br>
+                        
+                                }<br>
+                            }<br>
+                        }<br>
+                        
+
+
+                    </span>
+                    <br>
+                    <br>
+                    <b>ReadThreadServer.java</b>
+                    <br>
+                    <span class="code-snip">
+                        package server;<br>
+
+                        import util.SocketUtil;<br>
+                        <br>
+                        public class ReadThreadServer implements Runnable {<br>
+                            <br>
+                            Thread t;<br>
+                            SocketUtil socketUtil;<br>
+                            <br>
+                            public ReadThreadServer(SocketUtil socketUtil){<br>
+                                this.socketUtil = socketUtil;<br>
+                                this.t = new Thread(this);<br>
+                                t.start();<br>
+                            }<br>
+                            <br>
+                            @Override<br>
+                            public void run(){<br>
+                                while (true){<br>
+                        //            System.out.println("Client: ");<br>
+                                    try {<br>
+                                        System.out.println("Client: " + this.socketUtil.readSocket());<br>
+                                    } catch (Exception e) {<br>
+                                        e.printStackTrace();<br>
+                                    }<br>
+                                }<br>
+                            }<br>
+                        }<br>
+                        
+
+
+                    </span>
+                    <br>
+                    <br>
+                    <b>WriteThreadServer.java</b>
+                    <br>
+                    <span class="code-snip">
+                        package server;<br>
+
+                        import util.SocketUtil;<br>
+                        
+                        import java.util.Scanner;<br>
+                        <br>
+                        public class WriteThreadServer implements Runnable {<br>
+                            <br>
+                            SocketUtil socketUtil;<br>
+                            Thread t;<br>
+                            <br>
+                            public WriteThreadServer(SocketUtil socketUtil){<br>
+                                this.socketUtil = socketUtil;<br>
+                                this.t = new Thread(this);<br>
+                                t.start();<br>
+                            }<br>
+                            <br>
+                            @Override<br>
+                            public void run() {<br>
+                                while (true){<br>
+                                    System.out.println("Enter message for the client: ");<br>
+                                    Scanner scanner = new Scanner(System.in);<br>
+                                    String str = scanner.nextLine();<br>
+                                    try {<br>
+                                        this.socketUtil.writeSocket(str);<br>
+                                    }<br>
+                                    catch (Exception e){<br>
+                                        e.printStackTrace();<br>
+                                    }<br>
+                                }<br>
+                            }<br>
+                        }<br>
+                        
+
+
+                    </span>
+                    <br>
+                    <h4 id="client" class="level1"><b>Client package</b></h4>    
+                    The <b>client</b> package will have the following classes,
+
+                    <br>
+                    <b>client.java</b>
+                    <br>
+                    <span class="code-snip">
+                        package client;<br>
+
+                        import util.SocketUtil;<br>
+                        import util.config;<br>
+                        
+                        import java.io.IOException;<br>
+                        import java.net.Socket;<br>
+                        <br>
+                        public class client {<br>
+                            <br>
+                            public static void main(String[] args) throws Exception {<br>
+                                <br>
+                                Socket socket = new Socket(config.host, config.port);<br>
+                                SocketUtil socketUtil = new SocketUtil(socket);<br>
+                                new ReadThreadClient(socketUtil);<br>
+                                new WriteThreadClient(socketUtil);<br>
+                            }<br>
+                        
+                        }<br>
+                        
+
+
+                    </span>
+                    <br>
+                    <br>
+                    <b>ReadThreadClient.java</b>
+                    <br>
+                    <span class="code-snip">
+                        package client;<br>
+
+                        import util.SocketUtil;<br>
+                        <br>
+                        public class ReadThreadClient implements Runnable {<br>
+                            <br>
+                            Thread t;<br>
+                            SocketUtil socketUtil;<br>
+                            <br>
+                            public ReadThreadClient(SocketUtil socketUtil){<br>
+                                this.socketUtil = socketUtil;<br>
+                                this.t = new Thread(this);<br>
+                                t.start();<br>
+                            }<br>
+                            <br>
+                            @Override<br>
+                            public void run(){<br>
+                                while (true){<br>
+                        //            System.out.println("Server: ");<br>
+                                    try {<br>
+                                        System.out.println("Server: " + this.socketUtil.readSocket());<br>
+                                    } catch (Exception e) {<br>
+                                        e.printStackTrace();<br>
+                                    }<br>
+                                }<br>
+                            }<br>
+                        }<br>
+                        
+
+
+                    </span>
+                    <br>
+                    <br>
+                    <b>WriteThreadClient.java</b>
+                    <br>
+                    <span class="code-snip">
+                        package client;<br>
+
+                        import util.SocketUtil;<br>
+                        
+                        import java.util.Scanner;<br>
+                        <br>
+                        public class WriteThreadClient implements Runnable {<br>
+                            <br>
+                            SocketUtil socketUtil;<br>
+                            Thread t;<br>
+                            <br>
+                            public WriteThreadClient(SocketUtil socketUtil){<br>
+                                this.socketUtil = socketUtil;<br>
+                                this.t = new Thread(this);<br>
+                                t.start();<br>
+                            }<br>
+                            <br>
+                            @Override<br>
+                            public void run() {<br>
+                                while (true){<br>
+                                    System.out.println("Enter message for the server: ");<br>
+                                    Scanner scanner = new Scanner(System.in);<br>
+                                    String str = scanner.nextLine();<br>
+                                    try {<br>
+                                        this.socketUtil.writeSocket(str);<br>
+                                    }<br>
+                                    catch (Exception e){<br>
+                                        e.printStackTrace();<br>
+                                    }<br>
+                                }<br>
+                            }<br>
+                        }<br>
+                        
+
+
+                    </span>
+                    <br>
+
+                    
+
+                </p>
+
+
                 <div id="footer" class="container d-flex align-items-center justify-content-between">
                     <a href="thread.html" class="btn btn-outline-info"><i class="bi bi-chevron-double-left"></i>  Previous</a>
                     <a href="stream.html" class="btn btn-outline-info">Next  <i class="bi bi-chevron-double-right"></i></a>
@@ -193,7 +500,17 @@
     </div>
 
 
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
 </body>
 
